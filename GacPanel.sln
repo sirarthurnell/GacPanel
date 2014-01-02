@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GacPanel", "GacPanel\GacPanel.vbproj", "{F33E91C5-B9BA-43D0-B265-7A7C71D21432}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GacManipulationTest", "Test\GacManipulationTest.vbproj", "{88D9231D-39FE-4B4B-B659-6551021B42EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CB1970F2-87D1-4BCD-90F7-32D5E653F392}"
+	ProjectSection(SolutionItems) = preProject
+		GacPanel.vsmdi = GacPanel.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GacManipulation", "GacManipulation\GacManipulation.vbproj", "{0B0FFC24-CBF7-4FE8-BDC5-1B899FFB934A}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = GacPanel.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F33E91C5-B9BA-43D0-B265-7A7C71D21432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F33E91C5-B9BA-43D0-B265-7A7C71D21432}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F33E91C5-B9BA-43D0-B265-7A7C71D21432}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F33E91C5-B9BA-43D0-B265-7A7C71D21432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88D9231D-39FE-4B4B-B659-6551021B42EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88D9231D-39FE-4B4B-B659-6551021B42EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88D9231D-39FE-4B4B-B659-6551021B42EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88D9231D-39FE-4B4B-B659-6551021B42EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B0FFC24-CBF7-4FE8-BDC5-1B899FFB934A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B0FFC24-CBF7-4FE8-BDC5-1B899FFB934A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B0FFC24-CBF7-4FE8-BDC5-1B899FFB934A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B0FFC24-CBF7-4FE8-BDC5-1B899FFB934A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

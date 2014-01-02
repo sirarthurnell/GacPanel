@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="4d5021e2-dec6-4a6a-b5fe-6ba421ea0427" name="amedinaj@PC7698 2013-12-18 18:24:48" runUser="MITYC\amedinaj" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0986dc83-d545-40fe-8404-a61d03624407">
+    <Description>Esta es la configuración de pruebas predeterminada para una ejecución de pruebas local.</Description>
+    <Deployment enabled="false" runDeploymentRoot="amedinaj_PC7698 2013-12-18 18_24_48">
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Mdb.dll" />
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Pdb.dll" />
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Rocks.dll" />
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Debug\Mono.Cecil.dll" />
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Debug\GacManipulation.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-12-18T18:24:48.5266060+01:00" queuing="2013-12-18T18:24:48.6669286+01:00" start="2013-12-18T18:24:48.6981114+01:00" finish="2013-12-18T18:24:49.4309072+01:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestGetMd5" storage="c:\documents and settings\amedinaj\mis documentos\visual studio 2010\projects\gacpanel\test\bin\debug\test.dll" id="0eb39fbb-fe34-46ed-24d7-431b6fbe86d8">
+      <Execution id="2f6121e9-05a1-478c-8292-c49e6befa9b8" />
+      <TestMethod codeBase="C:/Documents and Settings/amedinaj/Mis documentos/Visual Studio 2010/Projects/GacPanel/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.MachineConfigFileTest, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestGetMd5" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Resultados que no están en la lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0eb39fbb-fe34-46ed-24d7-431b6fbe86d8" executionId="2f6121e9-05a1-478c-8292-c49e6befa9b8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="2f6121e9-05a1-478c-8292-c49e6befa9b8" testId="0eb39fbb-fe34-46ed-24d7-431b6fbe86d8" testName="TestGetMd5" computerName="PC7698" duration="00:00:00.0544326" startTime="2013-12-18T18:24:48.6981114+01:00" endTime="2013-12-18T18:24:49.3685416+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2f6121e9-05a1-478c-8292-c49e6befa9b8">
+    </UnitTestResult>
+  </Results>
+</TestRun>

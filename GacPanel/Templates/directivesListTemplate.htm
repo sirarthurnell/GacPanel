@@ -1,0 +1,69 @@
+﻿<script id="directivesListTemplate" type="text/html">
+
+    <table class="directivesList">
+
+        {{#Data}}
+
+        <tr class="bindingDirective">
+            <td class="editButtonsRegion">
+                <img class="addButton" data-assembly-name="{{Name}}" src="../Media/Images/Icons/add.png" alt="Añadir redirección" />
+                <img class="deleteButton" data-assembly-name="{{Name}}" src="../Media/Images/Icons/delete.png" alt="Eliminar redirección" />
+            </td>
+            <td class="assemblyName">{{Name}}</td>
+            <td class="assemblyToken">{{Token}}</td>
+        </tr>
+            
+        <tr class="redirections">
+
+            <td colspan="3">
+            
+                <table>
+
+                    <tr class="redirection">
+
+                    {{#Redirections}}
+
+                        <td class="checkBoxRegion">
+                            <input type="checkbox" data-assembly-name="{{Name}}" data-id="{{Id}}"> 
+                        </td>
+
+                        {{#Range}}
+
+                        {{#LowerBound}}
+
+                        <td class="lowerBound versionControl" data-assembly-name="{{Name}}" data-id="{{Id}}">{{VersionAsString}}</td>
+
+                        {{/LowerBound}}
+
+                        {{#UpperBound}}
+
+                        <td class="upperBound versionControl" data-assembly-name="{{Name}}" data-id="{{Id}}">{{VersionAsString}}</td>
+
+                        {{/UpperBound}}
+
+                        {{/Range}}
+
+                        <td>&nbsp;</td>
+
+                        {{#TargetVersion}}
+
+                        <td class="targetVersion">{{VersionAsString}}</td>
+
+                        {{/TargetVersion}}
+
+                    {{/Redirections}}
+
+                    </tr>
+
+                </table>
+
+            </td>            
+
+        </tr>            
+
+        {{/Data}}
+
+    </table>
+
+</script>
+

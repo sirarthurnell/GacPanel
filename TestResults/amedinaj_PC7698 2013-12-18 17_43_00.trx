@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="331c5b90-ecc4-4fbe-9514-095f1ebb9bb9" name="amedinaj@PC7698 2013-12-18 17:43:00" runUser="MITYC\amedinaj" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0986dc83-d545-40fe-8404-a61d03624407">
+    <Description>Esta es la configuración de pruebas predeterminada para una ejecución de pruebas local.</Description>
+    <Deployment enabled="false" runDeploymentRoot="amedinaj_PC7698 2013-12-18 17_43_00">
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Mdb.dll" />
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Pdb.dll" />
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Rocks.dll" />
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Debug\Mono.Cecil.dll" />
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Debug\GacManipulation.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-12-18T17:43:00.9772614+01:00" queuing="2013-12-18T17:43:04.6020062+01:00" start="2013-12-18T17:43:04.8051169+01:00" finish="2013-12-18T17:43:06.9924629+01:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="SuggestAndApplyTest" storage="c:\documents and settings\amedinaj\mis documentos\visual studio 2010\projects\gacpanel\test\bin\debug\test.dll" id="f715f6e9-b44b-72a9-ec51-28fbf72e72ee">
+      <Execution id="5ecb0f67-59ad-4f14-af30-bc225e4f28ff" />
+      <TestMethod codeBase="C:/Documents and Settings/amedinaj/Mis documentos/Visual Studio 2010/Projects/GacPanel/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.DirectiveResolverTest, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SuggestAndApplyTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Resultados que no están en la lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="f715f6e9-b44b-72a9-ec51-28fbf72e72ee" executionId="5ecb0f67-59ad-4f14-af30-bc225e4f28ff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="5ecb0f67-59ad-4f14-af30-bc225e4f28ff" testId="f715f6e9-b44b-72a9-ec51-28fbf72e72ee" testName="SuggestAndApplyTest" computerName="PC7698" duration="00:00:00.4887327" startTime="2013-12-18T17:43:04.9769798+01:00" endTime="2013-12-18T17:43:06.8518478+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5ecb0f67-59ad-4f14-af30-bc225e4f28ff">
+      <Output>
+        <ErrorInfo>
+          <Message>Error de Assert.AreNotEqual. Se esperaba cualquier valor excepto &lt;oldVersion="3.0.0.0-3.2.18.66535" newVersion="3.2.18.29464"&gt;, pero es &lt;oldVersion="3.0.0.0-3.2.18.66535" newVersion="3.2.18.29464"&gt;. </Message>
+          <StackTrace>   en Test.DirectiveResolverTest.SuggestAndApplyTest() en C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\DirectiveResolverTest.vb:línea 87
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

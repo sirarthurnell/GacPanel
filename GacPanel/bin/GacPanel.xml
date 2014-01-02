@@ -1,0 +1,81 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+GacPanel
+</name>
+</assembly>
+<members>
+<member name="M:GacPanel.JsonResponse.TransmitOject(System.Web.HttpResponse,System.Object)">
+	<summary>
+ Transmite los resultados de la operación al cliente.
+ </summary>
+	<param name="response">Objeto de respuesta.</param>
+	<param name="obj">Objeto a transmitir.</param>
+</member><member name="M:GacPanel.JsonResponse.TransmitJson(System.Web.HttpResponse,System.String)">
+	<summary>
+ Transmite el objeto json indicado.
+ </summary>
+	<param name="response">Objeto de respuesta.</param>
+	<param name="json">Texto en formato JSON.</param>
+</member><member name="T:GacPanel.JsonResponse">
+	<summary>
+ Contiene métodos para el envío de mensajes
+ en formato JSON al cliente.
+ </summary>
+</member><member name="M:GacPanel.OperationResult`1.#ctor(System.Boolean,`0)">
+	<summary>
+ Crea una nueva instancia de OperationResult.
+ </summary>
+	<param name="success">Indica si ha tenido éxito
+ la operación.</param>
+	<param name="data">Datos asociados a la operación.</param>
+</member><member name="P:GacPanel.OperationResult`1.Success">
+	<summary>
+ Devuelve si la operación tuvo éxito.
+ </summary>
+</member><member name="P:GacPanel.OperationResult`1.Data">
+	<summary>
+ Devuelve los datos asociados a la operación.
+ </summary>
+</member><member name="T:GacPanel.OperationResult`1">
+	<summary>
+ Contiene la respuesta resultado de una
+ operación realizada.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.Application">
+	<summary>
+ Devuelve información sobre la aplicación actual.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.Computer">
+	<summary>
+ Devuelve información sobre el equipo host.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.User">
+	<summary>
+ Devuelve información del usuario web actual.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.Request">
+	<summary>
+ Devuelve un objeto Request.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.Response">
+	<summary>
+ Devuelve un objeto Response.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.Log">
+	<summary>
+ Devuelve el objeto de registro Asp.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.WebServices">
+	<summary>
+ Proporciona acceso a los servicios Web agregados a este proyecto.
+ </summary>
+</member><member name="T:GacPanel.My.MyWebExtension">
+	<summary>
+ Módulo usado para definir las propiedades que están disponibles en el espacio de nombres My para proyectos web.
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,1573 @@
+﻿{
+  "Success": true,
+  "Data": [
+    {
+      "Name": "Mityc.Sigetel.DenunciasEquipos",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                1,
+                0,
+                5,
+                65535
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 5,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              1,
+              0,
+              5,
+              18135
+            ],
+            "Major": 1,
+            "Minor": 0,
+            "Patch": 5,
+            "Build": 18135,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Radioaficionado",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                5,
+                2,
+                0,
+                65535
+              ],
+              "Major": 5,
+              "Minor": 2,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              5,
+              2,
+              0,
+              21977
+            ],
+            "Major": 5,
+            "Minor": 2,
+            "Patch": 0,
+            "Build": 21977,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Common.Territorios",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                1,
+                1,
+                2,
+                65535
+              ],
+              "Major": 1,
+              "Minor": 1,
+              "Patch": 2,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              1,
+              1,
+              2,
+              20631
+            ],
+            "Major": 1,
+            "Minor": 1,
+            "Patch": 2,
+            "Build": 20631,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Common.TramitacionBandejaEntrada",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                4,
+                0,
+                0,
+                65535
+              ],
+              "Major": 4,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              4,
+              0,
+              0,
+              0
+            ],
+            "Major": 4,
+            "Minor": 0,
+            "Patch": 0,
+            "Build": 0,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Interop.IGRALXLib",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                65535
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              1,
+              0,
+              0,
+              2
+            ],
+            "Major": 1,
+            "Minor": 0,
+            "Patch": 0,
+            "Build": 2,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Recom.InterfazSict",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                1,
+                0,
+                2,
+                65535
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 2,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              1,
+              0,
+              2,
+              23877
+            ],
+            "Major": 1,
+            "Minor": 0,
+            "Patch": 2,
+            "Build": 23877,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.RIN",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                1,
+                0,
+                5,
+                65535
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 5,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              1,
+              0,
+              5,
+              22439
+            ],
+            "Major": 1,
+            "Minor": 0,
+            "Patch": 5,
+            "Build": 22439,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.CSSTA",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                3,
+                9,
+                2,
+                65535
+              ],
+              "Major": 3,
+              "Minor": 9,
+              "Patch": 2,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              3,
+              9,
+              2,
+              18030
+            ],
+            "Major": 3,
+            "Minor": 9,
+            "Patch": 2,
+            "Build": 18030,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Recursos",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                3,
+                0,
+                0,
+                65535
+              ],
+              "Major": 3,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              3,
+              0,
+              0,
+              17607
+            ],
+            "Major": 3,
+            "Minor": 0,
+            "Patch": 0,
+            "Build": 17607,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Web.UI.Core",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                3,
+                0,
+                1,
+                65535
+              ],
+              "Major": 3,
+              "Minor": 0,
+              "Patch": 1,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              3,
+              0,
+              1,
+              24119
+            ],
+            "Major": 3,
+            "Minor": 0,
+            "Patch": 1,
+            "Build": 24119,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Interop.idocDecrypt",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                2,
+                0,
+                0,
+                65535
+              ],
+              "Major": 2,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              2,
+              0,
+              0,
+              2
+            ],
+            "Major": 2,
+            "Minor": 0,
+            "Patch": 0,
+            "Build": 2,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Interop.AspPDF",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                1,
+                6,
+                0,
+                65535
+              ],
+              "Major": 1,
+              "Minor": 6,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              1,
+              6,
+              0,
+              9
+            ],
+            "Major": 1,
+            "Minor": 6,
+            "Patch": 0,
+            "Build": 9,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.int",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                3,
+                3,
+                4,
+                65535
+              ],
+              "Major": 3,
+              "Minor": 3,
+              "Patch": 4,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              3,
+              3,
+              4,
+              22583
+            ],
+            "Major": 3,
+            "Minor": 3,
+            "Patch": 4,
+            "Build": 22583,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.ComunRenafeRecom",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                5,
+                1,
+                0,
+                65535
+              ],
+              "Major": 5,
+              "Minor": 1,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              5,
+              1,
+              0,
+              11111
+            ],
+            "Major": 5,
+            "Minor": 1,
+            "Patch": 0,
+            "Build": 11111,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "SETSI_GeoInterfaz",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                1,
+                1,
+                0,
+                65535
+              ],
+              "Major": 1,
+              "Minor": 1,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              1,
+              1,
+              0,
+              20036
+            ],
+            "Major": 1,
+            "Minor": 1,
+            "Patch": 0,
+            "Build": 20036,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Renafe",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                5,
+                2,
+                1,
+                65535
+              ],
+              "Major": 5,
+              "Minor": 2,
+              "Patch": 1,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              5,
+              2,
+              1,
+              11111
+            ],
+            "Major": 5,
+            "Minor": 2,
+            "Patch": 1,
+            "Build": 11111,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.UsoEspecial",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                5,
+                1,
+                1,
+                65535
+              ],
+              "Major": 5,
+              "Minor": 1,
+              "Patch": 1,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              5,
+              1,
+              1,
+              21379
+            ],
+            "Major": 5,
+            "Minor": 1,
+            "Patch": 1,
+            "Build": 21379,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.CB27",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                5,
+                0,
+                0,
+                65535
+              ],
+              "Major": 5,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              5,
+              0,
+              0,
+              23956
+            ],
+            "Major": 5,
+            "Minor": 0,
+            "Patch": 0,
+            "Build": 23956,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Templates",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                3,
+                0,
+                1,
+                65535
+              ],
+              "Major": 3,
+              "Minor": 0,
+              "Patch": 1,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              3,
+              0,
+              1,
+              24014
+            ],
+            "Major": 3,
+            "Minor": 0,
+            "Patch": 1,
+            "Build": 24014,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Reclamaciones",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                4,
+                1,
+                1,
+                65535
+              ],
+              "Major": 4,
+              "Minor": 1,
+              "Patch": 1,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              4,
+              1,
+              1,
+              22783
+            ],
+            "Major": 4,
+            "Minor": 1,
+            "Patch": 1,
+            "Build": 22783,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Recom",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                4,
+                0,
+                9,
+                65535
+              ],
+              "Major": 4,
+              "Minor": 0,
+              "Patch": 9,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              4,
+              0,
+              9,
+              20797
+            ],
+            "Major": 4,
+            "Minor": 0,
+            "Patch": 9,
+            "Build": 20797,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.SAN",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                1,
+                0,
+                5,
+                65535
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 5,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              1,
+              0,
+              5,
+              16242
+            ],
+            "Major": 1,
+            "Minor": 0,
+            "Patch": 5,
+            "Build": 16242,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "ConexMAP",
+      "Token": "5f25c403005e7b6c",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                65535
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              1,
+              0,
+              0,
+              2
+            ],
+            "Major": 1,
+            "Minor": 0,
+            "Patch": 0,
+            "Build": 2,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Interop.IFCOMLib",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                4,
+                6,
+                0,
+                65535
+              ],
+              "Major": 4,
+              "Minor": 6,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              4,
+              6,
+              0,
+              3
+            ],
+            "Major": 4,
+            "Minor": 6,
+            "Patch": 0,
+            "Build": 3,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Ingresos",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                3,
+                8,
+                2,
+                65535
+              ],
+              "Major": 3,
+              "Minor": 8,
+              "Patch": 2,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              3,
+              8,
+              2,
+              18625
+            ],
+            "Major": 3,
+            "Minor": 8,
+            "Patch": 2,
+            "Build": 18625,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Common.Security",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                3,
+                0,
+                3,
+                65535
+              ],
+              "Major": 3,
+              "Minor": 0,
+              "Patch": 3,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              3,
+              0,
+              3,
+              27620
+            ],
+            "Major": 3,
+            "Minor": 0,
+            "Patch": 3,
+            "Build": 27620,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Ict",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                4,
+                0,
+                0,
+                0
+              ],
+              "Major": 4,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                4,
+                0,
+                3,
+                65535
+              ],
+              "Major": 4,
+              "Minor": 0,
+              "Patch": 3,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              4,
+              0,
+              3,
+              22890
+            ],
+            "Major": 4,
+            "Minor": 0,
+            "Patch": 3,
+            "Build": 22890,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Terceros",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                4,
+                0,
+                0,
+                65535
+              ],
+              "Major": 4,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              4,
+              0,
+              0,
+              1
+            ],
+            "Major": 4,
+            "Minor": 0,
+            "Patch": 0,
+            "Build": 1,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "invesflow",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                3,
+                3,
+                0,
+                65535
+              ],
+              "Major": 3,
+              "Minor": 3,
+              "Patch": 0,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              3,
+              3,
+              0,
+              23054
+            ],
+            "Major": 3,
+            "Minor": 3,
+            "Patch": 0,
+            "Build": 23054,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.IntegracionPSC",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                3,
+                4,
+                1,
+                65535
+              ],
+              "Major": 3,
+              "Minor": 4,
+              "Patch": 1,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              3,
+              4,
+              1,
+              29763
+            ],
+            "Major": 3,
+            "Minor": 4,
+            "Patch": 1,
+            "Build": 29763,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Common",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                5,
+                2,
+                59,
+                65535
+              ],
+              "Major": 5,
+              "Minor": 2,
+              "Patch": 59,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              5,
+              2,
+              59,
+              16580
+            ],
+            "Major": 5,
+            "Minor": 2,
+            "Patch": 59,
+            "Build": 16580,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Mityc.Sigetel.Base",
+      "Token": "159574ffe4118e68",
+      "Redirections": [
+        {
+          "Range": {
+            "LowerBound": {
+              "Parts": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "Major": 1,
+              "Minor": 0,
+              "Patch": 0,
+              "Build": 0,
+              "ComponentsCount": 4
+            },
+            "UpperBound": {
+              "Parts": [
+                3,
+                2,
+                12,
+                65535
+              ],
+              "Major": 3,
+              "Minor": 2,
+              "Patch": 12,
+              "Build": 65535,
+              "ComponentsCount": 4
+            }
+          },
+          "TargetVersion": {
+            "Parts": [
+              3,
+              2,
+              12,
+              18364
+            ],
+            "Major": 3,
+            "Minor": 2,
+            "Patch": 12,
+            "Build": 18364,
+            "ComponentsCount": 4
+          }
+        }
+      ]
+    }
+  ]
+}

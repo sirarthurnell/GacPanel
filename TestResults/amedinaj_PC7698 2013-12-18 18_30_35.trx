@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="5c4b02ee-46dd-4f18-b505-4527a724358c" name="amedinaj@PC7698 2013-12-18 18:30:35" runUser="MITYC\amedinaj" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0986dc83-d545-40fe-8404-a61d03624407">
+    <Description>Esta es la configuración de pruebas predeterminada para una ejecución de pruebas local.</Description>
+    <Deployment enabled="false" runDeploymentRoot="amedinaj_PC7698 2013-12-18 18_30_35">
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Mdb.dll" />
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Pdb.dll" />
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Rocks.dll" />
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Debug\Mono.Cecil.dll" />
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Debug\GacManipulation.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-12-18T18:30:35.6300484+01:00" queuing="2013-12-18T18:30:39.2970354+01:00" start="2013-12-18T18:30:39.5310984+01:00" finish="2013-12-18T18:30:41.9185410+01:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="6" executed="6" passed="5" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestChangeDirective" storage="c:\documents and settings\amedinaj\mis documentos\visual studio 2010\projects\gacpanel\test\bin\debug\test.dll" id="35eb65eb-0a55-ebd0-1bc6-a18f872e7817">
+      <Execution id="60d27449-dded-4ca1-acb8-b15ae1c90846" />
+      <TestMethod codeBase="C:/Documents and Settings/amedinaj/Mis documentos/Visual Studio 2010/Projects/GacPanel/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.MachineConfigFileTest, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestChangeDirective" />
+    </UnitTest>
+    <UnitTest name="SuggestAndApplyTest" storage="c:\documents and settings\amedinaj\mis documentos\visual studio 2010\projects\gacpanel\test\bin\debug\test.dll" id="f715f6e9-b44b-72a9-ec51-28fbf72e72ee">
+      <Execution id="88769095-75e3-4108-bbf6-be184ee10870" />
+      <TestMethod codeBase="C:/Documents and Settings/amedinaj/Mis documentos/Visual Studio 2010/Projects/GacPanel/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.DirectiveResolverTest, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SuggestAndApplyTest" />
+    </UnitTest>
+    <UnitTest name="TestLoad" storage="c:\documents and settings\amedinaj\mis documentos\visual studio 2010\projects\gacpanel\test\bin\debug\test.dll" id="a6209171-6d87-2e8c-6f8d-34bb86e156d6">
+      <Execution id="4e3e330f-825a-46ed-8b9a-f2c4f30c4d03" />
+      <TestMethod codeBase="C:/Documents and Settings/amedinaj/Mis documentos/Visual Studio 2010/Projects/GacPanel/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.MachineConfigFileTest, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestLoad" />
+    </UnitTest>
+    <UnitTest name="SuggestTest" storage="c:\documents and settings\amedinaj\mis documentos\visual studio 2010\projects\gacpanel\test\bin\debug\test.dll" id="072da995-9368-c31f-4f67-02e6b5ac48d7">
+      <Execution id="210f3a53-96c6-401f-91d3-b0996a1bfc9d" />
+      <TestMethod codeBase="C:/Documents and Settings/amedinaj/Mis documentos/Visual Studio 2010/Projects/GacPanel/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.DirectiveResolverTest, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SuggestTest" />
+    </UnitTest>
+    <UnitTest name="TestGetMd5" storage="c:\documents and settings\amedinaj\mis documentos\visual studio 2010\projects\gacpanel\test\bin\debug\test.dll" id="0eb39fbb-fe34-46ed-24d7-431b6fbe86d8">
+      <Execution id="424ecc19-40a9-4611-9121-239814d22ccd" />
+      <TestMethod codeBase="C:/Documents and Settings/amedinaj/Mis documentos/Visual Studio 2010/Projects/GacPanel/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.MachineConfigFileTest, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestGetMd5" />
+    </UnitTest>
+    <UnitTest name="TestThereAreRedirections" storage="c:\documents and settings\amedinaj\mis documentos\visual studio 2010\projects\gacpanel\test\bin\debug\test.dll" id="c295c8eb-c794-9b4a-b0f3-786b6ef5d0d3">
+      <Execution id="08e5440b-d2db-4078-9a32-48909757171b" />
+      <TestMethod codeBase="C:/Documents and Settings/amedinaj/Mis documentos/Visual Studio 2010/Projects/GacPanel/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.MachineConfigFileTest, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestThereAreRedirections" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Resultados que no están en la lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="072da995-9368-c31f-4f67-02e6b5ac48d7" executionId="210f3a53-96c6-401f-91d3-b0996a1bfc9d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0eb39fbb-fe34-46ed-24d7-431b6fbe86d8" executionId="424ecc19-40a9-4611-9121-239814d22ccd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="35eb65eb-0a55-ebd0-1bc6-a18f872e7817" executionId="60d27449-dded-4ca1-acb8-b15ae1c90846" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a6209171-6d87-2e8c-6f8d-34bb86e156d6" executionId="4e3e330f-825a-46ed-8b9a-f2c4f30c4d03" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c295c8eb-c794-9b4a-b0f3-786b6ef5d0d3" executionId="08e5440b-d2db-4078-9a32-48909757171b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f715f6e9-b44b-72a9-ec51-28fbf72e72ee" executionId="88769095-75e3-4108-bbf6-be184ee10870" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="210f3a53-96c6-401f-91d3-b0996a1bfc9d" testId="072da995-9368-c31f-4f67-02e6b5ac48d7" testName="SuggestTest" computerName="PC7698" duration="00:00:00.2884922" startTime="2013-12-18T18:30:39.7027446+01:00" endTime="2013-12-18T18:30:41.3723940+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="210f3a53-96c6-401f-91d3-b0996a1bfc9d">
+    </UnitTestResult>
+    <UnitTestResult executionId="424ecc19-40a9-4611-9121-239814d22ccd" testId="0eb39fbb-fe34-46ed-24d7-431b6fbe86d8" testName="TestGetMd5" computerName="PC7698" duration="00:00:00.1722165" startTime="2013-12-18T18:30:41.3879982+01:00" endTime="2013-12-18T18:30:41.5596444+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="424ecc19-40a9-4611-9121-239814d22ccd">
+      <Output>
+        <ErrorInfo>
+          <Message>Error de Assert.IsNotNull. </Message>
+          <StackTrace>   en Test.MachineConfigFileTest.TestGetMd5() en C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\MachineConfigFileTest.vb:línea 77
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="60d27449-dded-4ca1-acb8-b15ae1c90846" testId="35eb65eb-0a55-ebd0-1bc6-a18f872e7817" testName="TestChangeDirective" computerName="PC7698" duration="00:00:00.1367053" startTime="2013-12-18T18:30:41.5752486+01:00" endTime="2013-12-18T18:30:41.7312906+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="60d27449-dded-4ca1-acb8-b15ae1c90846">
+    </UnitTestResult>
+    <UnitTestResult executionId="4e3e330f-825a-46ed-8b9a-f2c4f30c4d03" testId="a6209171-6d87-2e8c-6f8d-34bb86e156d6" testName="TestLoad" computerName="PC7698" duration="00:00:00.0027933" startTime="2013-12-18T18:30:41.7312906+01:00" endTime="2013-12-18T18:30:41.7468948+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4e3e330f-825a-46ed-8b9a-f2c4f30c4d03">
+    </UnitTestResult>
+    <UnitTestResult executionId="08e5440b-d2db-4078-9a32-48909757171b" testId="c295c8eb-c794-9b4a-b0f3-786b6ef5d0d3" testName="TestThereAreRedirections" computerName="PC7698" duration="00:00:00.0031216" startTime="2013-12-18T18:30:41.7468948+01:00" endTime="2013-12-18T18:30:41.7624990+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="08e5440b-d2db-4078-9a32-48909757171b">
+    </UnitTestResult>
+    <UnitTestResult executionId="88769095-75e3-4108-bbf6-be184ee10870" testId="f715f6e9-b44b-72a9-ec51-28fbf72e72ee" testName="SuggestAndApplyTest" computerName="PC7698" duration="00:00:00.0152734" startTime="2013-12-18T18:30:41.7781032+01:00" endTime="2013-12-18T18:30:41.7937074+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="88769095-75e3-4108-bbf6-be184ee10870">
+    </UnitTestResult>
+  </Results>
+</TestRun>

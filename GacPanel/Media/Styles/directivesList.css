@@ -1,0 +1,71 @@
+﻿body 
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 100%;
+    color: #333333;    
+}
+
+#assembliesListContainer
+{
+    font-size: 0.75em;
+    width: 65%;
+    margin: 0 auto;
+    background-color: #FFFFE1;
+    border: 1px solid silver;
+    overflow: hidden;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.directivesList
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.directivesList .bindingDirective
+{
+    background-color: #FFFFF0;
+    border-top: 1px solid #F4F4F4;
+    border-bottom: 1px solid silver;
+}
+
+.directivesList .bindingDirective td
+{
+    padding: 0.5em;
+}
+
+.directivesList .redirections > td
+{
+    padding-left: 1.75em;
+}
+
+.directivesList .bindingDirective .editButtonsRegion
+{
+    border-right: 1px solid silver;
+    width: 4.5em;
+}
+
+.directivesList .bindingDirective img
+{
+    width: 1.5em;
+    height: 1.5em;
+    margin-bottom: -0.2em;
+    padding-left: 0.5em;
+    cursor: pointer;
+}
+
+.directivesList .bindingDirective .assemblyToken
+{
+    text-align: right;
+}
+
+.versionControl
+{
+    background-color: white;
+    text-align: center;
+    font-family: inherit;
+    font-size: inherit;
+    width: 6em;
+}

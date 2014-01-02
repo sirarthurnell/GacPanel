@@ -1,0 +1,16 @@
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacPanel.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacPanel.pdb
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacPanel.xml
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacManipulation.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\Newtonsoft.Json.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\Mono.Cecil.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacManipulation.pdb
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacManipulation.xml
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\Newtonsoft.Json.xml
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GacPanel.Resources.resources
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GacPanel.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GacPanel.xml
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GacPanel.pdb

@@ -1,0 +1,258 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+GacPanel
+</name>
+</assembly>
+<members>
+<member name="M:GacPanel.MachineConfigFile.#ctor(System.String)">
+	<summary>
+ Crea una nueva instancia de MachineConfig.
+ </summary>
+	<param name="pathToFile">Ruta al archivo
+ machine.config.</param>
+</member><member name="M:GacPanel.MachineConfigFile.LoadDirectives">
+	<summary>
+ Carga las directivas de enlace del archivo
+ machine.config.
+ </summary>
+</member><member name="P:GacPanel.MachineConfigFile.Directives">
+	<summary>
+ Directivas de enlace declaradas en el archivo
+ machine.config.
+ </summary>
+</member><member name="M:GacPanel.MachineConfigFile.SaveDirectives">
+	<summary>
+ Guarda las directivas de enlace en el archivo
+ machine.config.
+ </summary>
+</member><member name="T:GacPanel.MachineConfigFile">
+	<summary>
+ Representa el archivo de configuración
+ del framework.
+ </summary>
+</member><member name="M:GacPanel.BindingDirective.#ctor(System.String,System.String)">
+	<summary>
+ Crea una nueva instancia de BindingDirective.
+ </summary>
+	<param name="name">Nombre del ensamblado.</param>
+	<param name="token">Token del ensamblado.</param>
+</member><member name="P:GacPanel.BindingDirective.Name">
+	<summary>
+ Obtiene el nombre del ensamblado.
+ </summary>
+</member><member name="P:GacPanel.BindingDirective.Token">
+	<summary>
+ Obtiene el token público del ensamblado.
+ </summary>
+</member><member name="P:GacPanel.BindingDirective.Redirections">
+	<summary>
+ Obtiene la lista de redirecciones de esta
+ directiva de enlace.
+ </summary>
+</member><member name="M:GacPanel.BindingDirective.ToString">
+	<summary>
+ Obtiene una representación en cadena de
+ la directiva de enlace actual.
+ </summary>
+	<returns>Representación en cadena de
+ la directiva de enlace actual.</returns>
+</member><member name="T:GacPanel.BindingDirective">
+	<summary>
+ Representa una directiva de enlace.
+ </summary>
+</member><member name="M:GacPanel.BindingDirectiveTranslator.ToXml(System.Collections.Generic.IEnumerable{GacPanel.BindingDirective},System.Xml.Linq.XNamespace)">
+	<summary>
+ Traduce una colección de directivas de enlace
+ a su representación en XML.
+ </summary>
+	<param name="directives">Directivas de enlace
+ a traducir.</param>
+	<param name="ns">Espacio de nombres a usar.</param>
+	<returns>Directivas de enlace en XML.</returns>
+</member><member name="M:GacPanel.BindingDirectiveTranslator.ToXml(GacPanel.BindingDirective,System.Xml.Linq.XNamespace)">
+	<summary>
+ Traduce un objeto de directiva de enlace en un
+ nodo XML.
+ </summary>
+	<param name="directive">Directiva de enlace.</param>
+	<param name="ns">Espacio de nombres a usar.</param>
+	<returns>Directiva de enlace expresada como XML.</returns>
+</member><member name="T:GacPanel.BindingDirectiveTranslator">
+	<summary>
+ Traduce objetos de directiva de enlace a su
+ representación en XML.
+ </summary>
+</member><member name="M:GacPanel.BindingRedirect.#ctor(GacPanel.BindingVersionRange,GacPanel.BindingVersion)">
+	<summary>
+ Crea una nueva instancia de BindingRedirect.
+ </summary>
+	<param name="range">Rango de versiones a redireccionar.</param>
+	<param name="targetVersion">Versión de destino.</param>
+</member><member name="P:GacPanel.BindingRedirect.Range">
+	<summary>
+ Obtiene el rango de versiones a redireccionar.
+ </summary>
+</member><member name="P:GacPanel.BindingRedirect.TargetVersion">
+	<summary>
+ Obtiene la versión de destino.
+ </summary>
+</member><member name="M:GacPanel.BindingRedirect.ToString">
+	<summary>
+ Obtiene una representación en cadena
+ de la redirección.
+ </summary>
+	<returns>Representación en cadena de
+ la redirección.</returns>
+</member><member name="M:GacPanel.BindingRedirect.CompareTo(GacPanel.BindingRedirect)">
+	<summary>
+ Compara esta instancia con otra redirección.
+ </summary>
+	<param name="other">Otra redirección con la
+ que se quiere comparar esta instancia.</param>
+	<returns>Menor que cero si esta instancia es de menor número
+ de versión. 0 si son iguales. Mayor que cero si es mayor.</returns>
+</member><member name="T:GacPanel.BindingRedirect">
+	<summary>
+ Representa la redirección de una directiva
+ de enlace.
+ </summary>
+</member><member name="M:GacPanel.BindingVersionRange.#ctor(GacPanel.BindingVersion,GacPanel.BindingVersion)">
+	<summary>
+ Crea una nueva instancia de BindingVersionRange.
+ </summary>
+	<param name="lowerBound">Límite inferior.</param>
+	<param name="upperBound">Límite superior.</param>
+</member><member name="M:GacPanel.BindingVersionRange.#ctor(System.String,System.String)">
+	<summary>
+ Crea una nueva instancia de BindingVersionRange.
+ </summary>
+	<param name="lowerBound">Límite inferior.</param>
+	<param name="upperBound">Límite superior.</param>
+</member><member name="M:GacPanel.BindingVersionRange.#ctor(System.String)">
+	<summary>
+ Crea una nueva instancia de BindingVersionRange.
+ </summary>
+	<param name="range">Intervalo de versiones.</param>
+</member><member name="P:GacPanel.BindingVersionRange.LowerBound">
+	<summary>
+ Obtiene el límite inferior del rango.
+ </summary>
+</member><member name="P:GacPanel.BindingVersionRange.UpperBound">
+	<summary>
+ Obtiene el límite superior del rango.
+ </summary>
+</member><member name="M:GacPanel.BindingVersionRange.ToString">
+	<summary>
+ Obtiene una representación en cadena del
+ rango de versiones.
+ </summary>
+	<returns>Representación en cadena del
+ rango de versiones.</returns>
+</member><member name="T:GacPanel.BindingVersionRange">
+	<summary>
+ Representa un intervalo de versiones para operar
+ con directivas de enlace.
+ </summary>
+</member><member name="M:GacPanel.BindingVersion.#ctor(System.String)">
+	<summary>
+ Crea una nueva instancia de BindingVersion.
+ </summary>
+	<param name="version">Número de versión.</param>
+</member><member name="M:GacPanel.BindingVersion.ParseAndFillNumbers(System.String)">
+	<summary>
+ Parsea el número de versión expresado como cadena.
+ </summary>
+	<param name="version">Número de versión a parsear.</param>
+</member><member name="P:GacPanel.BindingVersion.Parts">
+	<summary>
+ Obtiene las partes que componen este
+ número de versión.
+ </summary>
+</member><member name="P:GacPanel.BindingVersion.Major">
+	<summary>
+ Obtiene el número de versión mayor.
+ </summary>
+</member><member name="P:GacPanel.BindingVersion.Minor">
+	<summary>
+ Obtiene el número de versión menor.
+ </summary>
+</member><member name="P:GacPanel.BindingVersion.Patch">
+	<summary>
+ Obtiene el número de versión de revisión.
+ </summary>
+</member><member name="P:GacPanel.BindingVersion.Build">
+	<summary>
+ Obtiene el número de versión de compilación.
+ </summary>
+</member><member name="P:GacPanel.BindingVersion.ComponentsCount">
+	<summary>
+ Obtiene el número de partes del número de versión.
+ </summary>
+</member><member name="M:GacPanel.BindingVersion.ToString">
+	<summary>
+ Obtiene una representación en cadena del
+ número de versión.
+ </summary>
+	<returns>Representación en cadena del
+ número de versión.</returns>
+</member><member name="M:GacPanel.BindingVersion.CompareTo(GacPanel.BindingVersion)">
+	<summary>
+ Compara esta instancia con otra instancia
+ de BindingVersion.
+ </summary>
+	<param name="other">Otra instancia que
+ comparar.</param>
+	<returns>Un número igual que 0 si son iguales.
+ Un número mayor que cero si esta instancia es mayor
+ que con la que se compara.
+ Un número menor que cero si esta instancia es menor.</returns>
+</member><member name="M:GacPanel.BindingVersion.VersionAsNumber(GacPanel.BindingVersion)">
+	<summary>
+ Obtiene el número de versión como un número
+ operable matemáticamente.
+ </summary>
+	<param name="version">Versión.</param>
+	<returns>Número de versión operable.</returns>
+</member><member name="T:GacPanel.BindingVersion">
+	<summary>
+ Representa un número de versión de un ensamblado
+ a usar en una operación de directivas de enlace.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.Application">
+	<summary>
+ Devuelve información sobre la aplicación actual.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.Computer">
+	<summary>
+ Devuelve información sobre el equipo host.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.User">
+	<summary>
+ Devuelve información del usuario web actual.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.Request">
+	<summary>
+ Devuelve un objeto Request.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.Response">
+	<summary>
+ Devuelve un objeto Response.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.Log">
+	<summary>
+ Devuelve el objeto de registro Asp.
+ </summary>
+</member><member name="P:GacPanel.My.MyWebExtension.WebServices">
+	<summary>
+ Proporciona acceso a los servicios Web agregados a este proyecto.
+ </summary>
+</member><member name="T:GacPanel.My.MyWebExtension">
+	<summary>
+ Módulo usado para definir las propiedades que están disponibles en el espacio de nombres My para proyectos web.
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

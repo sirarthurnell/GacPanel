@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="9d4364bb-7a04-49fe-8600-66b32b6ac70e" name="amedinaj@PC7698 2013-12-18 12:03:21" runUser="MITYC\amedinaj" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0986dc83-d545-40fe-8404-a61d03624407">
+    <Description>Esta es la configuración de pruebas predeterminada para una ejecución de pruebas local.</Description>
+    <Deployment enabled="false" runDeploymentRoot="amedinaj_PC7698 2013-12-18 12_03_21">
+      <DeploymentItem filename="C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacPanel.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-12-18T12:03:21.2706767+01:00" queuing="2013-12-18T12:03:30.2082911+01:00" start="2013-12-18T12:03:30.7082975+01:00" finish="2013-12-18T12:04:08.5837823+01:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="3" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="2" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="PC7698" outcome="Error" timestamp="2013-12-18T12:04:08.5837823+01:00">
+        <Text>El proceso del host de pruebas terminó inesperadamente.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestThereAreRedirections" storage="c:\documents and settings\amedinaj\mis documentos\visual studio 2010\projects\gacpanel\test\bin\debug\test.dll" id="7b83aa95-4317-d78f-622f-6afeb39f8feb">
+      <Execution id="7fdee0a7-953a-4480-b1f7-a6bc458468e8" />
+      <TestMethod codeBase="C:/Documents and Settings/amedinaj/Mis documentos/Visual Studio 2010/Projects/GacPanel/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.MachineConfigTest, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestThereAreRedirections" />
+    </UnitTest>
+    <UnitTest name="TestLoad" storage="c:\documents and settings\amedinaj\mis documentos\visual studio 2010\projects\gacpanel\test\bin\debug\test.dll" id="71821857-41b4-cdfa-6068-2848e00e2dda">
+      <Execution id="b123e139-7d50-4331-b8eb-882ba894ecd8" />
+      <TestMethod codeBase="C:/Documents and Settings/amedinaj/Mis documentos/Visual Studio 2010/Projects/GacPanel/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.MachineConfigTest, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestLoad" />
+    </UnitTest>
+    <UnitTest name="TestChangeDirective" storage="c:\documents and settings\amedinaj\mis documentos\visual studio 2010\projects\gacpanel\test\bin\debug\test.dll" id="612f4c5a-94b8-f977-bfd0-aef876dfe47f">
+      <Execution id="ad16f2a8-4d1a-4187-9a05-fa06795f72a9" />
+      <TestMethod codeBase="C:/Documents and Settings/amedinaj/Mis documentos/Visual Studio 2010/Projects/GacPanel/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.MachineConfigTest, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestChangeDirective" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Resultados que no están en la lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="612f4c5a-94b8-f977-bfd0-aef876dfe47f" executionId="ad16f2a8-4d1a-4187-9a05-fa06795f72a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="71821857-41b4-cdfa-6068-2848e00e2dda" executionId="b123e139-7d50-4331-b8eb-882ba894ecd8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7b83aa95-4317-d78f-622f-6afeb39f8feb" executionId="7fdee0a7-953a-4480-b1f7-a6bc458468e8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="ad16f2a8-4d1a-4187-9a05-fa06795f72a9" testId="612f4c5a-94b8-f977-bfd0-aef876dfe47f" testName="TestChangeDirective" computerName="PC7698" duration="00:00:37.5629808" startTime="2013-12-18T12:03:31.0208015+01:00" endTime="2013-12-18T12:04:08.5837823+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ad16f2a8-4d1a-4187-9a05-fa06795f72a9">
+    </UnitTestResult>
+    <UnitTestResult executionId="b123e139-7d50-4331-b8eb-882ba894ecd8" testId="71821857-41b4-cdfa-6068-2848e00e2dda" testName="TestLoad" computerName="PC7698" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b123e139-7d50-4331-b8eb-882ba894ecd8">
+    </UnitTestResult>
+    <UnitTestResult executionId="7fdee0a7-953a-4480-b1f7-a6bc458468e8" testId="7b83aa95-4317-d78f-622f-6afeb39f8feb" testName="TestThereAreRedirections" computerName="PC7698" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7fdee0a7-953a-4480-b1f7-a6bc458468e8">
+    </UnitTestResult>
+  </Results>
+</TestRun>
