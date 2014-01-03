@@ -58,7 +58,7 @@ function showList() {
 /// </summary>
 function addEventHandlers() {
 
-    ///Eventos para los controles de versión.
+    //Eventos para los controles de versión.
     $('.versionControl').on('click', function setVersionControlClick() {
         var versionInput = $('<input type="text" class="versionControl">'),
             currentCell = $(this);
@@ -89,7 +89,7 @@ function addEventHandlers() {
         });
     });
 
-    ///Eventos para el botón de borrado de redirecciones.
+    //Eventos para el botón de borrado de redirecciones.
     $('.deleteButton').on('click', function () {
         var deleteButton = $(this),
             assemblyName = deleteButton.attr('data-assembly-name'),
@@ -99,18 +99,23 @@ function addEventHandlers() {
         showList();
     });
 
-    ///Eventos para el botón de adición de redirecciones.
+    //Eventos para el botón de adición de redirecciones.
     $('.addButton').on('click', function () {
         var assemblyName = $(this).attr('data-assembly-name');
         bindingDirective.createRedirection(assemblyName);
         showList();
     });
 
-    ///Eventos para el botón de eliminación de ensamblado.
+    //Eventos para el botón de eliminación de ensamblado.
     $('.deleteAssemblyButton').on('click', function () {
         var assemblyName = $(this).attr('data-assembly-name');
         bindingDirective.deleteAssembly(assemblyName);
         showList();
+    });
+
+    //Eventos para el botón de descartar cambios.
+    $('.discardChanges').on('click', function () {
+        loadList();
     });
 }
 

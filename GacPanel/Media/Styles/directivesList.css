@@ -34,6 +34,19 @@
     color: #FDEB86;
 }
 
+#uploadControlsContainer
+{
+    position: absolute;
+    top: 0.5em;
+    right: 4em;    
+}
+
+#uploadControlsContainer img
+{
+    padding-left: 1em;
+    cursor: pointer;
+}
+
 #assembliesListContainer
 {
     font-size: 0.75em;
