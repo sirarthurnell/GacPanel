@@ -7,7 +7,6 @@
         <tr class="bindingDirective">
             <td class="editButtonsRegion">
                 <img class="addButton" data-assembly-name="{{Name}}" src="../Media/Images/Icons/add.png" alt="Añadir redirección" />
-                <img class="deleteButton" data-assembly-name="{{Name}}" src="../Media/Images/Icons/delete.png" alt="Eliminar redirección" />
             </td>
             <td class="assemblyName">{{Name}}</td>
             <td class="assemblyToken">{{Token}}</td>
@@ -24,10 +23,10 @@
 
                     {{#Redirections}}
 
-                    <tr class="redirection">                    
+                    <tr class="redirection">
 
-                        <td class="checkBoxRegion">
-                            <input type="checkbox" data-assembly-name="{{Name}}" data-id="{{Id}}"> 
+                        <td class="editButtonsRegion">
+                            <img class="deleteButton" data-assembly-name="{{Name}}" data-id="{{Id}}" src="../Media/Images/Icons/delete.png" alt="Eliminar redirección" />
                         </td>
 
                         {{#Range}}

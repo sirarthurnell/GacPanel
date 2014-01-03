@@ -91,16 +91,12 @@ function addEventHandlers() {
 
     ///Eventos para el botón de borrado de redirecciones.
     $('.deleteButton').on('click', function () {
-        var assemblyName = $(this).attr('data-assembly-name');
+        var deleteButton = $(this),
+            assemblyName = deleteButton.attr('data-assembly-name'),
+            redirectionId = deleteButton.attr('data-id');
 
-        $('[data-assembly-name="' + assemblyName + '"]:checked').each(function () {
-            var checkbox = $(this),
-                redirectionId = checkbox.attr('data-id'),
-                redirectionTr = checkbox.closest('tr');
-
-            bindingDirective.deleteRedirection(assemblyName, redirectionId);
-            showList();
-        });
+        bindingDirective.deleteRedirection(assemblyName, redirectionId);
+        showList();
     });
 
     ///Eventos para el botón de adición de redirecciones.
