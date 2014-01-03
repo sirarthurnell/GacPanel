@@ -16,31 +16,40 @@
         ];
 
         $(function () {
-            templateLoader.loadTemplates(templates, showList);
+            templateLoader.loadTemplates(templates, loadList);
         });
     }
 });
 
 /// <summary>
-/// Muestra la lista de ensamblados.
+/// Carga la lista de ensamblados y la muestra.
 /// </summary>
-function showList() {
-    var templateHtml = $('#directivesListTemplate').html();
-
-    Mustache.parse(templateHtml);
-
+function loadList() {
     bindingDirective.loadAll(
-        function success(data) {
-            var assembliesListHtml;
-            assembliesListHtml = Mustache.render(templateHtml, data);
-            $('#assembliesListContainer').html(assembliesListHtml);
-
-            addEventHandlers();
+        function success() {
+            showList();
         },
         function failure() {
             alert('No se ha podido cargar la lista de ensamblados.');
         }
     );
+}
+
+/// <summary>
+/// Muestra la lista de ensamblados.
+/// </summary>
+function showList() {
+    var assembliesListHtml,
+        templateHtml = $('#directivesListTemplate').html(),
+        directivesList = bindingDirective.getList()().get(),
+        data = { Data: directivesList };
+
+    removeEventHandlers();
+
+    assembliesListHtml = Mustache.render(templateHtml, data);
+    $('#assembliesListContainer').html(assembliesListHtml);
+
+    addEventHandlers();
 }
 
 /// <summary>
@@ -91,4 +100,13 @@ function addEventHandlers() {
             redirectionTr.remove();
         });
     });
+
+    /// <summary>
+    /// Elimina los manejadores de eventos de la
+    /// lista de ensamblados.
+    /// </summary>
+    function removeEventHandlers() {
+        $('.versionControl').off('click');
+        $('.deleteButton').off('click');
+    }
 }

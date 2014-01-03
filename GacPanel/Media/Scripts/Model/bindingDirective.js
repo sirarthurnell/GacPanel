@@ -25,6 +25,13 @@ bindingDirective = (function () {
     var list = null;
 
     /// <summary>
+    /// Obtiene la lista de directivas de enlace.
+    /// </summary>
+    function getList() {
+        return list;
+    }
+
+    /// <summary>
     /// Carga todas las directivas de enlace existentes
     /// en la GAC.
     /// </summary>
@@ -138,7 +145,7 @@ bindingDirective = (function () {
         updateLowerBound: updateLowerBound,
         updateUpperBound: updateUpperBound,
         deleteRedirection: deleteRedirection,
-        list: list
+        getList: getList
     };
 
 })();
