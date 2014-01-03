@@ -11,17 +11,20 @@
             </td>
             <td class="assemblyName">{{Name}}</td>
             <td class="assemblyToken">{{Token}}</td>
+            <td class="editAssemblyButtonsRegion">
+                <img class="deleteAssemblyButton" data-assembly-name="{{Name}}" src="../Media/Images/Icons/deleteAssembly.png" alt="Eliminar ensamblado" />
+            </td>            
         </tr>
             
         <tr class="redirections">
 
-            <td colspan="3">
+            <td colspan="4">
             
                 <table>
 
-                    <tr class="redirection">
-
                     {{#Redirections}}
+
+                    <tr class="redirection">                    
 
                         <td class="checkBoxRegion">
                             <input type="checkbox" data-assembly-name="{{Name}}" data-id="{{Id}}"> 
@@ -47,13 +50,13 @@
 
                         {{#TargetVersion}}
 
-                        <td class="targetVersion">{{VersionAsString}}</td>
+                        <td class="targetVersion versionControl" data-assembly-name="{{Name}}" data-id="{{Id}}">{{VersionAsString}}</td>
 
-                        {{/TargetVersion}}
-
-                    {{/Redirections}}
+                        {{/TargetVersion}}                    
 
                     </tr>
+
+                    {{/Redirections}}
 
                 </table>
 

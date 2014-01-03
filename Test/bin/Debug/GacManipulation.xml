@@ -374,10 +374,6 @@ GacManipulation
  Obtiene las partes que componen este
  número de versión.
  </summary>
-</member><member name="P:GacManipulation.BindingVersion.ComponentsCount">
-	<summary>
- Obtiene el número de partes del número de versión.
- </summary>
 </member><member name="M:GacManipulation.BindingVersion.ToString">
 	<summary>
  Obtiene una representación en cadena del

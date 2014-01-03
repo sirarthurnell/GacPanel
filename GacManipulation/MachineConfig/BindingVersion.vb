@@ -51,15 +51,6 @@ Public Structure BindingVersion
     End Property
 
     ''' <summary>
-    ''' Obtiene el número de partes del número de versión.
-    ''' </summary>
-    Public ReadOnly Property ComponentsCount As Integer
-        Get
-            Return _version.Count
-        End Get
-    End Property
-
-    ''' <summary>
     ''' Obtiene una representación en cadena del
     ''' número de versión.
     ''' </summary>
@@ -129,7 +120,7 @@ Public Structure BindingVersion
         Dim sum As Long
         Dim versionLimit As Integer = 65535
 
-        For i As Integer = version.ComponentsCount - 1 To 0
+        For i As Integer = version.Parts.Count - 1 To 0
             sum += version.Parts(i) * Math.Pow(10000, i)
         Next
 

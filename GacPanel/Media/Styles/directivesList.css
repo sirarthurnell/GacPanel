@@ -2,7 +2,8 @@
 {
     font-family: 'Lato', sans-serif;
     font-size: 100%;
-    color: #333333;    
+    color: #333333;
+    background-color: #FFFFF1;
 }
 
 #assembliesListContainer
@@ -10,7 +11,7 @@
     font-size: 0.75em;
     width: 65%;
     margin: 0 auto;
-    background-color: #FFFFE1;
+    background-color: #FFFFD1;
     border: 1px solid silver;
     overflow: hidden;
     -webkit-border-radius: 10px;
@@ -26,7 +27,7 @@
 
 .directivesList .bindingDirective
 {
-    background-color: #FFFFF0;
+    background-color: #FFFFE1;
     border-top: 1px solid #F4F4F4;
     border-bottom: 1px solid silver;
 }
@@ -45,6 +46,13 @@
 {
     border-right: 1px solid silver;
     width: 4.5em;
+}
+
+.directivesList .bindingDirective .editAssemblyButtonsRegion
+{
+    border-left: 1px solid silver;
+    width: 2.5em;
+    padding-left: 0.75; 
 }
 
 .directivesList .bindingDirective img
@@ -67,5 +75,11 @@
     text-align: center;
     font-family: inherit;
     font-size: inherit;
-    width: 6em;
+    width: 7em;
+}
+
+.versionControl:focus
+{
+    height: 1em;
+    width: 6.5em;
 }

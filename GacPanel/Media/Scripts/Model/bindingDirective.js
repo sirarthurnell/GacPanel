@@ -22,7 +22,8 @@ bindingDirective = (function () {
         }
     };
 
-    var list = null;
+    var list = null,
+        redirectionId = 0;
 
     /// <summary>
     /// Obtiene la lista de directivas de enlace.
@@ -56,6 +57,55 @@ bindingDirective = (function () {
 
         );
 
+    }
+
+    /// <summary>
+    /// Elimina el ensamblado indicado.
+    /// </summary>
+    /// <param name="assemblyName">Nombre del ensamblado
+    /// que se quiere eliminar.</param>
+    function deleteAssembly(assemblyName) {
+        list({ 'Name': assemblyName }).remove();
+    }
+
+    /// <summary>
+    /// Crea una nueva redirección para la directiva de
+    /// enlace indicada.
+    /// </summary>
+    /// <param name="assemblyName">Nombre del ensamblado
+    /// al que se le quiere crear una redirección.</param>
+    function createRedirection(assemblyName) {
+        var directive = list({ 'Name': assemblyName }).get()[0],
+            newRedirection = {
+                "Range": {
+                    "LowerBound": {
+                        "Parts": []
+                    },
+                    "UpperBound": {
+                        "Parts": []
+                    }
+                },
+                "TargetVersion": {
+                    "Parts": []
+                }
+            };
+
+        extendRedirection(newRedirection);
+        newRedirection.Range.LowerBound.setVersionAsString('0.0.0.0');
+        newRedirection.Range.UpperBound.setVersionAsString('0.0.0.0');
+        newRedirection.TargetVersion.setVersionAsString('0.0.0.0');
+        directive.Redirections.push(newRedirection);
+    }
+
+    /// <summary>
+    /// Actualiza la versión de destino de la redirección.
+    /// </summary>
+    /// <param name="assemblyName">Nombre del ensamblado.</param>
+    /// <param name="redirectionId">Id de la redirección.</param>
+    /// <param name="newVersion">Nueva versión de destino.</param>
+    function updateTargetVersion(assemblyName, redirectionId, newVersion) {
+        var redirection = findRedirection(assemblyName, redirectionId);
+        redirection.TargetVersion.setVersionAsString(newVersion);
     }
 
     /// <summary>
@@ -124,27 +174,37 @@ bindingDirective = (function () {
     /// el servidor.
     /// </summary>
     function addFormattedVersion(data) {
-        var directives = data.Data,
-            redirectionId = 0;
+        var directives = data.Data;
 
         $.each(directives, function (index, bindingDirective) {
 
             $.each(bindingDirective.Redirections, function (index, redirection) {
-                redirectionId++;
-                redirection.Id = redirectionId.toString();
-                $.extend(redirection.TargetVersion, versionMixing);
-                $.extend(redirection.Range.LowerBound, versionMixing);
-                $.extend(redirection.Range.UpperBound, versionMixing);
+                extendRedirection(redirection);
             });
 
         });
     }
 
+    /// <summary>
+    /// Cambia el objeto de redirección para añadirle
+    /// más capacidades.
+    /// </summary>
+    function extendRedirection(redirection) {
+        redirectionId++;
+        redirection.Id = redirectionId.toString();
+        $.extend(redirection.TargetVersion, versionMixing);
+        $.extend(redirection.Range.LowerBound, versionMixing);
+        $.extend(redirection.Range.UpperBound, versionMixing);
+    }
+
     return {
         loadAll: loadAll,
+        updateTargetVersion: updateTargetVersion,
         updateLowerBound: updateLowerBound,
         updateUpperBound: updateUpperBound,
         deleteRedirection: deleteRedirection,
+        createRedirection: createRedirection,
+        deleteAssembly: deleteAssembly,
         getList: getList
     };
 

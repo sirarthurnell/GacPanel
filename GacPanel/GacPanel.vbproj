@@ -141,6 +141,7 @@
     <None Include="Fake\assembliesListFake.json" />
     <Content Include="Media\Images\Icons\add.png" />
     <Content Include="Media\Images\Icons\delete.png" />
+    <Content Include="Media\Images\Icons\deleteAssembly.png" />
     <Content Include="Media\Images\Icons\interface.png" />
     <Content Include="Media\Scripts\Lib\taffy-min.js" />
     <Content Include="Media\Scripts\Model\bindingDirective.js" />

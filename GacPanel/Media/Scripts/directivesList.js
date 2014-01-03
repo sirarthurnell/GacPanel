@@ -26,7 +26,7 @@
 /// </summary>
 function loadList() {
     bindingDirective.loadAll(
-        function success() {
+        function success() {            
             showList();
         },
         function failure() {
@@ -44,11 +44,11 @@ function showList() {
         directivesList = bindingDirective.getList()().get(),
         data = { Data: directivesList };
 
-    removeEventHandlers();
+    eraseEventHandlers(); 
 
     assembliesListHtml = Mustache.render(templateHtml, data);
     $('#assembliesListContainer').html(assembliesListHtml);
-
+    
     addEventHandlers();
 }
 
@@ -77,9 +77,11 @@ function addEventHandlers() {
 
             if (currentCell.hasClass('lowerBound')) {
                 bindingDirective.updateLowerBound(assemblyName, redirectionId, newVersion);
-            } else {
+            } else if (currentCell.hasClass('upperBound')) {
                 bindingDirective.updateUpperBound(assemblyName, redirectionId, newVersion);
-            }            
+            } else {
+                bindingDirective.updateTargetVersion(assemblyName, redirectionId, newVersion);
+            }
 
             currentCell.html(newVersion);
             versionInput.remove();
@@ -97,16 +99,31 @@ function addEventHandlers() {
                 redirectionTr = checkbox.closest('tr');
 
             bindingDirective.deleteRedirection(assemblyName, redirectionId);
-            redirectionTr.remove();
+            showList();
         });
     });
 
-    /// <summary>
-    /// Elimina los manejadores de eventos de la
-    /// lista de ensamblados.
-    /// </summary>
-    function removeEventHandlers() {
-        $('.versionControl').off('click');
-        $('.deleteButton').off('click');
-    }
+    ///Eventos para el botón de adición de redirecciones.
+    $('.addButton').on('click', function () {
+        var assemblyName = $(this).attr('data-assembly-name');
+        bindingDirective.createRedirection(assemblyName);
+        showList();
+    });
+
+    ///Eventos para el botón de eliminación de ensamblado.
+    $('.deleteAssemblyButton').on('click', function () {
+        var assemblyName = $(this).attr('data-assembly-name');
+        bindingDirective.deleteAssembly(assemblyName);
+        showList();
+    });
+}
+
+/// <summary>
+/// Elimina los manejadores de eventos de la
+/// lista de ensamblados.
+/// </summary>
+function eraseEventHandlers() {
+    $('.versionControl').off('click');
+    $('.addButton').off('click');
+    $('.deleteButton').off('click');
 }
