@@ -12,6 +12,15 @@ Public Structure BindingVersion
     ''' <summary>
     ''' Crea una nueva instancia de BindingVersion.
     ''' </summary>
+    ''' <param name="numbers">Enumerable con los
+    ''' números de la versión.</param>
+    Public Sub New(ByVal numbers As IEnumerable(Of Integer))
+        _version = New List(Of Integer)(numbers)
+    End Sub
+
+    ''' <summary>
+    ''' Crea una nueva instancia de BindingVersion.
+    ''' </summary>
     ''' <param name="version">Número de versión.</param>
     Public Sub New(ByVal version As String)
         _version = New List(Of Integer)()

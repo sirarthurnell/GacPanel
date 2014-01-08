@@ -33,6 +33,18 @@ bindingDirective = (function () {
     }
 
     /// <summary>
+    /// Aplica los cambios realizados en el servidor.
+    /// </summary>
+    /// <param name="successCallback">Función a llamar
+    /// cuando se aplican los cambios con éxito.</param>
+    /// <param name="failureCallback">Función a llamar
+    /// cuando falla la conexión con el servidor.</param>
+    function applyChanges(successCallback, failureCallback) {
+        var data = list().get();
+        server.applyChanges(data, successCallback, failureCallback);
+    }
+
+    /// <summary>
     /// Carga todas las directivas de enlace existentes
     /// en la GAC.
     /// </summary>
@@ -47,7 +59,7 @@ bindingDirective = (function () {
             function success(data) {
                 var shortedList;
 
-                addFormattedVersion(data);
+                adaptModel(data);
                 list = TAFFY(data.Data);
                 shortedList = list().order('Name').get();
                 successCallback({ Data: shortedList });
@@ -171,16 +183,18 @@ bindingDirective = (function () {
     /// <summary>
     /// Añade la propiedad de versión formateada
     /// a las directivas de enlace recuperadas desde
-    /// el servidor.
+    /// el servidor, y la propiedad de estado.
     /// </summary>
-    function addFormattedVersion(data) {
+    function adaptModel(data) {
         var directives = data.Data;
 
         $.each(directives, function (index, bindingDirective) {
 
-            $.each(bindingDirective.InstalledVersions, function(index, version) {
+            bindingDirective.State = "Unchanged"
+
+            $.each(bindingDirective.InstalledVersions, function (index, version) {
                 $.extend(version, versionMixing);
-            });            
+            });
 
             $.each(bindingDirective.Redirections, function (index, redirection) {
                 extendRedirection(redirection);
@@ -203,6 +217,7 @@ bindingDirective = (function () {
 
     return {
         loadAll: loadAll,
+        applyChanges: applyChanges,
         updateTargetVersion: updateTargetVersion,
         updateLowerBound: updateLowerBound,
         updateUpperBound: updateUpperBound,

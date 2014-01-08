@@ -6,7 +6,15 @@ GacPanel
 </name>
 </assembly>
 <members>
-<member name="M:GacPanel.JsonResponse.TransmitOject(System.Web.HttpResponse,System.Object)">
+<member name="M:GacPanel.ApplyChangesHandler.TranslateToBindingDirective(GacPanel.RootObject)">
+	<summary>
+ Traduce la directiva de enlace procedente del cliente
+ en directiva de enlace para aplicar en el servidor.
+ </summary>
+	<param name="directiveFromClient">Directiva de enlace
+ procedente del cliente.</param>
+	<returns>Directiva de enlace de servidor.</returns>
+</member><member name="M:GacPanel.JsonResponse.TransmitOject(System.Web.HttpResponse,System.Object)">
 	<summary>
  Transmite los resultados de la operación al cliente.
  </summary>

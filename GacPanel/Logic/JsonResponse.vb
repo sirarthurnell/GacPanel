@@ -28,4 +28,23 @@ Public NotInheritable Class JsonResponse
         response.Write(json)
     End Sub
 
+    ''' <summary>
+    ''' Transmite el error indicado por la excepción.
+    ''' </summary>
+    ''' <param name="response">Objeto de respuesta.</param>
+    ''' <param name="ex">Excepción cuyo mensaje será transmitido.</param>
+    Public Shared Sub TransmitError(ByVal response As HttpResponse, ByVal ex As Exception)
+        Dim result As New OperationResult(Of String)(False, ex.Message)
+        JsonResponse.TransmitOject(response, result)
+    End Sub
+
+    ''' <summary>
+    ''' Transmite un mensaje de OK al cliente.
+    ''' </summary>
+    ''' <param name="response">Objeto de respuesta.</param>
+    Public Shared Sub TransmitOk(ByVal response As HttpResponse)
+        Dim result As New OperationResult(Of String)(True, "OK")
+        JsonResponse.TransmitOject(response, result)
+    End Sub
+
 End Class

@@ -117,6 +117,17 @@ function addEventHandlers() {
     $('.discardChanges').on('click', function () {
         loadList();
     });
+
+    //Eventos para el botón de aplicar cambios en el servidor.
+    $('.applyChanges').on('click', function () {
+        bindingDirective.applyChanges(function success() {
+            alert('Cambios aplicados con éxito.');
+            loadList();
+        },
+        function failure() {
+            alert('Fallo al aplicar los cambios en el servidor.');
+        });
+    });
 }
 
 /// <summary>

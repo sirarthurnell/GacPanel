@@ -90,10 +90,15 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplyChangesHandler.ashx.vb">
+      <DependentUpon>ApplyChangesHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="DirectivesListHandler.ashx.vb">
       <DependentUpon>DirectivesListHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Logic\ConfigurationApplycator.vb" />
     <Compile Include="Logic\JsonResponse.vb" />
+    <Compile Include="Logic\ClientModel.vb" />
     <Compile Include="Logic\OperationResult.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -128,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DirectivesListHandler.ashx" />
+    <Content Include="ApplyChangesHandler.ashx" />
     <None Include="Media\Assets\applyChanges.svg" />
     <None Include="Media\Assets\discardChanges.svg" />
     <None Include="Media\Assets\gears.svg" />

@@ -9,22 +9,24 @@ Public Class DirectivesListHandler
     Public ReadOnly FakeJson As Boolean = False
 
     Sub ProcessRequest(ByVal context As HttpContext) Implements IHttpHandler.ProcessRequest
-
         If FakeJson Then
             SendFakeJson(context)
         Else
+            Try
 
-            Dim framework As Framework = framework.Instance(FrameworkVersion.Version2)
-            Dim machineConfig As MachineConfigFile = framework.MachineConfigFile
-            machineConfig.Load()
+                Dim framework As Framework = framework.Instance(FrameworkVersion.Version2)
+                Dim machineConfig As MachineConfigFile = framework.MachineConfigFile
+                machineConfig.Load()
 
-            Dim directives = machineConfig.Directives
+                Dim directives = machineConfig.Directives
 
-            Dim result As New OperationResult(Of List(Of BindingDirective))(True, directives)
-            JsonResponse.TransmitOject(context.Response, result)
+                Dim result As New OperationResult(Of List(Of BindingDirective))(True, directives)
+                JsonResponse.TransmitOject(context.Response, result)
 
+            Catch ex As Exception
+                JsonResponse.TransmitError(context.Response, ex)
+            End Try
         End If
-
     End Sub
 
     ''' <summary>

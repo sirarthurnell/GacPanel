@@ -18,8 +18,30 @@ var server = (function () {
         recoverPromise.fail(failureCallback);
     }
 
+    /// <summary>
+    /// Aplica los cambios realizados en el servidor.
+    /// </summary>
+    /// <param name="data">Datos a enviar al servidor.</param>
+    /// <param name="successCallback">Función a llamar
+    /// cuando se aplican los cambios con éxito.</param>
+    /// <param name="failureCallback">Función a llamar
+    /// cuando falla la conexión con el servidor.</param>
+    function applyChanges(data, successCallback, failureCallback) {
+        var applyPromise = $.ajax({
+            url: 'ApplyChangesHandler.ashx',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            dataType: 'json'
+        });
+
+        applyPromise.done(successCallback);
+        applyPromise.fail(failureCallback);
+    }
+
     return {
-        recoverDirectives: recoverDirectives
+        recoverDirectives: recoverDirectives,
+        applyChanges: applyChanges
     };
 
 })();

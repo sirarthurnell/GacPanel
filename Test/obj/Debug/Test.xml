@@ -6,7 +6,12 @@ Test
 </name>
 </assembly>
 <members>
-<member name="P:Test.GacTest.TestContext">
+<member name="P:Test.MachineConfigFileTest.TestContext">
+	<summary>
+Obtiene o establece el contexto de las pruebas que proporciona
+información y funcionalidad para la ejecución de pruebas actual.
+</summary>
+</member><member name="P:Test.GacTest.TestContext">
 	<summary>
 Obtiene o establece el contexto de la prueba que proporciona
 la información y funcionalidad para la ejecución de pruebas actual.
@@ -19,6 +24,24 @@ Una prueba de ListAssemblies
 	<summary>
 Se trata de una clase de prueba para GacTest y se pretende que
 contenga todas las pruebas unitarias GacTest.
+</summary>
+</member><member name="P:Test.DirectiveResolverTest.TestContext">
+	<summary>
+Obtiene o establece el contexto de la prueba que proporciona
+la información y funcionalidad para la ejecución de pruebas actual.
+</summary>
+</member><member name="M:Test.DirectiveResolverTest.SuggestTest">
+	<summary>
+Una prueba de Suggest
+</summary>
+</member><member name="M:Test.DirectiveResolverTest.SuggestAndApplyTest">
+	<summary>
+Una prueba de SuggestAndApply
+</summary>
+</member><member name="T:Test.DirectiveResolverTest">
+	<summary>
+Se trata de una clase de prueba para DirectiveResolverTest y se pretende que
+contenga todas las pruebas unitarias DirectiveResolverTest.
 </summary>
 </member><member name="P:Test.GacUtilTest.TestContext">
 	<summary>
@@ -47,29 +70,6 @@ Una prueba de CreateFromFullName
 	<summary>
 Se trata de una clase de prueba para AssemblyInfoTest y se pretende que
 contenga todas las pruebas unitarias AssemblyInfoTest.
-</summary>
-</member><member name="P:Test.MachineConfigFileTest.TestContext">
-	<summary>
-Obtiene o establece el contexto de las pruebas que proporciona
-información y funcionalidad para la ejecución de pruebas actual.
-</summary>
-</member><member name="P:Test.DirectiveResolverTest.TestContext">
-	<summary>
-Obtiene o establece el contexto de la prueba que proporciona
-la información y funcionalidad para la ejecución de pruebas actual.
-</summary>
-</member><member name="M:Test.DirectiveResolverTest.SuggestTest">
-	<summary>
-Una prueba de Suggest
-</summary>
-</member><member name="M:Test.DirectiveResolverTest.SuggestAndApplyTest">
-	<summary>
-Una prueba de SuggestAndApply
-</summary>
-</member><member name="T:Test.DirectiveResolverTest">
-	<summary>
-Se trata de una clase de prueba para DirectiveResolverTest y se pretende que
-contenga todas las pruebas unitarias DirectiveResolverTest.
 </summary>
 </member>
 </members>
