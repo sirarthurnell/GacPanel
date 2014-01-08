@@ -44,11 +44,11 @@ function showList() {
         directivesList = bindingDirective.getList()().get(),
         data = { Data: directivesList };
 
-    eraseEventHandlers(); 
+    eraseEventHandlers();
 
     assembliesListHtml = Mustache.render(templateHtml, data);
-    $('#assembliesListContainer').html(assembliesListHtml);
-    
+    $('#assembliesListContainer').html(assembliesListHtml); 
+       
     addEventHandlers();
 }
 
@@ -61,10 +61,11 @@ function addEventHandlers() {
     //Eventos para los controles de versión.
     $('.versionControl').on('click', function setVersionControlClick() {
         var versionInput = $('<input type="text" class="versionControl">'),
-            currentCell = $(this);
+            currentCell = $(this),
+            oldVersion = currentCell.html();
 
         currentCell.off('click');
-        versionInput.val(currentCell.html());
+        versionInput.val(oldVersion);
         currentCell.html('');
         currentCell.append(versionInput);
         versionInput.focus();
@@ -75,13 +76,22 @@ function addEventHandlers() {
                 newVersion = versionInput.val(),
                 assemblyName = currentCell.attr('data-assembly-name');
 
-            if (currentCell.hasClass('lowerBound')) {
-                bindingDirective.updateLowerBound(assemblyName, redirectionId, newVersion);
-            } else if (currentCell.hasClass('upperBound')) {
-                bindingDirective.updateUpperBound(assemblyName, redirectionId, newVersion);
-            } else {
-                bindingDirective.updateTargetVersion(assemblyName, redirectionId, newVersion);
-            }
+            if (newVersion != oldVersion) {
+
+                if (currentCell.hasClass('lowerBound')) {
+                    bindingDirective.updateLowerBound(assemblyName, redirectionId, newVersion);
+                } else if (currentCell.hasClass('upperBound')) {
+                    bindingDirective.updateUpperBound(assemblyName, redirectionId, newVersion);
+                } else {
+                    bindingDirective.updateTargetVersion(assemblyName, redirectionId, newVersion);
+                }
+
+                currentCell
+                    .closest('.redirections')
+                    .prev('.bindingDirective')
+                    .addClass('Changed');
+
+            }            
 
             currentCell.html(newVersion);
             versionInput.remove();
@@ -138,4 +148,6 @@ function eraseEventHandlers() {
     $('.versionControl').off('click');
     $('.addButton').off('click');
     $('.deleteButton').off('click');
+    $('.discardChanges').off('click');
+    $('.applyChanges').off('click');
 }

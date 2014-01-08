@@ -16,6 +16,26 @@ Public Class Gac
     End Sub
 
     ''' <summary>
+    ''' Instala el ensamblado especificado.
+    ''' </summary>
+    ''' <param name="path">Ruta al ensamblado a instalar.</param>
+    Public Sub InstallAssembly(ByVal path As String)
+        Dim args As String = String.Format("/i ""{0}""", path)
+        _gacutil.Execute(args)
+    End Sub
+
+    ''' <summary>
+    ''' Quita el ensamblado especificado.
+    ''' </summary>
+    ''' <param name="name">Nombre del ensamblado.</param>
+    ''' <param name="publicKeyToken">Token público.</param>
+    ''' <param name="version">Versión.</param>
+    Public Sub UnistallAssembly(ByVal name As String, ByVal publicKeyToken As String, ByVal version As String)
+        Dim args As String = String.Format("/u {0}, Version={1}, PublicKeyToken={2}", name, version, publicKeyToken)
+        _gacutil.Execute(args)
+    End Sub
+
+    ''' <summary>
     ''' Obtiene la lista de versiones instaladas
     ''' en la GAC para el ensamblado indicado.
     ''' </summary>

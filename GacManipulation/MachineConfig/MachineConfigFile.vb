@@ -41,7 +41,7 @@ Public Class MachineConfigFile
                                         Dim redirections = (From redirect In dependentAssembly.Elements(ns + "bindingRedirect")) _
                                                            .Select(Function(y)
                                                                        Dim range As New BindingVersionRange(y.Attribute("oldVersion"))
-                                                                       Dim target As New BindingVersion(y.Attribute("newVersion"))
+                                                                       Dim target As New BindingVersion(y.Attribute("newVersion").Value)
                                                                        Dim redirection As New BindingRedirect(range, target)
                                                                        Return redirection
                                                                    End Function)
@@ -93,6 +93,8 @@ Public Class MachineConfigFile
     ''' machine.config.
     ''' </summary>
     Public Sub SaveDirectives()
+        SaveBackup()
+
         Dim machineFile As XDocument = XDocument.Load(_pathToFile)
         Dim ns As XNamespace = "urn:schemas-microsoft-com:asm.v1"
         Dim oldAssemblyBinding As XElement = machineFile.Descendants(ns + "assemblyBinding").FirstOrDefault()
@@ -102,6 +104,14 @@ Public Class MachineConfigFile
         machineFile.Save(_pathToFile, SaveOptions.OmitDuplicateNamespaces)
 
         Load()
+    End Sub
+
+    ''' <summary>
+    ''' Guarda una copia de seguridad del archivo
+    ''' de configuración.
+    ''' </summary>
+    Private Sub SaveBackup()
+        File.Copy(_pathToFile, _pathToFile & ".gacpanel.backup", True)
     End Sub
 
 End Class

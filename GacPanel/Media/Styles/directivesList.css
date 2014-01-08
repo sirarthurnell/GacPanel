@@ -83,6 +83,16 @@
     padding: 0.5em;
 }
 
+.Removed
+{
+    background-color: #FFB6A4 !important;
+}
+
+.Changed
+{
+    background-color: #FFFF00 !important;
+}
+
 .editButtonsRegion
 {
     border-right: 1px solid silver;

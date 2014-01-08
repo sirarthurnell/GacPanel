@@ -77,7 +77,9 @@ bindingDirective = (function () {
     /// <param name="assemblyName">Nombre del ensamblado
     /// que se quiere eliminar.</param>
     function deleteAssembly(assemblyName) {
-        list({ 'Name': assemblyName }).remove();
+        var directive = list({ 'Name': assemblyName }).get()[0];
+        directive.State = "Removed";
+        //list({ 'Name': assemblyName }).remove();
     }
 
     /// <summary>
@@ -107,6 +109,7 @@ bindingDirective = (function () {
         newRedirection.Range.UpperBound.setVersionAsString('0.0.0.0');
         newRedirection.TargetVersion.setVersionAsString('0.0.0.0');
         directive.Redirections.push(newRedirection);
+        directive.State = "Changed";
     }
 
     /// <summary>
@@ -116,8 +119,9 @@ bindingDirective = (function () {
     /// <param name="redirectionId">Id de la redirección.</param>
     /// <param name="newVersion">Nueva versión de destino.</param>
     function updateTargetVersion(assemblyName, redirectionId, newVersion) {
-        var redirection = findRedirection(assemblyName, redirectionId);
-        redirection.TargetVersion.setVersionAsString(newVersion);
+        var combo = findRedirection(assemblyName, redirectionId);
+        combo.redirection.TargetVersion.setVersionAsString(newVersion);
+        combo.directive.State = "Changed";
     }
 
     /// <summary>
@@ -127,8 +131,9 @@ bindingDirective = (function () {
     /// <param name="redirectionId">Id de la redirección.</param>
     /// <param name="newVersion">Nueva versión del límite superior.</param>
     function updateLowerBound(assemblyName, redirectionId, newVersion) {
-        var redirection = findRedirection(assemblyName, redirectionId);
-        redirection.Range.LowerBound.setVersionAsString(newVersion);
+        var combo = findRedirection(assemblyName, redirectionId);
+        combo.redirection.Range.LowerBound.setVersionAsString(newVersion);
+        combo.directive.State = "Changed";
     }
 
     /// <summary>
@@ -138,8 +143,9 @@ bindingDirective = (function () {
     /// <param name="redirectionId">Id de la redirección.</param>
     /// <param name="newVersion">Nueva versión del límite superior.</param>
     function updateUpperBound(assemblyName, redirectionId, newVersion) {
-        var redirection = findRedirection(assemblyName, redirectionId);
-        redirection.Range.UpperBound.setVersionAsString(newVersion);
+        var combo = findRedirection(assemblyName, redirectionId);
+        combo.redirection.Range.UpperBound.setVersionAsString(newVersion);
+        combo.directive.State = "Changed";
     }
 
     /// <summary>
@@ -158,6 +164,8 @@ bindingDirective = (function () {
                 directive.Redirections.splice(i, 1);
             }
         }
+
+        directive.State = "Changed";
     }
 
     /// <summary>
@@ -177,7 +185,10 @@ bindingDirective = (function () {
             }
         });
 
-        return selectedRedirection;
+        return {
+            directive: directive,
+            redirection: selectedRedirection
+        };
     }
 
     /// <summary>
@@ -190,7 +201,7 @@ bindingDirective = (function () {
 
         $.each(directives, function (index, bindingDirective) {
 
-            bindingDirective.State = "Unchanged"
+            bindingDirective.State = "Unchanged";
 
             $.each(bindingDirective.InstalledVersions, function (index, version) {
                 $.extend(version, versionMixing);

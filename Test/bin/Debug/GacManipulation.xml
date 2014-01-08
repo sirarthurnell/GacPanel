@@ -155,6 +155,11 @@ GacManipulation
  Guarda las directivas de enlace en el archivo
  machine.config.
  </summary>
+</member><member name="M:GacManipulation.MachineConfigFile.SaveBackup">
+	<summary>
+ Guarda una copia de seguridad del archivo
+ de configuración.
+ </summary>
 </member><member name="T:GacManipulation.MachineConfigFile">
 	<summary>
  Representa el archivo de configuración
@@ -353,6 +358,18 @@ GacManipulation
  </summary>
 	<param name="gacutil">Herramienta
  GacUtil a utilizar.</param>
+</member><member name="M:GacManipulation.Gac.InstallAssembly(System.String)">
+	<summary>
+ Instala el ensamblado especificado.
+ </summary>
+	<param name="path">Ruta al ensamblado a instalar.</param>
+</member><member name="M:GacManipulation.Gac.UnistallAssembly(System.String,System.String,System.String)">
+	<summary>
+ Quita el ensamblado especificado.
+ </summary>
+	<param name="name">Nombre del ensamblado.</param>
+	<param name="publicKeyToken">Token público.</param>
+	<param name="version">Versión.</param>
 </member><member name="M:GacManipulation.Gac.GetVersionsForAssembly(System.String)">
 	<summary>
  Obtiene la lista de versiones instaladas
@@ -409,7 +426,7 @@ GacManipulation
 	<summary>
  Contiene métodos para trabajo con criptografía.
  </summary>
-</member><member name="M:GacManipulation.BindingVersion.#ctor(System.Collections.Generic.IEnumerable{System.Int32}[])">
+</member><member name="M:GacManipulation.BindingVersion.#ctor(System.Collections.Generic.IEnumerable{System.Int32})">
 	<summary>
  Crea una nueva instancia de BindingVersion.
  </summary>
