@@ -14,3 +14,19 @@ C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\Ga
 C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GacPanel.dll
 C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GacPanel.xml
 C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GacPanel.pdb
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacPanel.dll
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacPanel.pdb
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacPanel.xml
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacManipulation.dll
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\Newtonsoft.Json.dll
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\Mono.Cecil.dll
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacManipulation.pdb
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\GacManipulation.xml
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\bin\Newtonsoft.Json.xml
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GacPanel.Resources.resources
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GacPanel.dll
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GacPanel.xml
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacPanel\obj\Debug\GacPanel.pdb

@@ -97,7 +97,14 @@
 
 .directivesList .redirections .redirection .deleteButton
 {
-    margin-left: -1.5em;
+    margin-left: -1.55em;
+}
+
+.directivesList .redirections .redirectionsTable
+{
+    border: 0;
+    border-collapse: collapse;
+    margin-left: 0.2em;
 }
 
 .directivesList .bindingDirective .editAssemblyButtonsRegion

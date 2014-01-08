@@ -6,7 +6,6 @@ Imports Mono.Cecil
 ''' </summary>
 Public Class AssemblyInfo
 
-    Private _path As String
     Private _name As String
     Private _fullName As String
     Private _version As String
@@ -16,82 +15,117 @@ Public Class AssemblyInfo
     ''' <summary>
     ''' Crea una nueva instancia de AssemblyInfo.
     ''' </summary>
-    ''' <param name="path">Ruta al ensamblado.</param>
-    Public Sub New(ByVal path As String)
-        If Not File.Exists(path) Then
-            Throw New ArgumentException("El ensamblado indicado no existe", "assemblyPath")
-        End If
-
-        _path = path
-        Load()
+    Protected Sub New()
     End Sub
+
+    ''' <summary>
+    ''' Crea una nueva instancia de AssemblyInfo a partir
+    ''' de un nombre completo de ensamblado.
+    ''' </summary>
+    ''' <param name="fullName">Nombre completo del ensamblado.</param>
+    ''' <returns>Información del ensamblado.</returns>
+    Public Shared Function CreateFromFullName(ByVal fullName As String) As AssemblyInfo
+        Dim newAssemblyInfo As New AssemblyInfo()
+        newAssemblyInfo.FullName = fullName.Trim()
+
+        Dim parts() As String = newAssemblyInfo.FullName.Split(",")
+
+        newAssemblyInfo.Name = parts(0).Trim()
+        For i As Integer = 0 To parts.GetUpperBound(0)
+            Dim current As String = parts(i).Trim()
+
+            If current.StartsWith("Version=") Then
+                newAssemblyInfo.Version = current.Split("=")(1).Trim()
+            End If
+
+            If current.StartsWith("PublicKeyToken=") Then
+                newAssemblyInfo.PublicKeyToken = current.Split("=")(1).Trim()
+                newAssemblyInfo.HasPublicKey = True
+            End If
+        Next
+
+        Return newAssemblyInfo
+    End Function
 
     ''' <summary>
     ''' Carga los datos del ensamblado.
     ''' </summary>
-    Private Sub Load()
-        Dim definition As AssemblyDefinition = AssemblyDefinition.ReadAssembly(_path)
+    ''' <param name="path">Ruta en disco del ensamblado.</param>
+    Public Shared Function Load(ByVal path As String) As AssemblyInfo
+        If Not File.Exists(path) Then
+            Throw New ArgumentException("El ensamblado indicado no existe", "assemblyPath")
+        End If
+
+        Dim definition As AssemblyDefinition = AssemblyDefinition.ReadAssembly(path)
         Dim name As AssemblyNameDefinition = definition.Name
+        Dim newAssemblyInfo As New AssemblyInfo()
 
-        _hasPublicKey = name.HasPublicKey
-        _name = name.Name
-        _fullName = name.FullName
-        _version = name.Version.ToString()
-        _publicKeyToken = TranslateToken(name.PublicKeyToken)
-    End Sub
-
-    ''' <summary>
-    ''' Obtiene la ruta en disco al ensamblado.
-    ''' </summary>
-    Public ReadOnly Property Path As String
-        Get
-            Return _path
-        End Get
-    End Property
+        newAssemblyInfo.HasPublicKey = name.HasPublicKey
+        newAssemblyInfo.Name = name.Name
+        newAssemblyInfo.FullName = name.FullName
+        newAssemblyInfo.Version = name.Version.ToString()
+        newAssemblyInfo.PublicKeyToken = TranslateToken(name.PublicKeyToken)
+        Return newAssemblyInfo
+    End Function
 
     ''' <summary>
     ''' Obtiene si el ensamblado tiene clave pública.
     ''' </summary>
-    Public ReadOnly Property HasPublicKey As Boolean
+    Public Property HasPublicKey As Boolean
         Get
             Return _hasPublicKey
         End Get
+        Private Set(value As Boolean)
+            _hasPublicKey = value
+        End Set
     End Property
 
     ''' <summary>
     ''' Obtiene el nombre corto del ensamblado.
     ''' </summary>
-    Public ReadOnly Property Name As String
+    Public Property Name As String
         Get
             Return _name
         End Get
+        Private Set(value As String)
+            _name = value
+        End Set
     End Property
 
     ''' <summary>
     ''' Obtiene el nombre largo del ensamblado.
     ''' </summary>
-    Public ReadOnly Property FullName As String
+    Public Property FullName As String
         Get
             Return _fullName
         End Get
+        Private Set(value As String)
+            _fullName = value
+        End Set
     End Property
 
     ''' <summary>
     ''' Obtiene el token público del ensamblado.
     ''' </summary>
-    Public ReadOnly Property PublicKeyToken As String
+    Public Property PublicKeyToken As String
         Get
             Return _publicKeyToken
         End Get
+        Private Set(value As String)
+            _publicKeyToken = value
+        End Set
     End Property
 
     ''' <summary>
     ''' Obtiene la versión del ensamblado.
     ''' </summary>
-    Public ReadOnly Property Version As String
+    Public Property Version As String
         Get
             Return _version
         End Get
+        Private Set(value As String)
+            _version = value
+        End Set
     End Property
 
     ''' <summary>
@@ -99,7 +133,7 @@ Public Class AssemblyInfo
     ''' </summary>
     ''' <param name="token">Token a traducir.</param>
     ''' <returns>Token como cadena.</returns>
-    Private Function TranslateToken(ByVal token() As Byte) As String
+    Private Shared Function TranslateToken(ByVal token() As Byte) As String
         Dim tokenAsString As String = String.Empty
 
         For i As Integer = 0 To token.GetUpperBound(0)

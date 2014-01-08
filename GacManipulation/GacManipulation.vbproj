@@ -79,6 +79,7 @@
     <Compile Include="Assemblies\AssemblyInfo.vb" />
     <Compile Include="Assemblies\DirectiveResolver.vb" />
     <Compile Include="Gac\Framework.vb" />
+    <Compile Include="Gac\Gac.vb" />
     <Compile Include="Gac\GacUtil.vb" />
     <Compile Include="Helper\Cryptography.vb" />
     <Compile Include="MachineConfig\BindingDirective.vb" />

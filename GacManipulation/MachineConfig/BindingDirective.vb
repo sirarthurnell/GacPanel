@@ -6,6 +6,7 @@ Public Class BindingDirective
     Private _name As String
     Private _token As String
     Private _redirections As New List(Of BindingRedirect)()
+    Private _installedVersions As New List(Of BindingVersion)()
 
     ''' <summary>
     ''' Crea una nueva instancia de BindingDirective.
@@ -32,6 +33,16 @@ Public Class BindingDirective
     Public ReadOnly Property Token As String
         Get
             Return _token
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' Obtiene las versiones del ensamblado instaladas
+    ''' en la GAC.
+    ''' </summary>
+    Public ReadOnly Property InstalledVersions As List(Of BindingVersion)
+        Get
+            Return _installedVersions
         End Get
     End Property
 

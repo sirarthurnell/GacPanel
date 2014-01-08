@@ -34,7 +34,7 @@ Public Class MachineConfigFileTest
     '
     ' Usar TestInitialize para ejecutar el código antes de ejecutar cada prueba
     <TestInitialize()> Public Sub MyTestInitialize()
-        _machineFile = New MachineConfigFile("C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\Files\machine.config.test.xml")
+        _machineFile = New MachineConfigFile(Framework.Instance(FrameworkVersion.Version4))
         _machineFile.Load()
     End Sub
     '

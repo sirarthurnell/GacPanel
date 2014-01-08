@@ -23,8 +23,11 @@ Public Class Framework
 
     Private _frameworkPath As String
     Private _machineConfigPath As String
+    Private _machineConfigFile As MachineConfigFile
     Private _gacPath As String
+    Private _gac As Gac
     Private _gacUtilPath As String
+    Private _gacutil As GacUtil
 
     ''' <summary>
     ''' Crea una nueva instancia de Framework a partir de las rutas relativas al mismo.
@@ -36,8 +39,11 @@ Public Class Framework
     Private Sub New(ByVal frameworkPath As String, ByVal machineConfigPath As String, ByVal gacPath As String, ByVal gacUtilPath As String)
         Me._frameworkPath = frameworkPath
         Me._machineConfigPath = machineConfigPath
+        Me._machineConfigFile = New MachineConfigFile(Me)
         Me._gacPath = gacPath
         Me._gacUtilPath = gacUtilPath
+        Me._gacutil = New GacUtil(_gacUtilPath)
+        Me._gac = New Gac(_gacutil)
     End Sub
 
 #Region "Funciones importadas"
@@ -132,11 +138,31 @@ Public Class Framework
     End Property
 
     ''' <summary>
+    ''' Obtiene un objeto que representa el archivo
+    ''' de configuración del Framework.
+    ''' </summary>
+    Public ReadOnly Property MachineConfigFile As MachineConfigFile
+        Get
+            Return _machineConfigFile
+        End Get
+    End Property
+
+    ''' <summary>
     ''' Obtiene la ruta a la GAC.
     ''' </summary>
     Public ReadOnly Property GacPath As String
         Get
             Return _gacPath
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' Obtiene un objeto que representa la caché
+    ''' de ensamblados global.
+    ''' </summary>
+    Public ReadOnly Property Gac As Gac
+        Get
+            Return _gac
         End Get
     End Property
 
@@ -147,6 +173,16 @@ Public Class Framework
     Public ReadOnly Property GacUtilPath As String
         Get
             Return _gacUtilPath
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' Obtiene un objeto que representa la herramienta
+    ''' de configuración de ensamblados.
+    ''' </summary>
+    Public ReadOnly Property GacUtil As GacUtil
+        Get
+            Return _gacutil
         End Get
     End Property
 

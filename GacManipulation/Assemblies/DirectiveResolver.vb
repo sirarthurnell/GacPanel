@@ -49,7 +49,7 @@ Public Class DirectiveResolver
             Throw New ArgumentException("El ensamblado indicado no existe", "assemblyPath")
         End If
 
-        Dim info As New AssemblyInfo(assemblyPath)
+        Dim info As AssemblyInfo = AssemblyInfo.Load(assemblyPath)
         Dim currentDirective = (From directive In _directiveSource.Directives
                                Where directive.Name = info.Name).FirstOrDefault()
 

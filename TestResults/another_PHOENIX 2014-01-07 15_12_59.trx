@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="23ea62ba-d046-4b9f-a48b-82db56db25cc" name="another@PHOENIX 2014-01-07 15:12:59" runUser="phoenix\another" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0986dc83-d545-40fe-8404-a61d03624407">
+    <Description>Esta es la configuración de pruebas predeterminada para una ejecución de pruebas local.</Description>
+    <Deployment enabled="false" runDeploymentRoot="another_PHOENIX 2014-01-07 15_12_59">
+      <DeploymentItem filename="C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Debug\GacManipulation.dll" />
+      <DeploymentItem filename="C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Rocks.dll" />
+      <DeploymentItem filename="C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Pdb.dll" />
+      <DeploymentItem filename="C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\Test\bin\Debug\Mono.Cecil.dll" />
+      <DeploymentItem filename="C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Mdb.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-01-07T15:12:59.4759693+01:00" queuing="2014-01-07T15:13:03.3459693+01:00" start="2014-01-07T15:13:03.7689693+01:00" finish="2014-01-07T15:14:35.2199693+01:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="PHOENIX" outcome="Error" timestamp="2014-01-07T15:14:35.2159693+01:00">
+        <Text>El proceso del host de pruebas terminó inesperadamente.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ExecuteTest" storage="c:\users\another\documents\visual studio 2010\projects\gacpanel\test\bin\debug\test.dll" id="2e1e6543-73aa-80f5-b8c4-2e5f7105f389">
+      <Execution id="b2f9ec7d-1b00-43b2-8e9c-20baa72dee94" />
+      <TestMethod codeBase="C:/Users/another/Documents/Visual Studio 2010/Projects/GacPanel/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.GacUtilTest, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ExecuteTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Resultados que no están en la lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="2e1e6543-73aa-80f5-b8c4-2e5f7105f389" executionId="b2f9ec7d-1b00-43b2-8e9c-20baa72dee94" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="b2f9ec7d-1b00-43b2-8e9c-20baa72dee94" testId="2e1e6543-73aa-80f5-b8c4-2e5f7105f389" testName="ExecuteTest" computerName="PHOENIX" duration="00:01:31.2200000" startTime="2014-01-07T15:13:03.9999693+01:00" endTime="2014-01-07T15:14:35.2199693+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b2f9ec7d-1b00-43b2-8e9c-20baa72dee94">
+    </UnitTestResult>
+  </Results>
+</TestRun>

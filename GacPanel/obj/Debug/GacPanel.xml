@@ -23,6 +23,11 @@ GacPanel
  Contiene métodos para el envío de mensajes
  en formato JSON al cliente.
  </summary>
+</member><member name="M:GacPanel.DirectivesListHandler.SendFakeJson(System.Web.HttpContext)">
+	<summary>
+ Envía un archivo JSON para hacer pruebas.
+ </summary>
+	<param name="context">Contexto ASP.NET.</param>
 </member><member name="M:GacPanel.OperationResult`1.#ctor(System.Boolean,`0)">
 	<summary>
  Crea una nueva instancia de OperationResult.

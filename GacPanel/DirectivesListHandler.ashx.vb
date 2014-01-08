@@ -6,17 +6,39 @@ Imports GacManipulation
 Public Class DirectivesListHandler
     Implements System.Web.IHttpHandler
 
+    Public ReadOnly FakeJson As Boolean = True
+
     Sub ProcessRequest(ByVal context As HttpContext) Implements IHttpHandler.ProcessRequest
 
-        Dim framework As Framework = framework.Instance(FrameworkVersion.Version2)
-        Dim machineConfig As New MachineConfigFile(framework.MachineConfigPath)
-        machineConfig.Load()
+        If FakeJson Then
+            SendFakeJson(context)
+        Else
 
-        Dim directives = machineConfig.Directives
+            Dim framework As Framework = framework.Instance(FrameworkVersion.Version2)
+            Dim machineConfig As MachineConfigFile = framework.MachineConfigFile
+            machineConfig.Load()
 
-        Dim result As New OperationResult(Of List(Of BindingDirective))(True, directives)
-        JsonResponse.TransmitOject(context.Response, result)
+            Dim directives = machineConfig.Directives
 
+            Dim result As New OperationResult(Of List(Of BindingDirective))(True, directives)
+            JsonResponse.TransmitOject(context.Response, result)
+
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Envía un archivo JSON para hacer pruebas.
+    ''' </summary>
+    ''' <param name="context">Contexto ASP.NET.</param>
+    Sub SendFakeJson(ByVal context As HttpContext)
+        Dim json As String
+
+        Using sr As New StreamReader(context.Server.MapPath("Fake\assembliesListFake.json"))
+            json = sr.ReadToEnd()
+        End Using
+
+        JsonResponse.TransmitJson(context.Response, json)
     End Sub
 
     ReadOnly Property IsReusable() As Boolean Implements IHttpHandler.IsReusable

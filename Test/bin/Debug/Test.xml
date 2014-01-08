@@ -6,7 +6,49 @@ Test
 </name>
 </assembly>
 <members>
-<member name="P:Test.MachineConfigFileTest.TestContext">
+<member name="P:Test.GacTest.TestContext">
+	<summary>
+Obtiene o establece el contexto de la prueba que proporciona
+la información y funcionalidad para la ejecución de pruebas actual.
+</summary>
+</member><member name="M:Test.GacTest.ListAssembliesTest">
+	<summary>
+Una prueba de ListAssemblies
+</summary>
+</member><member name="T:Test.GacTest">
+	<summary>
+Se trata de una clase de prueba para GacTest y se pretende que
+contenga todas las pruebas unitarias GacTest.
+</summary>
+</member><member name="P:Test.GacUtilTest.TestContext">
+	<summary>
+Obtiene o establece el contexto de la prueba que proporciona
+la información y funcionalidad para la ejecución de pruebas actual.
+</summary>
+</member><member name="M:Test.GacUtilTest.ExecuteTest">
+	<summary>
+Una prueba de Execute
+</summary>
+</member><member name="T:Test.GacUtilTest">
+	<summary>
+Se trata de una clase de prueba para GacUtilTest y se pretende que
+contenga todas las pruebas unitarias GacUtilTest.
+</summary>
+</member><member name="P:Test.AssemblyInfoTest.TestContext">
+	<summary>
+Obtiene o establece el contexto de la prueba que proporciona
+la información y funcionalidad para la ejecución de pruebas actual.
+</summary>
+</member><member name="M:Test.AssemblyInfoTest.CreateFromFullNameTest">
+	<summary>
+Una prueba de CreateFromFullName
+</summary>
+</member><member name="T:Test.AssemblyInfoTest">
+	<summary>
+Se trata de una clase de prueba para AssemblyInfoTest y se pretende que
+contenga todas las pruebas unitarias AssemblyInfoTest.
+</summary>
+</member><member name="P:Test.MachineConfigFileTest.TestContext">
 	<summary>
 Obtiene o establece el contexto de las pruebas que proporciona
 información y funcionalidad para la ejecución de pruebas actual.

@@ -8,6 +8,7 @@ Imports System.IO
 Public Class MachineConfigFile
     Implements IBindingDirectiveSource
 
+    Private _framework As Framework
     Private _pathToFile As String
     Private _directives As List(Of BindingDirective)
     Private _md5 As String
@@ -15,10 +16,11 @@ Public Class MachineConfigFile
     ''' <summary>
     ''' Crea una nueva instancia de MachineConfig.
     ''' </summary>
-    ''' <param name="pathToFile">Ruta al archivo
-    ''' machine.config.</param>
-    Public Sub New(ByVal pathToFile As String)
-        _pathToFile = pathToFile
+    ''' <param name="framework">Framework al que
+    ''' pertenece el archivo.</param>
+    Public Sub New(ByVal framework As Framework)
+        _framework = framework
+        _pathToFile = _framework.MachineConfigPath
     End Sub
 
     ''' <summary>
@@ -45,6 +47,12 @@ Public Class MachineConfigFile
                                                                    End Function)
 
                                         newDirective.Redirections.AddRange(redirections)
+
+                                        Dim installedVersions = _framework.Gac.GetVersionsForAssembly(newDirective.Name)
+                                        For Each installedVersion In installedVersions
+                                            newDirective.InstalledVersions.Add(New BindingVersion(installedVersion))
+                                        Next
+
                                         Return newDirective
                                     End Function)
 

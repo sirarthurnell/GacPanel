@@ -12,3 +12,17 @@ C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\Ga
 C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Debug\GacManipulation.dll
 C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Debug\GacManipulation.xml
 C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Debug\GacManipulation.pdb
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Debug\GacManipulation.dll
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Debug\GacManipulation.pdb
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Debug\GacManipulation.xml
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Debug\Mono.Cecil.dll
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Debug\Mono.Cecil.Rocks.dll
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Debug\GacManipulation.Resources.resources
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Debug\GacManipulation.dll
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Debug\GacManipulation.xml
+C:\Users\another\Documents\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Debug\GacManipulation.pdb

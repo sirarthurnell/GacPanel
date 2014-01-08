@@ -85,7 +85,10 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyInfoTest.vb" />
     <Compile Include="DirectiveResolverTest.vb" />
+    <Compile Include="GacTest.vb" />
+    <Compile Include="GacUtilTest.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="MachineConfigFileTest.vb" />
   </ItemGroup>
