@@ -57,12 +57,17 @@
     overflow: hidden;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
-    border-radius: 10px;
+    border-radius: 10px;    
+    overflow: auto;
 }
 
 .directivesList
 {
     width: 100%;
+}
+
+.directivesList, .directivesList .redirections .redirectionsTable
+{
     border-collapse: collapse;
 }
 
@@ -78,33 +83,18 @@
     padding: 0.5em;
 }
 
-.directivesList .redirections > td
-{
-    padding-left: 1.75em;
-}
-
-.directivesList .bindingDirective .editButtonsRegion
+.editButtonsRegion
 {
     border-right: 1px solid silver;
     width: 2.4em;
+    min-width: 2.4em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
-.directivesList .redirections .redirection .editButtonsRegion
+.redirectionsTable
 {
-    border-right: 1px solid silver;
-    width: 1.3em;
-}
-
-.directivesList .redirections .redirection .deleteButton
-{
-    margin-left: -1.55em;
-}
-
-.directivesList .redirections .redirectionsTable
-{
-    border: 0;
-    border-collapse: collapse;
-    margin-left: 0.2em;
+    margin: -0.1em;
 }
 
 .directivesList .bindingDirective .editAssemblyButtonsRegion

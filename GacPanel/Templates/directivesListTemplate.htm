@@ -9,7 +9,17 @@
                 <img class="addButton" data-assembly-name="{{Name}}" src="../Media/Images/Icons/add.png" alt="Añadir redirección" title="Añadir redirección" />
             </td>
             <td class="assemblyName">{{Name}}</td>
+
+            <td class="installedVersionsCell">
+                
+                {{#InstalledVersions}}
+                    <span class="installedVersion">{{VersionAsString}}</span>
+                {{/InstalledVersions}}
+
+            </td>
+
             <td class="assemblyToken">{{Token}}</td>
+            
             <td class="editAssemblyButtonsRegion">
                 <img class="deleteAssemblyButton" data-assembly-name="{{Name}}" src="../Media/Images/Icons/deleteAssembly.png" alt="Eliminar ensamblado" title="Eliminar ensamblado" />
             </td>            
@@ -17,7 +27,7 @@
             
         <tr class="redirections">
 
-            <td colspan="4">
+            <td colspan="5">
             
                 <table class="redirectionsTable">
 

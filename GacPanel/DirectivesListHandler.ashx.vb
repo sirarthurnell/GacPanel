@@ -6,7 +6,7 @@ Imports GacManipulation
 Public Class DirectivesListHandler
     Implements System.Web.IHttpHandler
 
-    Public ReadOnly FakeJson As Boolean = True
+    Public ReadOnly FakeJson As Boolean = False
 
     Sub ProcessRequest(ByVal context As HttpContext) Implements IHttpHandler.ProcessRequest
 

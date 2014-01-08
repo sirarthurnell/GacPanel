@@ -178,6 +178,10 @@ bindingDirective = (function () {
 
         $.each(directives, function (index, bindingDirective) {
 
+            $.each(bindingDirective.InstalledVersions, function(index, version) {
+                $.extend(version, versionMixing);
+            });            
+
             $.each(bindingDirective.Redirections, function (index, redirection) {
                 extendRedirection(redirection);
             });

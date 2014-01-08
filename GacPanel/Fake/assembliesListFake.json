@@ -4,6 +4,16 @@
     {
       "Name": "Mityc.Sigetel.DenunciasEquipos",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            1,
+            0,
+            5,
+            18135
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -38,6 +48,16 @@
     {
       "Name": "Mityc.Sigetel.Radioaficionado",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            5,
+            2,
+            0,
+            21977
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -72,6 +92,16 @@
     {
       "Name": "Mityc.Sigetel.Common.Territorios",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            1,
+            1,
+            2,
+            20631
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -106,6 +136,16 @@
     {
       "Name": "Mityc.Sigetel.Common.TramitacionBandejaEntrada",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            4,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -140,6 +180,16 @@
     {
       "Name": "Interop.IGRALXLib",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            1,
+            0,
+            0,
+            2
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -174,6 +224,16 @@
     {
       "Name": "Mityc.Sigetel.Recom.InterfazSict",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            1,
+            0,
+            2,
+            23877
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -208,6 +268,16 @@
     {
       "Name": "Mityc.Sigetel.RIN",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            1,
+            0,
+            5,
+            22439
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -242,6 +312,16 @@
     {
       "Name": "Mityc.Sigetel.CSSTA",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            3,
+            9,
+            2,
+            18030
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -276,6 +356,16 @@
     {
       "Name": "Mityc.Sigetel.Recursos",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            3,
+            0,
+            0,
+            17607
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -310,6 +400,16 @@
     {
       "Name": "Mityc.Sigetel.Web.UI.Core",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            3,
+            0,
+            1,
+            24119
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -344,6 +444,16 @@
     {
       "Name": "Interop.idocDecrypt",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            2,
+            0,
+            0,
+            2
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -378,6 +488,16 @@
     {
       "Name": "Interop.AspPDF",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            1,
+            6,
+            0,
+            9
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -412,6 +532,16 @@
     {
       "Name": "Mityc.Sigetel.int",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            3,
+            3,
+            4,
+            22583
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -446,6 +576,16 @@
     {
       "Name": "Mityc.Sigetel.ComunRenafeRecom",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            5,
+            1,
+            0,
+            11111
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -480,6 +620,16 @@
     {
       "Name": "SETSI_GeoInterfaz",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            1,
+            1,
+            0,
+            20036
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -514,6 +664,16 @@
     {
       "Name": "Mityc.Sigetel.Renafe",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            5,
+            2,
+            1,
+            11111
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -548,6 +708,16 @@
     {
       "Name": "Mityc.Sigetel.UsoEspecial",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            5,
+            1,
+            1,
+            21379
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -582,6 +752,16 @@
     {
       "Name": "Mityc.Sigetel.CB27",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            5,
+            0,
+            0,
+            23956
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -616,6 +796,16 @@
     {
       "Name": "Mityc.Sigetel.Templates",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            3,
+            0,
+            1,
+            24014
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -650,6 +840,16 @@
     {
       "Name": "Mityc.Sigetel.Reclamaciones",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            4,
+            1,
+            1,
+            22783
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -684,6 +884,16 @@
     {
       "Name": "Mityc.Sigetel.Recom",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            4,
+            0,
+            9,
+            20797
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -718,6 +928,16 @@
     {
       "Name": "Mityc.Sigetel.SAN",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            1,
+            0,
+            5,
+            16242
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -752,6 +972,16 @@
     {
       "Name": "ConexMAP",
       "Token": "5f25c403005e7b6c",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            1,
+            0,
+            0,
+            2
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -786,6 +1016,16 @@
     {
       "Name": "Interop.IFCOMLib",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            4,
+            6,
+            0,
+            3
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -820,6 +1060,16 @@
     {
       "Name": "Mityc.Sigetel.Ingresos",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            3,
+            8,
+            2,
+            18625
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -854,6 +1104,16 @@
     {
       "Name": "Mityc.Sigetel.Common.Security",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            3,
+            0,
+            3,
+            27620
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -888,6 +1148,16 @@
     {
       "Name": "Mityc.Sigetel.Ict",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            4,
+            0,
+            3,
+            22890
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -922,6 +1192,16 @@
     {
       "Name": "Mityc.Sigetel.Terceros",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            4,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -956,6 +1236,16 @@
     {
       "Name": "invesflow",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            3,
+            3,
+            0,
+            23054
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -990,6 +1280,16 @@
     {
       "Name": "Mityc.Sigetel.IntegracionPSC",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            3,
+            4,
+            1,
+            29763
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -1024,6 +1324,16 @@
     {
       "Name": "Mityc.Sigetel.Common",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            5,
+            2,
+            59,
+            16580
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
@@ -1058,6 +1368,16 @@
     {
       "Name": "Mityc.Sigetel.Base",
       "Token": "159574ffe4118e68",
+      "InstalledVersions": [
+        {
+          "Parts": [
+            3,
+            2,
+            12,
+            18364
+          ]
+        }
+      ],
       "Redirections": [
         {
           "Range": {
