@@ -13,7 +13,7 @@ var server = (function () {
     /// <param name="failureCallback">Función a llamar
     /// cuando falla la conexión con el servidor.</param>
     function recoverDirectives(successCallback, failureCallback) {
-        var recoverPromise = $.post('DirectivesListHandler.ashx');
+        var recoverPromise = $.post('Handlers/DirectivesListHandler.ashx');
         recoverPromise.done(successCallback);
         recoverPromise.fail(failureCallback);
     }
@@ -28,7 +28,7 @@ var server = (function () {
     /// cuando falla la conexión con el servidor.</param>
     function applyChanges(data, successCallback, failureCallback) {
         var applyPromise = $.ajax({
-            url: 'ApplyChangesHandler.ashx',
+            url: 'Handlers/ApplyChangesHandler.ashx',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(data),
