@@ -31,7 +31,7 @@ Public Class Gac
     ''' <param name="publicKeyToken">Token público.</param>
     ''' <param name="version">Versión.</param>
     Public Sub UnistallAssembly(ByVal name As String, ByVal publicKeyToken As String, ByVal version As String)
-        Dim args As String = String.Format("/u {0}, Version={1}, PublicKeyToken={2}", name, version, publicKeyToken)
+        Dim args As String = String.Format("/u {0},Version={1},Culture=neutral,PublicKeyToken={2}", name, version, publicKeyToken)
         _gacutil.Execute(args)
     End Sub
 

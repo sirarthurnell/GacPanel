@@ -6,7 +6,21 @@ GacPanel
 </name>
 </assembly>
 <members>
-<member name="M:GacPanel.DirectivesListHandler.SendFakeJson(System.Web.HttpContext)">
+<member name="M:GacPanel.UploadHandler.ConstructAssembliesToInstallList(System.Collections.Generic.List{System.String})">
+	<summary>
+ Obtiene la lista de ensamblados que se pretenden
+ instalar en el servidor.
+ </summary>
+	<param name="filesPaths">Lista de rutas a los
+ archivos de los ensamblados.</param>
+	<returns>Lista de ensamblados propuestos para su
+ instalación.</returns>
+</member><member name="M:GacPanel.UploadHandler.GetUploadedFiles(System.Web.HttpContext)">
+	<summary>
+ Obtiene las rutas a los archivos subidos.
+ </summary>
+	<returns>Rutas a los archivos subidos.</returns>
+</member><member name="M:GacPanel.DirectivesListHandler.SendFakeJson(System.Web.HttpContext)">
 	<summary>
  Envía un archivo JSON para hacer pruebas.
  </summary>

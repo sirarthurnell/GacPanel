@@ -51,11 +51,12 @@ Public Class DirectiveResolver
 
         Dim info As AssemblyInfo = AssemblyInfo.Load(assemblyPath)
         Dim currentDirective = (From directive In _directiveSource.Directives
-                               Where directive.Name = info.Name).FirstOrDefault()
+                               Where String.Compare(directive.Name, info.Name, StringComparison.InvariantCultureIgnoreCase) = 0).FirstOrDefault()
 
         Dim directiveToUse As BindingDirective
         If currentDirective Is Nothing Then
             directiveToUse = New BindingDirective(info.Name, info.PublicKeyToken)
+            directiveToUse.InstalledVersions.Add(New BindingVersion(info.Version))
         Else
             directiveToUse = currentDirective
         End If
@@ -64,9 +65,9 @@ Public Class DirectiveResolver
         Dim redirectionsCount As Integer = directiveToUse.Redirections.Count
         Dim lastIndex As Integer = redirectionsCount - 1
         If redirectionsCount > 0 Then
-            currentDirective.Redirections(lastIndex) = newRedirection
+            directiveToUse.Redirections(lastIndex) = newRedirection
         Else
-            currentDirective.Redirections.Add(newRedirection)
+            directiveToUse.Redirections.Add(newRedirection)
         End If
 
         Return directiveToUse

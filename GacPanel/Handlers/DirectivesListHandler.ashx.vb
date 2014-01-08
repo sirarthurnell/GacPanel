@@ -4,7 +4,7 @@ Imports System.IO
 Imports GacManipulation
 
 Public Class DirectivesListHandler
-    Implements System.Web.IHttpHandler
+    Implements System.Web.IHttpHandler, System.Web.SessionState.IRequiresSessionState
 
     Public ReadOnly FakeJson As Boolean = False
 
@@ -13,6 +13,8 @@ Public Class DirectivesListHandler
             SendFakeJson(context)
         Else
             Try
+
+                context.Session(Keys.AssembliesToInstall) = Nothing
 
                 Dim framework As Framework = framework.Instance(FrameworkVersion.Version2)
                 Dim machineConfig As MachineConfigFile = framework.MachineConfigFile

@@ -93,6 +93,11 @@
     background-color: #FFFF00 !important;
 }
 
+.NewInstall
+{
+    background-color: #CCFFCC !important;
+}
+
 .editButtonsRegion
 {
     border-right: 1px solid silver;
@@ -140,4 +145,14 @@
 {
     height: 1em;
     width: 6.5em;
+}
+
+.dragdrop
+{
+    border: 0.2em dashed #66CCFF;
+}
+
+#fileupload
+{
+    margin-top: 2em;
 }

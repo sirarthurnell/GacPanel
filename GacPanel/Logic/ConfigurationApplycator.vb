@@ -56,7 +56,6 @@ Public Class ConfigurationApplycator
             If currentChange.State = "Removed" Then
                 Dim versionToRemove = String.Join(".", currentChange.InstalledVersions(0).Parts)
                 _gac.UnistallAssembly(currentChange.Name, currentChange.Token, versionToRemove)
-                changes.Remove(currentChange)
             End If
         Next
     End Sub
@@ -89,7 +88,11 @@ Public Class ConfigurationApplycator
                                                         Return String.Compare(currentDirective.Name, currentChanged.Name, StringComparison.InvariantCultureIgnoreCase) = 0
                                                     End Function)
 
-            currentDirectives(index) = currentChanged
+            If index < 0 Then
+                currentDirectives.Add(currentChanged)
+            Else
+                currentDirectives(index) = currentChanged
+            End If
         Next
 
         machineConfig.SaveDirectives()

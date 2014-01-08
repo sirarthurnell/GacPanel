@@ -5,6 +5,9 @@
             'Media/Scripts/Lib/underscore-min.js',
             'Media/Scripts/Lib/mustache.js',
             'Media/Scripts/Lib/jquery-1.10.2.min.js',
+            'Media/Scripts/Lib/jquery.ui.widget.js',
+            'Media/Scripts/Lib/jquery.iframe-transport.js',
+            'Media/Scripts/Lib/jquery.fileupload.js',
             'Media/Scripts/Utils/templateLoader.js',
             'Media/Scripts/Model/server.js',
             'Media/Scripts/Model/bindingDirective.js'
@@ -130,14 +133,62 @@ function addEventHandlers() {
 
     //Eventos para el botón de aplicar cambios en el servidor.
     $('.applyChanges').on('click', function () {
-        bindingDirective.applyChanges(function success() {
-            alert('Cambios aplicados con éxito.');
-            loadList();
+        bindingDirective.applyChanges(function success(result) {
+            if (result.Success) {
+                alert('Cambios aplicados con éxito.');
+                loadList();
+            } else {
+                alert(result.Data);
+            }
         },
         function failure() {
             alert('Fallo al aplicar los cambios en el servidor.');
         });
     });
+
+    //Soporte drag&drop.
+    var dragdropTarget = getDragDropTarget();
+    dragdropTarget.on('dragenter', function (e) {
+        dragdropTarget.addClass('dragdrop');
+    });
+
+    dragdropTarget.on('dragover', function (e) {
+        if (!dragdropTarget.hasClass('dragdrop')) {
+            dragdropTarget.addClass('dragdrop');
+        }
+    });
+
+    dragdropTarget.on('dragleave', function (e) {
+        dragdropTarget.removeClass('dragdrop');
+    });
+
+    dragdropTarget.on('drop', function (e) {
+        dragdropTarget.removeClass('dragdrop');
+        $('#fileupload').trigger('fileupload');
+    });
+
+    //Subida de archivos asíncrona.
+    $('#fileupload').fileupload({
+        dataType: 'json',
+        done: function (e, data) {
+            var result = data.result;
+
+            if (result.Success) {
+                bindingDirective.installAssemblies(result);
+                showList();
+            } else {
+                alert(result.Data);
+            }
+        }
+    });
+}
+
+/// <summary>
+/// Obtiene el destino de los elementos
+/// drag&drop.
+/// </summary>
+function getDragDropTarget() {
+    return $('body');
 }
 
 /// <summary>
@@ -150,4 +201,11 @@ function eraseEventHandlers() {
     $('.deleteButton').off('click');
     $('.discardChanges').off('click');
     $('.applyChanges').off('click');
+
+    var dragdropTarget = getDragDropTarget();
+    dragdropTarget.off('dragenter');
+    dragdropTarget.off('dragleave');
+    dragdropTarget.off('drop');
+
+    $('#fileupload').off('fileupload');
 }

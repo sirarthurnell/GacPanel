@@ -34,7 +34,7 @@ Public NotInheritable Class JsonResponse
     ''' <param name="response">Objeto de respuesta.</param>
     ''' <param name="ex">Excepción cuyo mensaje será transmitido.</param>
     Public Shared Sub TransmitError(ByVal response As HttpResponse, ByVal ex As Exception)
-        Dim result As New OperationResult(Of String)(False, ex.Message)
+        Dim result As New OperationResult(Of String)(False, ex.ToString())
         JsonResponse.TransmitOject(response, result)
     End Sub
 

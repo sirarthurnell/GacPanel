@@ -5,7 +5,7 @@ Imports Newtonsoft.Json
 Imports GacManipulation
 
 Public Class ApplyChangesHandler
-    Implements System.Web.IHttpHandler
+    Implements System.Web.IHttpHandler, System.Web.SessionState.IRequiresSessionState
 
     Sub ProcessRequest(ByVal context As HttpContext) Implements IHttpHandler.ProcessRequest
         Try
@@ -16,7 +16,7 @@ Public Class ApplyChangesHandler
             Dim applycator As New ConfigurationApplycator(Framework.Instance(FrameworkVersion.Version2))
             applycator.ApplyChanges(changes)
 
-            Dim assembliesToInstall As List(Of AssemblyToInstall)()
+            Dim assembliesToInstall As List(Of AssemblyToInstall)
             assembliesToInstall = context.Session(Keys.AssembliesToInstall)
             If Not assembliesToInstall Is Nothing Then
                 applycator.InstallAssemblies(assembliesToInstall)

@@ -33,6 +33,21 @@ bindingDirective = (function () {
     }
 
     /// <summary>
+    /// Agrega los ensamblados propuestos para la
+    /// instalación.
+    /// </summary>
+    /// <param name="directivesList">Lista de directivas
+    /// de enlace propuestas para la instalación.</param>
+    function installAssemblies(data) {
+        adaptModel(data);
+        console.log(data);
+        $.each(data.Data, function (index, directive) {
+            list.insert(directive);
+            directive.State = 'NewInstall';
+        });
+    }
+
+    /// <summary>
     /// Aplica los cambios realizados en el servidor.
     /// </summary>
     /// <param name="successCallback">Función a llamar
@@ -79,7 +94,6 @@ bindingDirective = (function () {
     function deleteAssembly(assemblyName) {
         var directive = list({ 'Name': assemblyName }).get()[0];
         directive.State = "Removed";
-        //list({ 'Name': assemblyName }).remove();
     }
 
     /// <summary>
@@ -227,6 +241,7 @@ bindingDirective = (function () {
     }
 
     return {
+        installAssemblies: installAssemblies,
         loadAll: loadAll,
         applyChanges: applyChanges,
         updateTargetVersion: updateTargetVersion,
