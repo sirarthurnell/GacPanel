@@ -35,7 +35,6 @@ Public Class MachineConfigFileTest
     ' Usar TestInitialize para ejecutar el código antes de ejecutar cada prueba
     <TestInitialize()> Public Sub MyTestInitialize()
         _machineFile = New MachineConfigFile(Framework.Instance(FrameworkVersion.Version4))
-        _machineFile.Load()
     End Sub
     '
     ' Use TestCleanup para ejecutar el código una vez ejecutadas todas las pruebas

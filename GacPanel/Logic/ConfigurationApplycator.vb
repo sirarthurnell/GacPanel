@@ -8,6 +8,7 @@ Public Class ConfigurationApplycator
 
     Private _framework As Framework
     Private _gac As Gac
+    Private _machineConfig As MachineConfigFile
 
     ''' <summary>
     ''' Crea una nueva instancia de ConfigurationApplycator.
@@ -17,6 +18,7 @@ Public Class ConfigurationApplycator
     Public Sub New(ByVal framework As Framework)
         _framework = framework
         _gac = _framework.Gac
+        _machineConfig = _framework.MachineConfigFile
     End Sub
 
     ''' <summary>
@@ -27,6 +29,7 @@ Public Class ConfigurationApplycator
         Dim changesCopy As New List(Of RootObject)(changes)
         RemoveRemovedAssemblies(changesCopy)
         ApplyDirectivesChangesFromClient(changesCopy)
+        _machineConfig.SaveDirectives()
     End Sub
 
     ''' <summary>
@@ -42,7 +45,8 @@ Public Class ConfigurationApplycator
             newDirectives.Add(currentAssembly.SuggestedDirective)
         Next
 
-        ApplyDirectives(newDirectives)
+        AddReplaceDirectives(newDirectives)
+        _machineConfig.SaveDirectives()
     End Sub
 
     ''' <summary>
@@ -66,22 +70,43 @@ Public Class ConfigurationApplycator
     ''' <param name="changes">Cambios relativos a las directivas
     ''' de enlace.</param>
     Private Sub ApplyDirectivesChangesFromClient(ByVal changes As IEnumerable(Of RootObject))
-        Dim changedDirectives = From clientDirective In changes
-                                        Where clientDirective.State = "Changed"
-                                        Select TranslateToBindingDirective(clientDirective)
+        Dim machineConfig = _framework.MachineConfigFile
 
-        ApplyDirectives(changedDirectives)
+        Dim changedDirectives = From clientDirective In changes
+                                Where clientDirective.State = "Changed" OrElse clientDirective.State = "NewInstall"
+                                Select TranslateToBindingDirective(clientDirective)
+        AddReplaceDirectives(changedDirectives)
+
+        Dim removedDirectives = From clientDirective In changes
+                                Where clientDirective.State = "Removed"
+                                Select TranslateToBindingDirective(clientDirective)
+        RemoveDirectives(removedDirectives)
     End Sub
 
     ''' <summary>
-    ''' Aplica las directivas de enlace indicadas.
+    ''' Elimina las directivas indicadas.
+    ''' </summary>
+    ''' <param name="directives">Directivas a eliminar.</param>
+    Private Sub RemoveDirectives(ByVal directives As IEnumerable(Of BindingDirective))
+        Dim currentDirectives = _machineConfig.Directives
+        For Each changedDirective In directives
+            Dim currentChanged As BindingDirective = changedDirective
+            Dim index = currentDirectives.FindIndex(Function(currentDirective)
+                                                        Return String.Compare(currentDirective.Name, currentChanged.Name, StringComparison.InvariantCultureIgnoreCase) = 0
+                                                    End Function)
+
+            If index >= 0 Then
+                currentDirectives.RemoveAt(index)
+            End If
+        Next
+    End Sub
+
+    ''' <summary>
+    ''' Añade/reemplaza las directivas de enlace indicadas.
     ''' </summary>
     ''' <param name="directives">Directivas de enlace a aplicar.</param>
-    Private Sub ApplyDirectives(ByVal directives As IEnumerable(Of BindingDirective))
-        Dim machineConfig = _framework.MachineConfigFile
-        machineConfig.Load()
-
-        Dim currentDirectives = machineConfig.Directives
+    Private Sub AddReplaceDirectives(ByVal directives As IEnumerable(Of BindingDirective))
+        Dim currentDirectives = _machineConfig.Directives
         For Each changedDirective In directives
             Dim currentChanged As BindingDirective = changedDirective
             Dim index = currentDirectives.FindIndex(Function(currentDirective)
@@ -94,8 +119,6 @@ Public Class ConfigurationApplycator
                 currentDirectives(index) = currentChanged
             End If
         Next
-
-        machineConfig.SaveDirectives()
     End Sub
 
     ''' <summary>

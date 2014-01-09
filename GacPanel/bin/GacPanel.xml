@@ -6,7 +6,35 @@ GacPanel
 </name>
 </assembly>
 <members>
-<member name="M:GacPanel.UploadHandler.ConstructAssembliesToInstallList(System.Collections.Generic.List{System.String})">
+<member name="M:GacPanel.JsonResponse.TransmitOject(System.Web.HttpResponse,System.Object)">
+	<summary>
+ Transmite los resultados de la operación al cliente.
+ </summary>
+	<param name="response">Objeto de respuesta.</param>
+	<param name="obj">Objeto a transmitir.</param>
+</member><member name="M:GacPanel.JsonResponse.TransmitJson(System.Web.HttpResponse,System.String)">
+	<summary>
+ Transmite el objeto json indicado.
+ </summary>
+	<param name="response">Objeto de respuesta.</param>
+	<param name="json">Texto en formato JSON.</param>
+</member><member name="M:GacPanel.JsonResponse.TransmitError(System.Web.HttpResponse,System.Exception)">
+	<summary>
+ Transmite el error indicado por la excepción.
+ </summary>
+	<param name="response">Objeto de respuesta.</param>
+	<param name="ex">Excepción cuyo mensaje será transmitido.</param>
+</member><member name="M:GacPanel.JsonResponse.TransmitOk(System.Web.HttpResponse)">
+	<summary>
+ Transmite un mensaje de OK al cliente.
+ </summary>
+	<param name="response">Objeto de respuesta.</param>
+</member><member name="T:GacPanel.JsonResponse">
+	<summary>
+ Contiene métodos para el envío de mensajes
+ en formato JSON al cliente.
+ </summary>
+</member><member name="M:GacPanel.UploadHandler.ConstructAssembliesToInstallList(System.Collections.Generic.List{System.String})">
 	<summary>
  Obtiene la lista de ensamblados que se pretenden
  instalar en el servidor.
@@ -20,11 +48,6 @@ GacPanel
  Obtiene las rutas a los archivos subidos.
  </summary>
 	<returns>Rutas a los archivos subidos.</returns>
-</member><member name="M:GacPanel.DirectivesListHandler.SendFakeJson(System.Web.HttpContext)">
-	<summary>
- Envía un archivo JSON para hacer pruebas.
- </summary>
-	<param name="context">Contexto ASP.NET.</param>
 </member><member name="T:GacPanel.Keys">
 	<summary>
  Cadenas a usar como claves de sesión.
@@ -46,6 +69,26 @@ GacPanel
 	<summary>
  Representa un ensamblado que se desea instalar
  en la GAC.
+ </summary>
+</member><member name="M:GacPanel.OperationResult`1.#ctor(System.Boolean,`0)">
+	<summary>
+ Crea una nueva instancia de OperationResult.
+ </summary>
+	<param name="success">Indica si ha tenido éxito
+ la operación.</param>
+	<param name="data">Datos asociados a la operación.</param>
+</member><member name="P:GacPanel.OperationResult`1.Success">
+	<summary>
+ Devuelve si la operación tuvo éxito.
+ </summary>
+</member><member name="P:GacPanel.OperationResult`1.Data">
+	<summary>
+ Devuelve los datos asociados a la operación.
+ </summary>
+</member><member name="T:GacPanel.OperationResult`1">
+	<summary>
+ Contiene la respuesta resultado de una
+ operación realizada.
  </summary>
 </member><member name="M:GacPanel.ConfigurationApplycator.#ctor(GacManipulation.Framework)">
 	<summary>
@@ -75,9 +118,14 @@ GacPanel
  </summary>
 	<param name="changes">Cambios relativos a las directivas
  de enlace.</param>
-</member><member name="M:GacPanel.ConfigurationApplycator.ApplyDirectives(System.Collections.Generic.IEnumerable{GacManipulation.BindingDirective})">
+</member><member name="M:GacPanel.ConfigurationApplycator.RemoveDirectives(System.Collections.Generic.IEnumerable{GacManipulation.BindingDirective})">
 	<summary>
- Aplica las directivas de enlace indicadas.
+ Elimina las directivas indicadas.
+ </summary>
+	<param name="directives">Directivas a eliminar.</param>
+</member><member name="M:GacPanel.ConfigurationApplycator.AddReplaceDirectives(System.Collections.Generic.IEnumerable{GacManipulation.BindingDirective})">
+	<summary>
+ Añade/reemplaza las directivas de enlace indicadas.
  </summary>
 	<param name="directives">Directivas de enlace a aplicar.</param>
 </member><member name="M:GacPanel.ConfigurationApplycator.TranslateToBindingDirective(GacPanel.RootObject)">
@@ -93,54 +141,11 @@ GacPanel
  Filtra y aplica la configuración especificada
  por el cliente.
  </summary>
-</member><member name="M:GacPanel.JsonResponse.TransmitOject(System.Web.HttpResponse,System.Object)">
+</member><member name="M:GacPanel.DirectivesListHandler.SendFakeJson(System.Web.HttpContext)">
 	<summary>
- Transmite los resultados de la operación al cliente.
+ Envía un archivo JSON para hacer pruebas.
  </summary>
-	<param name="response">Objeto de respuesta.</param>
-	<param name="obj">Objeto a transmitir.</param>
-</member><member name="M:GacPanel.JsonResponse.TransmitJson(System.Web.HttpResponse,System.String)">
-	<summary>
- Transmite el objeto json indicado.
- </summary>
-	<param name="response">Objeto de respuesta.</param>
-	<param name="json">Texto en formato JSON.</param>
-</member><member name="M:GacPanel.JsonResponse.TransmitError(System.Web.HttpResponse,System.Exception)">
-	<summary>
- Transmite el error indicado por la excepción.
- </summary>
-	<param name="response">Objeto de respuesta.</param>
-	<param name="ex">Excepción cuyo mensaje será transmitido.</param>
-</member><member name="M:GacPanel.JsonResponse.TransmitOk(System.Web.HttpResponse)">
-	<summary>
- Transmite un mensaje de OK al cliente.
- </summary>
-	<param name="response">Objeto de respuesta.</param>
-</member><member name="T:GacPanel.JsonResponse">
-	<summary>
- Contiene métodos para el envío de mensajes
- en formato JSON al cliente.
- </summary>
-</member><member name="M:GacPanel.OperationResult`1.#ctor(System.Boolean,`0)">
-	<summary>
- Crea una nueva instancia de OperationResult.
- </summary>
-	<param name="success">Indica si ha tenido éxito
- la operación.</param>
-	<param name="data">Datos asociados a la operación.</param>
-</member><member name="P:GacPanel.OperationResult`1.Success">
-	<summary>
- Devuelve si la operación tuvo éxito.
- </summary>
-</member><member name="P:GacPanel.OperationResult`1.Data">
-	<summary>
- Devuelve los datos asociados a la operación.
- </summary>
-</member><member name="T:GacPanel.OperationResult`1">
-	<summary>
- Contiene la respuesta resultado de una
- operación realizada.
- </summary>
+	<param name="context">Contexto ASP.NET.</param>
 </member><member name="P:GacPanel.My.MyWebExtension.Application">
 	<summary>
  Devuelve información sobre la aplicación actual.

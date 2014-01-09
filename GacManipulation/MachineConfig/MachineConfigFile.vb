@@ -12,6 +12,7 @@ Public Class MachineConfigFile
     Private _pathToFile As String
     Private _directives As List(Of BindingDirective)
     Private _md5 As String
+    Private _isLoaded As Boolean = False
 
     ''' <summary>
     ''' Crea una nueva instancia de MachineConfig.
@@ -57,7 +58,17 @@ Public Class MachineConfigFile
                                     End Function)
 
         _directives = allDirectives.ToList()
+        _isLoaded = True
     End Sub
+
+    ''' <summary>
+    ''' Obtiene si el archivo machine.cofig fue cargado.
+    ''' </summary>
+    Public ReadOnly Property IsLoaded() As Boolean
+        Get
+            Return _isLoaded
+        End Get
+    End Property
 
     ''' <summary>
     ''' Obtiene la firma Md5 del archivo cargado.
@@ -84,6 +95,10 @@ Public Class MachineConfigFile
     ''' </summary>
     Public ReadOnly Property Directives As List(Of BindingDirective) Implements IBindingDirectiveSource.Directives
         Get
+            If Not IsLoaded Then
+                Load()
+            End If
+
             Return _directives
         End Get
     End Property

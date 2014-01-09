@@ -18,8 +18,6 @@ Public Class DirectivesListHandler
 
                 Dim framework As Framework = framework.Instance(FrameworkVersion.Version2)
                 Dim machineConfig As MachineConfigFile = framework.MachineConfigFile
-                machineConfig.Load()
-
                 Dim directives = machineConfig.Directives
 
                 Dim result As New OperationResult(Of List(Of BindingDirective))(True, directives)

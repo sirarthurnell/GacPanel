@@ -136,6 +136,10 @@ GacManipulation
 	<summary>
  Carga el archivo machine.config.
  </summary>
+</member><member name="P:GacManipulation.MachineConfigFile.IsLoaded">
+	<summary>
+ Obtiene si el archivo machine.cofig fue cargado.
+ </summary>
 </member><member name="P:GacManipulation.MachineConfigFile.Md5">
 	<summary>
  Obtiene la firma Md5 del archivo cargado.
