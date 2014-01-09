@@ -58,7 +58,10 @@ Public Class ConfigurationApplycator
 
         For Each currentChange In changesCopy
             If currentChange.State = "Removed" Then
-                Dim versionToRemove = String.Join(".", currentChange.InstalledVersions(0).Parts)
+                Dim selectedVersion = (From version In currentChange.InstalledVersions
+                                      Where version.Selected).FirstOrDefault()
+
+                Dim versionToRemove = String.Join(".", selectedVersion.Parts)
                 _gac.UnistallAssembly(currentChange.Name, currentChange.Token, versionToRemove)
             End If
         Next

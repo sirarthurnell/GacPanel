@@ -12,9 +12,15 @@
 
             <td class="installedVersionsCell">
                 
+                <select class="installedVersions">
+
                 {{#InstalledVersions}}
-                    <span class="installedVersion">{{VersionAsString}}</span>
+
+                    <option class="installedVersion" value="{{VersionAsString}}">{{VersionAsString}}</option>
+
                 {{/InstalledVersions}}
+
+                </select>
 
             </td>
 

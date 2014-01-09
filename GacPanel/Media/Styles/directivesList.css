@@ -132,13 +132,21 @@
     text-align: right;
 }
 
-.versionControl
+.versionControl, .installedVersions
 {
+    background-color: transparent;
     border: 1px dashed #FFEECA;
     text-align: center;
     font-family: inherit;
     font-size: inherit;
-    width: 7em;
+    width: 7em;    
+}
+
+.installedVersions
+{
+    border: 0;
+    width: 7.5em;
+    text-align: right;
 }
 
 .versionControl:focus

@@ -6,7 +6,6 @@
             'Media/Scripts/Lib/taffy-min.js',
             'Media/Scripts/Lib/underscore-min.js',
             'Media/Scripts/Lib/mustache.js',
-            /*'Media/Scripts/Lib/jquery-1.10.2.min.js',*/
             'Media/Scripts/Lib/jquery.ui.widget.js',
             'Media/Scripts/Lib/jquery.iframe-transport.js',
             'Media/Scripts/Lib/jquery.fileupload.js',
@@ -123,8 +122,14 @@
 
         //Eventos para el botón de eliminación de ensamblado.
         $('.deleteAssemblyButton').on('click', function () {
-            var assemblyName = $(this).attr('data-assembly-name');
-            bindingDirective.deleteAssembly(assemblyName);
+            var deleteAssemblyButton = $(this),
+                assemblyName = deleteAssemblyButton.attr('data-assembly-name'),
+                version = deleteAssemblyButton
+                    .closest('.bindingDirective')
+                    .find('.installedVersion:selected')
+                    .val();
+
+            bindingDirective.deleteAssembly(assemblyName, version);
             showList();
         });
 
@@ -208,8 +213,6 @@
         dragdropTarget.off('dragenter');
         dragdropTarget.off('dragleave');
         dragdropTarget.off('drop');
-
-        $('#fileupload').off('fileupload');
     }
 
 })(jQuery);

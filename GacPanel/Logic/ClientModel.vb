@@ -9,6 +9,15 @@ Public Class InstalledVersion
         End Set
     End Property
     Private m_Parts As List(Of Integer)
+    Public Property Selected() As Boolean
+        Get
+            Return m_Selected
+        End Get
+        Set(value As Boolean)
+            m_Selected = Value
+        End Set
+    End Property
+    Private m_Selected As Boolean
 End Class
 
 Public Class LowerBound

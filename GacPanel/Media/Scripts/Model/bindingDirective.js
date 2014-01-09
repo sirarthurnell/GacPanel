@@ -91,8 +91,17 @@ bindingDirective = (function () {
     /// </summary>
     /// <param name="assemblyName">Nombre del ensamblado
     /// que se quiere eliminar.</param>
-    function deleteAssembly(assemblyName) {
+    /// <param name="selectedVersion">Versión a eliminar
+    /// seleccionada.</param>
+    function deleteAssembly(assemblyName, selectedVersion) {
         var directive = list({ 'Name': assemblyName }).get()[0];
+
+        $.each(directive.InstalledVersions, function (index, version) {
+            if (version.VersionAsString() == selectedVersion) {
+                version.Selected = true;
+            }
+        });
+
         directive.State = "Removed";
     }
 
@@ -219,6 +228,7 @@ bindingDirective = (function () {
 
             $.each(bindingDirective.InstalledVersions, function (index, version) {
                 $.extend(version, versionMixing);
+                version.Selected = false;
             });
 
             $.each(bindingDirective.Redirections, function (index, redirection) {
