@@ -34,7 +34,6 @@ Public Class GacUtil
     Public Function Execute(ByVal args As String) As String
         Dim procUtil As Process
         Dim procInfoUtil As ProcessStartInfo
-        Dim datStartProcessDate As Date = Date.MinValue
         Dim output As String
 
         'Obtenemos un objeto de proceso que representará al gacUtil
@@ -43,18 +42,15 @@ Public Class GacUtil
         procInfoUtil = New ProcessStartInfo()
         procInfoUtil.FileName = _pathToGacUtil
         procInfoUtil.Arguments = args
-        'procInfoUtil.WindowStyle = ProcessWindowStyle.Hidden
         procInfoUtil.UseShellExecute = False
         procInfoUtil.RedirectStandardOutput = True
         procInfoUtil.CreateNoWindow = True
         procUtil.StartInfo = procInfoUtil
 
-        'Guardamos la fecha en la que se lanzó el proceso.
-        datStartProcessDate = Date.Now
+        'Obtenemos la salida.
         procUtil.Start()
-
-        'Mostramos la salida.
         output = procUtil.StandardOutput.ReadToEnd()
+        procUtil.WaitForExit(60000) 'un minuto.
 
         If procUtil.ExitCode <> 0 Then
             'Si el ejecutable terminó de forma inesperada, lanzamos una excepción.

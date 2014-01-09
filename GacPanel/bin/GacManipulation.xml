@@ -367,6 +367,12 @@ GacManipulation
  Instala el ensamblado especificado.
  </summary>
 	<param name="path">Ruta al ensamblado a instalar.</param>
+</member><member name="M:GacManipulation.Gac.InstallAssemblies(System.Collections.Generic.IEnumerable{System.String})">
+	<summary>
+ Instala los ensamblados especificados.
+ </summary>
+	<param name="paths">Rutas a los ensamblados
+ a instalar.</param>
 </member><member name="M:GacManipulation.Gac.UnistallAssembly(System.String,System.String,System.String)">
 	<summary>
  Quita el ensamblado especificado.

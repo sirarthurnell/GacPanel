@@ -39,11 +39,14 @@ Public Class ConfigurationApplycator
     ''' a instalar.</param>
     Public Sub InstallAssemblies(ByVal assemblies As IEnumerable(Of AssemblyToInstall))
         Dim newDirectives As New List(Of BindingDirective)()
+        Dim assembliesPaths As New List(Of String)()
 
         For Each currentAssembly In assemblies
-            _gac.InstallAssembly(currentAssembly.Path)
+            assembliesPaths.Add(currentAssembly.Path)
             newDirectives.Add(currentAssembly.SuggestedDirective)
         Next
+
+        _gac.InstallAssemblies(assembliesPaths)
 
         AddReplaceDirectives(newDirectives)
         _machineConfig.SaveDirectives()

@@ -1,4 +1,6 @@
-﻿''' <summary>
+﻿Imports System.IO
+
+''' <summary>
 ''' Representa la caché de ensamblados global.
 ''' </summary>
 Public Class Gac
@@ -22,6 +24,28 @@ Public Class Gac
     Public Sub InstallAssembly(ByVal path As String)
         Dim args As String = String.Format("/i ""{0}""", path)
         _gacutil.Execute(args)
+    End Sub
+
+    ''' <summary>
+    ''' Instala los ensamblados especificados.
+    ''' </summary>
+    ''' <param name="paths">Rutas a los ensamblados
+    ''' a instalar.</param>
+    Public Sub InstallAssemblies(ByVal paths As IEnumerable(Of String))
+        Dim tempFile As String = Path.GetTempFileName()
+
+        Using sw As New StreamWriter(tempFile)
+            For Each currentPath In paths
+                sw.WriteLine(currentPath)
+            Next
+        End Using
+
+        Dim args As String = String.Format("/il ""{0}""", tempFile)
+        _gacutil.Execute(args)
+
+        If File.Exists(tempFile) Then
+            File.Delete(tempFile)
+        End If
     End Sub
 
     ''' <summary>
