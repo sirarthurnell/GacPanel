@@ -55,6 +55,7 @@ Public Class ConfigurationApplycator
     ''' <param name="changes">Lista de cambios.</param>
     Private Sub RemoveRemovedAssemblies(ByVal changes As List(Of RootObject))
         Dim changesCopy As New List(Of RootObject)(changes)
+        Dim directiveRedirectionsToRemove As New List(Of BindingDirective)()
 
         For Each currentChange In changesCopy
             If currentChange.State = "Removed" Then
@@ -63,8 +64,17 @@ Public Class ConfigurationApplycator
 
                 Dim versionToRemove = String.Join(".", selectedVersion.Parts)
                 _gac.UnistallAssembly(currentChange.Name, currentChange.Token, versionToRemove)
+
+                Dim directiveToRemove = TranslateToBindingDirective(currentChange)
+                Dim redirectionToRemove = (From redirection In directiveToRemove.Redirections
+                                          Where redirection.TargetVersion.ToString() = versionToRemove).FirstOrDefault()
+
+                directiveToRemove.Redirections.Remove(redirectionToRemove)
+                directiveRedirectionsToRemove.Add(directiveToRemove)
             End If
         Next
+
+        RemoveEmptyDirectives(directiveRedirectionsToRemove)
     End Sub
 
     ''' <summary>
@@ -76,21 +86,16 @@ Public Class ConfigurationApplycator
         Dim machineConfig = _framework.MachineConfigFile
 
         Dim changedDirectives = From clientDirective In changes
-                                Where clientDirective.State = "Changed" OrElse clientDirective.State = "NewInstall"
+                                Where clientDirective.State <> "Unchanged"
                                 Select TranslateToBindingDirective(clientDirective)
         AddReplaceDirectives(changedDirectives)
-
-        Dim removedDirectives = From clientDirective In changes
-                                Where clientDirective.State = "Removed"
-                                Select TranslateToBindingDirective(clientDirective)
-        RemoveDirectives(removedDirectives)
     End Sub
 
     ''' <summary>
     ''' Elimina las directivas indicadas.
     ''' </summary>
     ''' <param name="directives">Directivas a eliminar.</param>
-    Private Sub RemoveDirectives(ByVal directives As IEnumerable(Of BindingDirective))
+    Private Sub RemoveEmptyDirectives(ByVal directives As IEnumerable(Of BindingDirective))
         Dim currentDirectives = _machineConfig.Directives
         For Each changedDirective In directives
             Dim currentChanged As BindingDirective = changedDirective
@@ -98,7 +103,7 @@ Public Class ConfigurationApplycator
                                                         Return String.Compare(currentDirective.Name, currentChanged.Name, StringComparison.InvariantCultureIgnoreCase) = 0
                                                     End Function)
 
-            If index >= 0 Then
+            If index >= 0 AndAlso currentChanged.Redirections.Count = 0 Then
                 currentDirectives.RemoveAt(index)
             End If
         Next
@@ -122,6 +127,8 @@ Public Class ConfigurationApplycator
                 currentDirectives(index) = currentChanged
             End If
         Next
+
+        RemoveEmptyDirectives(directives)
     End Sub
 
     ''' <summary>

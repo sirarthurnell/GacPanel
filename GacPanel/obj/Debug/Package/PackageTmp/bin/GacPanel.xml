@@ -118,7 +118,7 @@ GacPanel
  </summary>
 	<param name="changes">Cambios relativos a las directivas
  de enlace.</param>
-</member><member name="M:GacPanel.ConfigurationApplycator.RemoveDirectives(System.Collections.Generic.IEnumerable{GacManipulation.BindingDirective})">
+</member><member name="M:GacPanel.ConfigurationApplycator.RemoveEmptyDirectives(System.Collections.Generic.IEnumerable{GacManipulation.BindingDirective})">
 	<summary>
  Elimina las directivas indicadas.
  </summary>

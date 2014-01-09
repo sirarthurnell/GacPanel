@@ -134,6 +134,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon.ico" />
     <Content Include="Handlers\DirectivesListHandler.ashx" />
     <Content Include="Handlers\ApplyChangesHandler.ashx" />
     <None Include="Media\Assets\applyChanges.svg" />
