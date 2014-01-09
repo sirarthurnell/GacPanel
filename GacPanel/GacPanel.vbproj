@@ -148,7 +148,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <Content Include="directivesList.htm" />
+    <Content Include="index.htm" />
     <None Include="Fake\assembliesListFake.json" />
     <Content Include="Media\Images\Icons\add.png" />
     <Content Include="Media\Images\Icons\applyChanges.png" />
