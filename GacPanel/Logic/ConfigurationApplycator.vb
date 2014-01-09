@@ -86,7 +86,7 @@ Public Class ConfigurationApplycator
         Dim machineConfig = _framework.MachineConfigFile
 
         Dim changedDirectives = From clientDirective In changes
-                                Where clientDirective.State <> "Unchanged"
+                                Where clientDirective.State = "Changed" OrElse clientDirective.State = "NewInstall"
                                 Select TranslateToBindingDirective(clientDirective)
         AddReplaceDirectives(changedDirectives)
     End Sub

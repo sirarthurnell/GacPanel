@@ -61,7 +61,11 @@ Public Class UploadHandler
 
         If filesCount > 0 Then
 
-            Dim tempPath As String = context.Server.MapPath("~/Temp")
+            Dim rootPath As String = context.Server.MapPath("~")
+            Dim tempPath As String = Path.Combine(rootPath, "Temp")
+            If Not Directory.Exists(tempPath) Then
+                Directory.CreateDirectory(tempPath)
+            End If
 
             For i As Integer = 0 To uploadedFiles.Count - 1
                 Dim uploadedFile = uploadedFiles(i)
