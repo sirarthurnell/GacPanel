@@ -30,6 +30,7 @@ Public Class MachineConfigFile
     Public Sub Load()
         Dim text As String = ReadText()
         _md5 = Cryptography.ComputeMd5(text)
+        _framework.Gac.Reset()
 
         Dim machineFile As XDocument = XDocument.Parse(text)
         Dim ns As XNamespace = "urn:schemas-microsoft-com:asm.v1"

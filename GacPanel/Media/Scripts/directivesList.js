@@ -31,12 +31,44 @@
     function loadList() {
         bindingDirective.loadAll(
             function success() {
+                unsetModelHandlers();
                 showList();
+                setModelHandlers();
             },
             function failure() {
                 alert('No se ha podido cargar la lista de ensamblados.');
             }
         );
+    }
+
+    /// <summary>
+    /// Fija los manejadores de eventos del modelo.
+    /// </summary>
+    function setModelHandlers() {
+        $(document).on(
+            [
+                'assembliesInstalled',
+                'assemblyDeleted',
+                'redirectionCreated',
+                'redirectionDeleted'
+            ].join(" "),
+            function () {
+                showList();
+            }
+        );
+    }
+
+    /// <summary>
+    /// Elimina los manejadores de eventos del modelo.
+    /// </summary>
+    function unsetModelHandlers() {
+        $(document).off(
+            [
+                'assembliesInstalled',
+                'assemblyDeleted',
+                'redirectionCreated',
+                'redirectionDeleted'
+            ].join(" "));
     }
 
     /// <summary>
@@ -48,19 +80,19 @@
         directivesList = bindingDirective.getList()().get(),
         data = { Data: directivesList };
 
-        eraseEventHandlers();
+        eraseInterfaceEventHandlers();
 
         assembliesListHtml = Mustache.render(templateHtml, data);
         $('#assembliesListContainer').html(assembliesListHtml);
 
-        addEventHandlers();
+        addInterfaceEventHandlers();
     }
 
     /// <summary>
     /// Establece los manejadores de eventos de la
     /// lista de ensamblados.
     /// </summary>
-    function addEventHandlers() {
+    function addInterfaceEventHandlers() {
 
         //Eventos para los controles de versión.
         $('.versionControl').on('click', function setVersionControlClick() {
@@ -80,7 +112,7 @@
                 newVersion = versionInput.val(),
                 assemblyName = currentCell.attr('data-assembly-name');
 
-                if (newVersion != oldVersion) {
+                try {
 
                     if (currentCell.hasClass('lowerBound')) {
                         bindingDirective.updateLowerBound(assemblyName, redirectionId, newVersion);
@@ -90,16 +122,22 @@
                         bindingDirective.updateTargetVersion(assemblyName, redirectionId, newVersion);
                     }
 
+                    currentCell.html(newVersion);
+
                     currentCell
                     .closest('.redirections')
                     .prev('.bindingDirective')
                     .addClass('Changed');
 
+                } catch (err) {
+                    versionInput.addClass('versionError');
+                    alert(err.message);
+                    currentCell.html(oldVersion);
+                } finally {
+                    versionInput.remove();
+                    currentCell.on('click', setVersionControlClick);
                 }
 
-                currentCell.html(newVersion);
-                versionInput.remove();
-                currentCell.on('click', setVersionControlClick);
             });
         });
 
@@ -110,14 +148,12 @@
             redirectionId = deleteButton.attr('data-id');
 
             bindingDirective.deleteRedirection(assemblyName, redirectionId);
-            showList();
         });
 
         //Eventos para el botón de adición de redirecciones.
         $('.addButton').on('click', function () {
             var assemblyName = $(this).attr('data-assembly-name');
             bindingDirective.createRedirection(assemblyName);
-            showList();
         });
 
         //Eventos para el botón de eliminación de ensamblado.
@@ -130,7 +166,6 @@
                     .val();
 
             bindingDirective.deleteAssembly(assemblyName, version);
-            showList();
         });
 
         //Eventos para el botón de descartar cambios.
@@ -148,9 +183,9 @@
                     alert(result.Data);
                 }
             },
-        function failure() {
-            alert('Fallo al aplicar los cambios en el servidor.');
-        });
+            function failure() {
+                alert('Fallo al aplicar los cambios en el servidor.');
+            });
         });
 
         //Soporte drag&drop.
@@ -181,8 +216,16 @@
                 var result = data.result;
 
                 if (result.Success) {
-                    bindingDirective.installAssemblies(result);
-                    showList();
+
+                    try {
+
+                        bindingDirective.installAssemblies(result);
+                        showList();
+
+                    } catch (err) {
+                        alert(err.message);
+                    }
+
                 } else {
                     alert(result.Data);
                 }
@@ -202,7 +245,7 @@
     /// Elimina los manejadores de eventos de la
     /// lista de ensamblados.
     /// </summary>
-    function eraseEventHandlers() {
+    function eraseInterfaceEventHandlers() {
         $('.versionControl').off('click');
         $('.addButton').off('click');
         $('.deleteButton').off('click');

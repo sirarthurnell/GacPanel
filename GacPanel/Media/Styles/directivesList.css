@@ -149,10 +149,15 @@
     text-align: right;    
 }
 
-.versionControl:focus
+.versionControl:focus, .versionError
 {
     height: 1em;
     width: 6.5em;
+}
+
+.versionError
+{
+    border: 0.1em solid red;
 }
 
 .dragdrop

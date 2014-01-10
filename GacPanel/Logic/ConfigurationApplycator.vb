@@ -38,18 +38,12 @@ Public Class ConfigurationApplycator
     ''' <param name="assemblies">Lista de ensamblados
     ''' a instalar.</param>
     Public Sub InstallAssemblies(ByVal assemblies As IEnumerable(Of AssemblyToInstall))
-        Dim newDirectives As New List(Of BindingDirective)()
         Dim assembliesPaths As New List(Of String)()
-
         For Each currentAssembly In assemblies
             assembliesPaths.Add(currentAssembly.Path)
-            newDirectives.Add(currentAssembly.SuggestedDirective)
         Next
 
         _gac.InstallAssemblies(assembliesPaths)
-
-        AddReplaceDirectives(newDirectives)
-        _machineConfig.SaveDirectives()
     End Sub
 
     ''' <summary>
@@ -58,40 +52,31 @@ Public Class ConfigurationApplycator
     ''' <param name="changes">Lista de cambios.</param>
     Private Sub RemoveRemovedAssemblies(ByVal changes As List(Of RootObject))
         Dim changesCopy As New List(Of RootObject)(changes)
-        Dim directiveRedirectionsToRemove As New List(Of BindingDirective)()
+        Dim currentDirectives = _machineConfig.Directives
+        Dim possiblyEmptyDirectives As New List(Of BindingDirective)()
 
         For Each currentChange In changesCopy
+
+            Dim currentChangeName As String = currentChange.Name
             If currentChange.State = "Removed" Then
-                Dim selectedVersion = (From version In currentChange.InstalledVersions
+
+                Dim versionToRemove = (From version In currentChange.InstalledVersions
                                       Where version.Selected).FirstOrDefault()
+                Dim versionToRemoveAsString = String.Join(".", versionToRemove.Parts)
+                _gac.UnistallAssembly(currentChange.Name, currentChange.Token, versionToRemoveAsString)
 
-                Dim versionToRemove = String.Join(".", selectedVersion.Parts)
-                _gac.UnistallAssembly(currentChange.Name, currentChange.Token, versionToRemove)
+                Dim currentDirective = (From directive In currentDirectives
+                                       Where String.Compare(directive.Name, currentChangeName, StringComparison.InvariantCultureIgnoreCase) = 0).FirstOrDefault()
+                Dim redirectionToRemove = (From redirection In currentDirective.Redirections
+                                          Where redirection.TargetVersion.ToString() = versionToRemoveAsString).FirstOrDefault()
+                currentDirective.Redirections.Remove(redirectionToRemove)
 
-                Dim directiveToRemove = TranslateToBindingDirective(currentChange)
-                Dim redirectionToRemove = (From redirection In directiveToRemove.Redirections
-                                          Where redirection.TargetVersion.ToString() = versionToRemove).FirstOrDefault()
-
-                directiveToRemove.Redirections.Remove(redirectionToRemove)
-                directiveRedirectionsToRemove.Add(directiveToRemove)
+                possiblyEmptyDirectives.Add(currentDirective)
             End If
+
         Next
 
-        RemoveEmptyDirectives(directiveRedirectionsToRemove)
-    End Sub
-
-    ''' <summary>
-    ''' Aplica los cambios relativos a las directivas de enlace.
-    ''' </summary>
-    ''' <param name="changes">Cambios relativos a las directivas
-    ''' de enlace.</param>
-    Private Sub ApplyDirectivesChangesFromClient(ByVal changes As IEnumerable(Of RootObject))
-        Dim machineConfig = _framework.MachineConfigFile
-
-        Dim changedDirectives = From clientDirective In changes
-                                Where clientDirective.State = "Changed" OrElse clientDirective.State = "NewInstall"
-                                Select TranslateToBindingDirective(clientDirective)
-        AddReplaceDirectives(changedDirectives)
+        RemoveEmptyDirectives(possiblyEmptyDirectives)
     End Sub
 
     ''' <summary>
@@ -110,6 +95,18 @@ Public Class ConfigurationApplycator
                 currentDirectives.RemoveAt(index)
             End If
         Next
+    End Sub
+
+    ''' <summary>
+    ''' Aplica los cambios relativos a las directivas de enlace.
+    ''' </summary>
+    ''' <param name="changes">Cambios relativos a las directivas
+    ''' de enlace.</param>
+    Private Sub ApplyDirectivesChangesFromClient(ByVal changes As IEnumerable(Of RootObject))
+        Dim changedDirectives = From clientDirective In changes
+                                Where clientDirective.State = "Changed" OrElse clientDirective.State = "NewInstall"
+                                Select TranslateToBindingDirective(clientDirective)
+        AddReplaceDirectives(changedDirectives)
     End Sub
 
     ''' <summary>

@@ -112,17 +112,17 @@ GacPanel
  Elimina el ensamblado marcado como eliminado.
  </summary>
 	<param name="changes">Lista de cambios.</param>
+</member><member name="M:GacPanel.ConfigurationApplycator.RemoveEmptyDirectives(System.Collections.Generic.IEnumerable{GacManipulation.BindingDirective})">
+	<summary>
+ Elimina las directivas indicadas.
+ </summary>
+	<param name="directives">Directivas a eliminar.</param>
 </member><member name="M:GacPanel.ConfigurationApplycator.ApplyDirectivesChangesFromClient(System.Collections.Generic.IEnumerable{GacPanel.RootObject})">
 	<summary>
  Aplica los cambios relativos a las directivas de enlace.
  </summary>
 	<param name="changes">Cambios relativos a las directivas
  de enlace.</param>
-</member><member name="M:GacPanel.ConfigurationApplycator.RemoveEmptyDirectives(System.Collections.Generic.IEnumerable{GacManipulation.BindingDirective})">
-	<summary>
- Elimina las directivas indicadas.
- </summary>
-	<param name="directives">Directivas a eliminar.</param>
 </member><member name="M:GacPanel.ConfigurationApplycator.AddReplaceDirectives(System.Collections.Generic.IEnumerable{GacManipulation.BindingDirective})">
 	<summary>
  Añade/reemplaza las directivas de enlace indicadas.

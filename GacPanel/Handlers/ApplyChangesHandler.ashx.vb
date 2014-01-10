@@ -14,7 +14,6 @@ Public Class ApplyChangesHandler
             Dim changes = JsonConvert.DeserializeObject(Of List(Of RootObject))(directivesAsJson)
 
             Dim applycator As New ConfigurationApplycator(Framework.Instance(FrameworkVersion.Version2))
-            applycator.ApplyChanges(changes)
 
             Dim assembliesToInstall As List(Of AssemblyToInstall)
             assembliesToInstall = context.Session(Keys.AssembliesToInstall)
@@ -22,6 +21,8 @@ Public Class ApplyChangesHandler
                 applycator.InstallAssemblies(assembliesToInstall)
                 context.Session(Keys.AssembliesToInstall) = Nothing
             End If
+
+            applycator.ApplyChanges(changes)
 
             JsonResponse.TransmitOk(context.Response)
 

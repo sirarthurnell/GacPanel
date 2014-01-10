@@ -2,7 +2,7 @@
 /// Modelo que representa las directivas de enlace
 /// en el cliente.
 /// </summary>
-bindingDirective = (function () {
+bindingDirective = (function ($) {
 
     var versionMixing = {
         VersionAsString: function () {
@@ -12,10 +12,16 @@ bindingDirective = (function () {
             var newPartsAsString = newVersion.split('.'),
                 newParts = [];
 
-            //TODO validar la entrada del usuario.
+            function isNumber(n) {
+                return !isNaN(parseFloat(n)) && isFinite(n);
+            }
 
             $.each(newPartsAsString, function (index, part) {
-                newParts.push(parseInt(part));
+                if (isNumber(part)) {
+                    newParts.push(parseInt(part));
+                } else {
+                    throw new Error('La cadena ' + newVersion + ' no es un número de versión válido.');
+                }
             });
 
             this.Parts = newParts;
@@ -40,11 +46,40 @@ bindingDirective = (function () {
     /// de enlace propuestas para la instalación.</param>
     function installAssemblies(data) {
         adaptModel(data);
-        console.log(data);
         $.each(data.Data, function (index, directive) {
-            list.insert(directive);
-            directive.State = 'NewInstall';
+
+            var directivesWithName,
+                existentDirective,
+                existentVersion,
+                newVersion = directive.Redirections[0].TargetVersion,
+                i, j, installedVersionsCopy;
+
+            directivesWithName = list({ 'Name': directive.Name }).get();
+
+            if (directivesWithName.length > 0) {
+
+                existentDirective = directivesWithName[0];
+                installedVersionsCopy = existentDirective.InstalledVersions.slice();
+                for (i = 0; i < installedVersionsCopy.length; i++) {
+                    existentVersion = installedVersionsCopy[i];
+
+                    if (existentVersion.VersionAsString() != newVersion.VersionAsString()) {
+                        existentDirective.InstalledVersions.push(newVersion);
+                        existentDirective.Redirections.push(directive.Redirections[0]);
+                        existentDirective.State = 'NewInstall';
+                    } else {
+                        throw new Error('No se permite más de una instalación de la misma versión de un ensamblado. Escoja otra versión del ensamblado ' + existentDirective.Name + '.');
+                    }
+                }
+
+            } else {
+                list.insert(directive);
+                directive.State = 'NewInstall';
+            }
+
         });
+
+        triggerEvent('assembliesInstalled');
     }
 
     /// <summary>
@@ -103,6 +138,8 @@ bindingDirective = (function () {
         });
 
         directive.State = "Removed";
+
+        triggerEvent('assemblyDeleted');
     }
 
     /// <summary>
@@ -133,7 +170,11 @@ bindingDirective = (function () {
         newRedirection.TargetVersion.setVersionAsString('0.0.0.0');
         directive.Redirections.push(newRedirection);
         directive.State = "Changed";
+
+        triggerEvent('redirectionCreated', directive, newRedirection);
     }
+
+
 
     /// <summary>
     /// Actualiza la versión de destino de la redirección.
@@ -145,6 +186,8 @@ bindingDirective = (function () {
         var combo = findRedirection(assemblyName, redirectionId);
         combo.redirection.TargetVersion.setVersionAsString(newVersion);
         combo.directive.State = "Changed";
+
+        triggerEvent('targetVersionUpdated', combo.directive, combo.redirection);
     }
 
     /// <summary>
@@ -157,6 +200,8 @@ bindingDirective = (function () {
         var combo = findRedirection(assemblyName, redirectionId);
         combo.redirection.Range.LowerBound.setVersionAsString(newVersion);
         combo.directive.State = "Changed";
+
+        triggerEvent('lowerBoundUpdated', combo.directive, combo.redirection);
     }
 
     /// <summary>
@@ -169,6 +214,8 @@ bindingDirective = (function () {
         var combo = findRedirection(assemblyName, redirectionId);
         combo.redirection.Range.UpperBound.setVersionAsString(newVersion);
         combo.directive.State = "Changed";
+
+        triggerEvent('upperBoundUpdated', combo.directive, combo.redirection);
     }
 
     /// <summary>
@@ -189,6 +236,8 @@ bindingDirective = (function () {
         }
 
         directive.State = "Changed";
+
+        triggerEvent('redirectionDeleted', directive, redirectionToDelete);
     }
 
     /// <summary>
@@ -250,6 +299,17 @@ bindingDirective = (function () {
         $.extend(redirection.Range.UpperBound, versionMixing);
     }
 
+    /// <summary>
+    /// Lanza el evento indicado. Los argumentos
+    /// se pasan como parámetros al evento a lanzar.
+    /// </summary>
+    function triggerEvent() {
+        var args = Array.prototype.slice.call(arguments, 0),
+            doc = $(document);
+
+        doc.trigger.apply(doc, args);
+    }
+
     return {
         installAssemblies: installAssemblies,
         loadAll: loadAll,
@@ -263,4 +323,4 @@ bindingDirective = (function () {
         getList: getList
     };
 
-})();
+})(jQuery);
