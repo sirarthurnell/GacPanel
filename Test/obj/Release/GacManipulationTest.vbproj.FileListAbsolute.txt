@@ -1,0 +1,15 @@
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Release\Files\Mityc.Sigetel.Base.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Release\Test.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Release\Test.pdb
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Release\Test.xml
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Release\GacManipulation.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Release\Mono.Cecil.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Release\Mono.Cecil.Mdb.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Release\Mono.Cecil.Pdb.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Release\Mono.Cecil.Rocks.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Release\GacManipulation.pdb
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\bin\Release\GacManipulation.xml
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\obj\Release\Test.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\obj\Release\Test.xml
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\Test\obj\Release\Test.pdb

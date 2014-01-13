@@ -39,6 +39,7 @@ Public Class ConfigurationApplycator
     ''' a instalar.</param>
     Public Sub InstallAssemblies(ByVal assemblies As IEnumerable(Of AssemblyToInstall))
         Dim assembliesPaths As New List(Of String)()
+
         For Each currentAssembly In assemblies
             assembliesPaths.Add(currentAssembly.Path)
         Next

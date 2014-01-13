@@ -15,7 +15,12 @@ Public Class UploadHandler
             Dim directivesList = From proposedAssembly In proposedAssemblies
                                  Select proposedAssembly.SuggestedDirective
 
-            context.Session(Keys.AssembliesToInstall) = proposedAssemblies
+            If context.Session(Keys.AssembliesToInstall) Is Nothing Then
+                context.Session(Keys.AssembliesToInstall) = proposedAssemblies
+            Else
+                Dim sessionList As List(Of AssemblyToInstall) = context.Session(Keys.AssembliesToInstall)
+                sessionList.AddRange(proposedAssemblies)
+            End If
 
             Dim result As New OperationResult(Of List(Of BindingDirective))(True, directivesList.ToList())
             JsonResponse.TransmitOject(context.Response, result)

@@ -1,0 +1,14 @@
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Release\GacManipulation.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Release\GacManipulation.pdb
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Release\GacManipulation.xml
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Release\Mono.Cecil.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Release\Mono.Cecil.Mdb.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Release\Mono.Cecil.Pdb.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\bin\Release\Mono.Cecil.Rocks.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Release\GacManipulation.Resources.resources
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Release\GenerateResource.read.1.tlog
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Release\GenerateResource.write.1.tlog
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Release\GacManipulation.dll
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Release\GacManipulation.xml
+C:\Documents and Settings\amedinaj\Mis documentos\Visual Studio 2010\Projects\GacPanel\GacManipulation\obj\Release\GacManipulation.pdb
