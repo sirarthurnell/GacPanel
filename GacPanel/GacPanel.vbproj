@@ -184,9 +184,7 @@
     <Content Include="Handlers\UploadHandler.ashx" />
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Temp\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\GacManipulation\GacManipulation.vbproj">
       <Project>{0B0FFC24-CBF7-4FE8-BDC5-1B899FFB934A}</Project>
