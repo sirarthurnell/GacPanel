@@ -32,6 +32,7 @@
         bindingDirective.loadAll(
             function success() {
                 unsetModelHandlers();
+                showApplyChanges(false);
                 showList();
                 setModelHandlers();
             },
@@ -54,8 +55,35 @@
             ].join(" "),
             function () {
                 showList();
+                showApplyChanges(true);
             }
         );
+    }
+
+    /// <summary>
+    /// Muestra u oculta el botón de aplicar cambios.
+    /// </summary>
+    /// <param name="show">True para mostrar el
+    /// botón. False para ocultarlo.</param>
+    function showApplyChanges(show) {
+        var applyChanges = $('.applyChanges');
+
+        if (show) {
+            applyChanges
+                .css('opacity', '0')
+                .css('visibility', 'visible')
+                .animate({
+                    opacity: 1
+                }, 500);
+        } else {
+            applyChanges
+                .css('opacity', '1')
+                .animate({
+                    opacity: 0
+                }, 500, function () {
+                    applyChanges.css('visibility', 'hidden');
+                });
+        }
     }
 
     /// <summary>
@@ -83,7 +111,9 @@
         eraseInterfaceEventHandlers();
 
         assembliesListHtml = Mustache.render(templateHtml, data);
-        $('#assembliesListContainer').html(assembliesListHtml);
+        $('#assembliesListContainer')
+            .empty()
+            .html(assembliesListHtml);
 
         addInterfaceEventHandlers();
     }
@@ -175,6 +205,8 @@
 
         //Eventos para el botón de aplicar cambios en el servidor.
         $('.applyChanges').on('click', function () {
+            showApplyChanges(false);
+
             bindingDirective.applyChanges(function success(result) {
                 if (result.Success) {
                     alert('Cambios aplicados con éxito.');
