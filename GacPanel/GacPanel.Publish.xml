@@ -2,27 +2,27 @@
 <publishData>
   <publishProfile publishUrl="C:\Inetpub\wwwroot\GacPanel" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Local" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
     <file relUrl="Media/Images/Icons/deleteAssembly.png" publishTime="01/03/2014 06:34:40" />
-    <file relUrl="bin/GacPanel.xml" publishTime="01/13/2014 12:36:27" />
-    <file relUrl="bin/GacManipulation.pdb" publishTime="01/13/2014 12:36:25" />
+    <file relUrl="bin/GacPanel.xml" publishTime="01/14/2014 17:54:55" />
+    <file relUrl="bin/GacManipulation.pdb" publishTime="01/14/2014 17:54:52" />
     <file relUrl="Media/Images/Icons/discardChanges.png" publishTime="01/03/2014 06:34:40" />
     <file relUrl="Media/Scripts/Lib/jquery.iframe-transport.js" publishTime="01/03/2014 06:34:40" />
-    <file relUrl="bin/GacManipulation.dll" publishTime="01/13/2014 12:36:25" />
+    <file relUrl="bin/GacManipulation.dll" publishTime="01/14/2014 17:54:52" />
     <file relUrl="upload.htm" publishTime="01/08/2014 16:36:29" />
     <file relUrl="Media/Scripts/Lib/jquery.fileupload.js" publishTime="01/03/2014 06:34:40" />
     <file relUrl="Media/Images/Icons/interface.png" publishTime="01/03/2014 06:34:40" />
-    <file relUrl="Media/Styles/directivesList.css" publishTime="01/10/2014 10:45:09" />
+    <file relUrl="Media/Styles/directivesList.css" publishTime="01/13/2014 16:42:00" />
     <file relUrl="Media/Images/Icons/delete.png" publishTime="01/03/2014 06:34:40" />
-    <file relUrl="Media/Scripts/directivesList.js" publishTime="01/10/2014 12:38:40" />
+    <file relUrl="Media/Scripts/directivesList.js" publishTime="01/13/2014 17:00:37" />
     <file relUrl="Media/Images/Icons/add.png" publishTime="01/03/2014 06:34:40" />
     <file relUrl="Media/Scripts/Lib/yepnope.1.5.4-min.js" publishTime="01/03/2014 06:34:40" />
     <file relUrl="bin/Newtonsoft.Json.xml" publishTime="01/03/2014 06:34:40" />
     <file relUrl="Media/Scripts/Lib/mustache.js" publishTime="01/03/2014 06:34:40" />
-    <file relUrl="bin/GacPanel.pdb" publishTime="01/13/2014 12:36:27" />
-    <file relUrl="bin/GacPanel.dll" publishTime="01/13/2014 12:36:27" />
+    <file relUrl="bin/GacPanel.pdb" publishTime="01/14/2014 17:54:55" />
+    <file relUrl="bin/GacPanel.dll" publishTime="01/14/2014 17:54:55" />
     <file relUrl="Media/Images/Icons/applyChanges.png" publishTime="01/03/2014 06:34:40" />
     <file relUrl="Media/Scripts/upload.js" publishTime="01/08/2014 18:25:03" />
     <file relUrl="packages.config" publishTime="01/03/2014 06:34:40" />
-    <file relUrl="index.htm" publishTime="01/09/2014 13:04:11" />
+    <file relUrl="index.htm" publishTime="01/13/2014 16:40:28" />
     <file relUrl="Media/Scripts/Lib/underscore-min.js" publishTime="01/03/2014 06:34:40" />
     <file relUrl="bin/Newtonsoft.Json.dll" publishTime="01/03/2014 06:34:40" />
     <file relUrl="bin/Mono.Cecil.dll" publishTime="01/03/2014 06:34:40" />
@@ -33,12 +33,12 @@
     <file relUrl="Media/Scripts/Model/bindingDirective.js" publishTime="01/10/2014 11:38:24" />
     <file relUrl="Media/Scripts/Lib/taffy-min.js" publishTime="01/03/2014 06:34:40" />
     <file relUrl="Media/Images/logo.png" publishTime="01/03/2014 06:34:40" />
-    <file relUrl="Web.config" publishTime="01/13/2014 12:36:33" />
+    <file relUrl="Web.config" publishTime="01/14/2014 17:55:02" />
     <file relUrl="Handlers/ApplyChangesHandler.ashx" publishTime="01/08/2014 10:47:00" />
     <file relUrl="Media/Scripts/Lib/jquery.ui.widget.js" publishTime="01/03/2014 06:34:40" />
     <file relUrl="Handlers/UploadHandler.ashx" publishTime="01/03/2014 06:34:40" />
     <file relUrl="favicon.ico" publishTime="01/09/2014 13:01:40" />
-    <file relUrl="bin/GacManipulation.xml" publishTime="01/13/2014 12:36:25" />
+    <file relUrl="bin/GacManipulation.xml" publishTime="01/14/2014 17:54:52" />
     <file relUrl="Media/Scripts/Utils/templateLoader.js" publishTime="01/03/2014 06:34:40" />
   </publishProfile>
 </publishData>

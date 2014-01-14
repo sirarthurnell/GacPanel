@@ -1,0 +1,87 @@
+﻿<script id="directivesListTemplate" type="text/html">
+
+    <table class="directivesList">
+
+        {{#Data}}
+
+        <tr class="bindingDirective {{State}}">
+            <td class="editButtonsRegion">
+                <img class="addButton" data-assembly-name="{{Name}}" src="Media/Images/Icons/add.png" alt="Añadir redirección" title="Añadir redirección" />
+            </td>
+            <td class="assemblyName">{{Name}}</td>
+
+            <td class="installedVersionsCell">
+                
+                <select class="installedVersions">
+
+                {{#InstalledVersions}}
+
+                    <option class="installedVersion" value="{{VersionAsString}}">{{VersionAsString}}</option>
+
+                {{/InstalledVersions}}
+
+                </select>
+
+            </td>
+
+            <td class="assemblyToken">{{Token}}</td>
+            
+            <td class="editAssemblyButtonsRegion">
+                <img class="deleteAssemblyButton" data-assembly-name="{{Name}}" src="Media/Images/Icons/deleteAssembly.png" alt="Eliminar ensamblado" title="Eliminar ensamblado" />
+            </td>            
+        </tr>
+            
+        <tr class="redirections">
+
+            <td colspan="5">
+            
+                <table class="redirectionsTable">
+
+                    {{#Redirections}}
+
+                    <tr class="redirection">
+
+                        <td class="editButtonsRegion">
+                            <img class="deleteButton" data-assembly-name="{{Name}}" data-id="{{Id}}" src="Media/Images/Icons/delete.png" alt="Eliminar redirección" title="Eliminar redirección" />
+                        </td>
+
+                        {{#Range}}
+
+                        {{#LowerBound}}
+
+                        <td class="lowerBound versionControl" data-assembly-name="{{Name}}" data-id="{{Id}}">{{VersionAsString}}</td>
+
+                        {{/LowerBound}}
+
+                        {{#UpperBound}}
+
+                        <td class="upperBound versionControl" data-assembly-name="{{Name}}" data-id="{{Id}}">{{VersionAsString}}</td>
+
+                        {{/UpperBound}}
+
+                        {{/Range}}
+
+                        <td>&nbsp;</td>
+
+                        {{#TargetVersion}}
+
+                        <td class="targetVersion versionControl" data-assembly-name="{{Name}}" data-id="{{Id}}">{{VersionAsString}}</td>
+
+                        {{/TargetVersion}}                    
+
+                    </tr>
+
+                    {{/Redirections}}
+
+                </table>
+
+            </td>            
+
+        </tr>            
+
+        {{/Data}}
+
+    </table>
+
+</script>
+

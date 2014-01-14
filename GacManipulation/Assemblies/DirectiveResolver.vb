@@ -101,7 +101,7 @@ Public Class DirectiveResolver
 
         For i As Integer = 0 To currentVersion.Parts.Count - 1
             If i < 1 Then
-                lowerBound = currentVersion.Parts(0).ToString()
+                lowerBound = "1"
             Else
                 lowerBound &= ".0"
             End If
@@ -111,7 +111,7 @@ Public Class DirectiveResolver
             End If
         Next
 
-        upperBound &= "66535"
+        upperBound &= "65535"
 
         Dim newRange As New BindingVersionRange(lowerBound, upperBound)
         Return newRange

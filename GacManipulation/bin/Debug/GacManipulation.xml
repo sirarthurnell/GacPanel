@@ -1,0 +1,545 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+GacManipulation
+</name>
+</assembly>
+<members>
+<member name="M:GacManipulation.GacUtil.#ctor(System.String)">
+	<summary>
+ Crea una instancia de GacUtil.
+ </summary>
+	<param name="pathToGacUtil">Ruta al gacUtil.</param>
+</member><member name="M:GacManipulation.GacUtil.Execute(System.String)">
+	<summary>
+ Ejecuta la herramienta gacutil con los argumentos especificados.
+ </summary>
+	<param name="args">Argumentos con los que se ejecutará la herramienta gacutil.</param>
+	<returns>Salida de gacutil.</returns>
+	<exception cref="T:GacManipulation.FailedGacUtilOperationException">Lanzada cuando se excede el tiempo
+ de espera para la operación que gacutil está realizado o bien cuando gacutil termina
+ de forma anormal.</exception>
+</member><member name="T:GacManipulation.GacUtil">
+	<summary>
+ Representa el ejecutable usado para añadir o quitar ensamblados
+ de la caché de ensamblados.
+ </summary>
+</member><member name="M:GacManipulation.FailedGacUtilOperationException.#ctor">
+	<summary>
+ Crea una nueva instancia de FailedGacUtilOperationException.
+ </summary>
+</member><member name="M:GacManipulation.FailedGacUtilOperationException.#ctor(System.String)">
+	<summary>
+ Crea una nueva instancia de FailedGacUtilOperationException.
+ </summary>
+	<param name="strMessage">Mensaje que mostrará la excepción.</param>
+</member><member name="M:GacManipulation.FailedGacUtilOperationException.#ctor(System.String,System.Exception)">
+	<summary>
+ Crea una nueva instancia de FailedGacUtilOperationException.
+ </summary>
+	<param name="strMessage">Mensaje que mostrará la excepción.</param>
+	<param name="ex">Excepción anexada.</param>
+</member><member name="T:GacManipulation.FailedGacUtilOperationException">
+	<summary>
+ Representa una excepción que se lanza cuando una operación que se esperaba
+ que realizase el gacutil ha fallado.
+ </summary>
+</member><member name="M:GacManipulation.BindingDirective.#ctor(System.String,System.String)">
+	<summary>
+ Crea una nueva instancia de BindingDirective.
+ </summary>
+	<param name="name">Nombre del ensamblado.</param>
+	<param name="token">Token del ensamblado.</param>
+</member><member name="P:GacManipulation.BindingDirective.Name">
+	<summary>
+ Obtiene el nombre del ensamblado.
+ </summary>
+</member><member name="P:GacManipulation.BindingDirective.Token">
+	<summary>
+ Obtiene el token público del ensamblado.
+ </summary>
+</member><member name="P:GacManipulation.BindingDirective.InstalledVersions">
+	<summary>
+ Obtiene las versiones del ensamblado instaladas
+ en la GAC.
+ </summary>
+</member><member name="P:GacManipulation.BindingDirective.Redirections">
+	<summary>
+ Obtiene la lista de redirecciones de esta
+ directiva de enlace.
+ </summary>
+</member><member name="M:GacManipulation.BindingDirective.ToString">
+	<summary>
+ Obtiene una representación en cadena de
+ la directiva de enlace actual.
+ </summary>
+	<returns>Representación en cadena de
+ la directiva de enlace actual.</returns>
+</member><member name="T:GacManipulation.BindingDirective">
+	<summary>
+ Representa una directiva de enlace.
+ </summary>
+</member><member name="M:GacManipulation.AssemblyInfo.#ctor">
+	<summary>
+ Crea una nueva instancia de AssemblyInfo.
+ </summary>
+</member><member name="M:GacManipulation.AssemblyInfo.CreateFromFullName(System.String)">
+	<summary>
+ Crea una nueva instancia de AssemblyInfo a partir
+ de un nombre completo de ensamblado.
+ </summary>
+	<param name="fullName">Nombre completo del ensamblado.</param>
+	<returns>Información del ensamblado.</returns>
+</member><member name="M:GacManipulation.AssemblyInfo.Load(System.String)">
+	<summary>
+ Carga los datos del ensamblado.
+ </summary>
+	<param name="path">Ruta en disco del ensamblado.</param>
+</member><member name="P:GacManipulation.AssemblyInfo.HasPublicKey">
+	<summary>
+ Obtiene si el ensamblado tiene clave pública.
+ </summary>
+</member><member name="P:GacManipulation.AssemblyInfo.Name">
+	<summary>
+ Obtiene el nombre corto del ensamblado.
+ </summary>
+</member><member name="P:GacManipulation.AssemblyInfo.FullName">
+	<summary>
+ Obtiene el nombre largo del ensamblado.
+ </summary>
+</member><member name="P:GacManipulation.AssemblyInfo.PublicKeyToken">
+	<summary>
+ Obtiene el token público del ensamblado.
+ </summary>
+</member><member name="P:GacManipulation.AssemblyInfo.Version">
+	<summary>
+ Obtiene la versión del ensamblado.
+ </summary>
+</member><member name="M:GacManipulation.AssemblyInfo.TranslateToken(System.Byte[])">
+	<summary>
+ Traduce el token especificado a cadena.
+ </summary>
+	<param name="token">Token a traducir.</param>
+	<returns>Token como cadena.</returns>
+</member><member name="T:GacManipulation.AssemblyInfo">
+	<summary>
+ Junta información de un ensamblado.
+ </summary>
+</member><member name="M:GacManipulation.MachineConfigFile.#ctor(GacManipulation.Framework)">
+	<summary>
+ Crea una nueva instancia de MachineConfig.
+ </summary>
+	<param name="framework">Framework al que
+ pertenece el archivo.</param>
+</member><member name="M:GacManipulation.MachineConfigFile.Load">
+	<summary>
+ Carga el archivo machine.config.
+ </summary>
+</member><member name="P:GacManipulation.MachineConfigFile.IsLoaded">
+	<summary>
+ Obtiene si el archivo machine.cofig fue cargado.
+ </summary>
+</member><member name="P:GacManipulation.MachineConfigFile.Md5">
+	<summary>
+ Obtiene la firma Md5 del archivo cargado.
+ </summary>
+</member><member name="M:GacManipulation.MachineConfigFile.ReadText">
+	<summary>
+ Lee el texto del archivo machine.config.
+ </summary>
+	<returns>Texto del archivo machine.config.</returns>
+</member><member name="P:GacManipulation.MachineConfigFile.Directives">
+	<summary>
+ Directivas de enlace declaradas en el archivo
+ machine.config.
+ </summary>
+</member><member name="M:GacManipulation.MachineConfigFile.SaveDirectives">
+	<summary>
+ Guarda las directivas de enlace en el archivo
+ machine.config.
+ </summary>
+</member><member name="M:GacManipulation.MachineConfigFile.SaveBackup">
+	<summary>
+ Guarda una copia de seguridad del archivo
+ de configuración.
+ </summary>
+</member><member name="T:GacManipulation.MachineConfigFile">
+	<summary>
+ Representa el archivo de configuración
+ del framework.
+ </summary>
+</member><member name="M:GacManipulation.DirectiveResolver.#ctor(GacManipulation.IBindingDirectiveSource)">
+	<summary>
+ Crea una nueva instancia de DirectiveResolver.
+ </summary>
+	<param name="directiveSource">Fuente de directivas
+ de enlace.</param>
+</member><member name="M:GacManipulation.DirectiveResolver.SuggestAndApply(System.String)">
+	<summary>
+ Recupera y aplica la directiva de enlace automáticamente
+ sugerida para el ensamblado especificado.
+ </summary>
+	<param name="assemblyPath">Ruta al ensamblado.</param>
+	<returns>Directiva de enlace sugerida y aplicada.</returns>
+</member><member name="M:GacManipulation.DirectiveResolver.Suggest(System.String)">
+	<summary>
+ Sugiere una directiva de enlace a aplicar para el
+ ensamblado indicado.
+ </summary>
+	<param name="assemblyPath">Ruta al ensamblado.</param>
+	<returns>Directiva de enlace sugerida.</returns>
+</member><member name="M:GacManipulation.DirectiveResolver.CreateRedirect(System.String)">
+	<summary>
+ Crea una redirección nueva basada en el número
+ de versión especificado.
+ </summary>
+	<param name="version">Versión a partir de la cuál
+ crear la redirección.</param>
+	<returns>Redirección creada.</returns>
+</member><member name="M:GacManipulation.DirectiveResolver.CreateRange(System.String)">
+	<summary>
+ Crea un rango de versiones para abarcar la
+ versión indicada.
+ </summary>
+	<param name="version">Versión que se pretende
+ abarcar por el rango de versiones.</param>
+	<returns>Rango de versiones que abarca la versión
+ especificada.</returns>
+</member><member name="T:GacManipulation.DirectiveResolver">
+	<summary>
+ Se encarga de comparar y sugerir directivas de
+ enlace a aplicar a un ensamblado.
+ </summary>
+</member><member name="M:GacManipulation.BindingDirectiveTranslator.ToXml(System.Collections.Generic.IEnumerable{GacManipulation.BindingDirective},System.Xml.Linq.XNamespace)">
+	<summary>
+ Traduce una colección de directivas de enlace
+ a su representación en XML.
+ </summary>
+	<param name="directives">Directivas de enlace
+ a traducir.</param>
+	<param name="ns">Espacio de nombres a usar.</param>
+	<returns>Directivas de enlace en XML.</returns>
+</member><member name="M:GacManipulation.BindingDirectiveTranslator.ToXml(GacManipulation.BindingDirective,System.Xml.Linq.XNamespace)">
+	<summary>
+ Traduce un objeto de directiva de enlace en un
+ nodo XML.
+ </summary>
+	<param name="directive">Directiva de enlace.</param>
+	<param name="ns">Espacio de nombres a usar.</param>
+	<returns>Directiva de enlace expresada como XML.</returns>
+</member><member name="T:GacManipulation.BindingDirectiveTranslator">
+	<summary>
+ Traduce objetos de directiva de enlace a su
+ representación en XML.
+ </summary>
+</member><member name="M:GacManipulation.BindingRedirect.#ctor(GacManipulation.BindingVersionRange,GacManipulation.BindingVersion)">
+	<summary>
+ Crea una nueva instancia de BindingRedirect.
+ </summary>
+	<param name="range">Rango de versiones a redireccionar.</param>
+	<param name="targetVersion">Versión de destino.</param>
+</member><member name="P:GacManipulation.BindingRedirect.Range">
+	<summary>
+ Obtiene el rango de versiones a redireccionar.
+ </summary>
+</member><member name="P:GacManipulation.BindingRedirect.TargetVersion">
+	<summary>
+ Obtiene la versión de destino.
+ </summary>
+</member><member name="M:GacManipulation.BindingRedirect.ToString">
+	<summary>
+ Obtiene una representación en cadena
+ de la redirección.
+ </summary>
+	<returns>Representación en cadena de
+ la redirección.</returns>
+</member><member name="M:GacManipulation.BindingRedirect.CompareTo(GacManipulation.BindingRedirect)">
+	<summary>
+ Compara esta instancia con otra redirección.
+ </summary>
+	<param name="other">Otra redirección con la
+ que se quiere comparar esta instancia.</param>
+	<returns>Menor que cero si esta instancia es de menor número
+ de versión. 0 si son iguales. Mayor que cero si es mayor.</returns>
+</member><member name="M:GacManipulation.BindingRedirect.Equals(System.Object)">
+	<summary>
+ Comprueba si dos redirecciones son iguales.
+ </summary>
+	<param name="obj">Otra redirección con la
+ que comparar.</param>
+	<returns>True si son iguales. False en caso
+ contrario.</returns>
+</member><member name="T:GacManipulation.BindingRedirect">
+	<summary>
+ Representa la redirección de una directiva
+ de enlace.
+ </summary>
+</member><member name="T:GacManipulation.FrameworkVersion">
+	<summary>
+ Representa las distintas versiones de
+ framework.
+ </summary>
+</member><member name="M:GacManipulation.Framework.#ctor(System.String,System.String,System.String,System.String)">
+	<summary>
+ Crea una nueva instancia de Framework a partir de las rutas relativas al mismo.
+ </summary>
+	<param name="frameworkPath">Path del framework usado en el sistema.</param>
+	<param name="machineConfigPath">Path del archivo de configuración de ensamblados.</param>
+	<param name="gacPath">Path de la gac instalada en el sistema.</param>
+	<param name="gacUtilPath">Ruta a la utilidad gacutil.</param>
+</member><member name="M:GacManipulation.Framework.GetCORSystemDirectory(System.Text.StringBuilder,System.Int32,System.Int32@)">
+	<summary>
+ Importación de la función que permite obtener la ruta donde está instalado
+ el framework que usa el ejecutable actual.
+ </summary>
+	<param name="pbuffer">Puntero al buffer de cadena donde se almacenará la ruta.</param>
+	<param name="cchBuffer">Tamaño del buffer en el que se almacenará la ruta.</param>
+	<param name="dwlength">Tamaño real de la cadena que representa la ruta en carácteres.</param>
+	<returns>Cero si ha tenido éxito. Otro valor en caso contrario.</returns>
+</member><member name="M:GacManipulation.Framework.Instance(GacManipulation.FrameworkVersion)">
+	<summary>
+ Obtiene una instancia de Framework.
+ </summary>
+	<returns>Instancia de Framework.</returns>
+	<remarks>Singleton.</remarks>
+</member><member name="P:GacManipulation.Framework.FrameworkPath">
+	<summary>
+ Obtiene la ruta en la que está instalado el
+ framework.
+ </summary>
+</member><member name="P:GacManipulation.Framework.MachineConfigPath">
+	<summary>
+ Obtiene la ruta al archivo de configuración
+ del framework.
+ </summary>
+</member><member name="P:GacManipulation.Framework.MachineConfigFile">
+	<summary>
+ Obtiene un objeto que representa el archivo
+ de configuración del Framework.
+ </summary>
+</member><member name="P:GacManipulation.Framework.GacPath">
+	<summary>
+ Obtiene la ruta a la GAC.
+ </summary>
+</member><member name="P:GacManipulation.Framework.Gac">
+	<summary>
+ Obtiene un objeto que representa la caché
+ de ensamblados global.
+ </summary>
+</member><member name="P:GacManipulation.Framework.GacUtilPath">
+	<summary>
+ Obtiene la ruta a la herramienta gacutil.exe
+ del framework.
+ </summary>
+</member><member name="P:GacManipulation.Framework.GacUtil">
+	<summary>
+ Obtiene un objeto que representa la herramienta
+ de configuración de ensamblados.
+ </summary>
+</member><member name="M:GacManipulation.Framework.ResolveCurrentFrameworkPath">
+	<summary>
+ Resuelve la ruta del framework en ejecución.
+ </summary>
+	<returns>Ruta del framework en ejecución.</returns>
+</member><member name="M:GacManipulation.Framework.GacSearchPaths">
+	<summary>
+ Obtiene las distintas rutas en la gac en la que se pueden encontrar
+ ensamblados instalados.
+ </summary>
+	<returns>Distintas rutas en la gac en la que se pueden encontrar
+ ensamblados instalados.</returns>
+	<remarks>Se excluye el directorio temporal usado por la GAC para instalar
+ ensamblados.</remarks>
+</member><member name="T:GacManipulation.Framework">
+	<summary>
+ Representa el framework que usa el ejecutable actual.
+ </summary>
+	<remarks>Singleton.</remarks>
+</member><member name="M:GacManipulation.Gac.#ctor(GacManipulation.GacUtil)">
+	<summary>
+ Crea una nueva instancia de Gac.
+ </summary>
+	<param name="gacutil">Herramienta
+ GacUtil a utilizar.</param>
+</member><member name="M:GacManipulation.Gac.InstallAssembly(System.String)">
+	<summary>
+ Instala el ensamblado especificado.
+ </summary>
+	<param name="path">Ruta al ensamblado a instalar.</param>
+</member><member name="M:GacManipulation.Gac.InstallAssemblies(System.Collections.Generic.IEnumerable{System.String})">
+	<summary>
+ Instala los ensamblados especificados.
+ </summary>
+	<param name="paths">Rutas a los ensamblados
+ a instalar.</param>
+</member><member name="M:GacManipulation.Gac.UnistallAssembly(System.String,System.String,System.String)">
+	<summary>
+ Quita el ensamblado especificado.
+ </summary>
+	<param name="name">Nombre del ensamblado.</param>
+	<param name="publicKeyToken">Token público.</param>
+	<param name="version">Versión.</param>
+</member><member name="M:GacManipulation.Gac.GetVersionsForAssembly(System.String)">
+	<summary>
+ Obtiene la lista de versiones instaladas
+ en la GAC para el ensamblado indicado.
+ </summary>
+	<param name="name">Nombre corto del ensamblado.</param>
+	<returns>Lista de versiones instaladas en la GAC.</returns>
+</member><member name="M:GacManipulation.Gac.GetAssembliesList">
+	<summary>
+ Obtiene la lista de ensamblados de la GAC.
+ </summary>
+	<returns>Lista de ensamblados de la GAC.</returns>
+</member><member name="M:GacManipulation.Gac.Reset">
+	<summary>
+ Solicita que se vuelvan a cargar los
+ datos de la GAC.
+ </summary>
+</member><member name="T:GacManipulation.Gac">
+	<summary>
+ Representa la caché de ensamblados global.
+ </summary>
+</member><member name="P:GacManipulation.IBindingDirectiveSource.Directives">
+	<summary>
+ Cuando se implementa, obtiene una lista de
+ directivas de enlace.
+ </summary>
+</member><member name="T:GacManipulation.IBindingDirectiveSource">
+	<summary>
+ Interfaz a implementar por aquellas clases
+ de las que se pueden obtener directivas de
+ enlace.
+ </summary>
+</member><member name="P:GacManipulation.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:GacManipulation.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:GacManipulation.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:GacManipulation.Cryptography.ComputeMd5(System.String)">
+	<summary>
+ Computa la firma MD5 para un texto dado.
+ </summary>
+	<param name="text">Texto al que computar
+ la firma MD5.</param>
+	<returns>Firma computada.</returns>
+</member><member name="T:GacManipulation.Cryptography">
+	<summary>
+ Contiene métodos para trabajo con criptografía.
+ </summary>
+</member><member name="M:GacManipulation.BindingVersion.#ctor(System.Collections.Generic.IEnumerable{System.Int32})">
+	<summary>
+ Crea una nueva instancia de BindingVersion.
+ </summary>
+	<param name="numbers">Enumerable con los
+ números de la versión.</param>
+</member><member name="M:GacManipulation.BindingVersion.#ctor(System.String)">
+	<summary>
+ Crea una nueva instancia de BindingVersion.
+ </summary>
+	<param name="version">Número de versión.</param>
+</member><member name="M:GacManipulation.BindingVersion.ParseAndFillNumbers(System.String)">
+	<summary>
+ Parsea el número de versión expresado como cadena.
+ </summary>
+	<param name="version">Número de versión a parsear.</param>
+</member><member name="P:GacManipulation.BindingVersion.Parts">
+	<summary>
+ Obtiene las partes que componen este
+ número de versión.
+ </summary>
+</member><member name="M:GacManipulation.BindingVersion.ToString">
+	<summary>
+ Obtiene una representación en cadena del
+ número de versión.
+ </summary>
+	<returns>Representación en cadena del
+ número de versión.</returns>
+</member><member name="M:GacManipulation.BindingVersion.CompareTo(GacManipulation.BindingVersion)">
+	<summary>
+ Compara esta instancia con otra instancia
+ de BindingVersion.
+ </summary>
+	<param name="other">Otra instancia que
+ comparar.</param>
+	<returns>Un número igual que 0 si son iguales.
+ Un número mayor que cero si esta instancia es mayor
+ que con la que se compara.
+ Un número menor que cero si esta instancia es menor.</returns>
+</member><member name="M:GacManipulation.BindingVersion.Equals(System.Object)">
+	<summary>
+ Comprueba si dos números de versión son iguales.
+ </summary>
+	<param name="obj">Otro número de versión con el
+ que comparar.</param>
+	<returns>True si son iguales. False en caso
+ contrario.</returns>
+</member><member name="M:GacManipulation.BindingVersion.VersionAsNumber(GacManipulation.BindingVersion)">
+	<summary>
+ Obtiene el número de versión como un número
+ operable matemáticamente.
+ </summary>
+	<param name="version">Versión.</param>
+	<returns>Número de versión operable.</returns>
+</member><member name="T:GacManipulation.BindingVersion">
+	<summary>
+ Representa un número de versión de un ensamblado
+ a usar en una operación de directivas de enlace.
+ </summary>
+</member><member name="M:GacManipulation.BindingVersionRange.#ctor(GacManipulation.BindingVersion,GacManipulation.BindingVersion)">
+	<summary>
+ Crea una nueva instancia de BindingVersionRange.
+ </summary>
+	<param name="lowerBound">Límite inferior.</param>
+	<param name="upperBound">Límite superior.</param>
+</member><member name="M:GacManipulation.BindingVersionRange.#ctor(System.String,System.String)">
+	<summary>
+ Crea una nueva instancia de BindingVersionRange.
+ </summary>
+	<param name="lowerBound">Límite inferior.</param>
+	<param name="upperBound">Límite superior.</param>
+</member><member name="M:GacManipulation.BindingVersionRange.#ctor(System.String)">
+	<summary>
+ Crea una nueva instancia de BindingVersionRange.
+ </summary>
+	<param name="range">Intervalo de versiones.</param>
+</member><member name="P:GacManipulation.BindingVersionRange.LowerBound">
+	<summary>
+ Obtiene el límite inferior del rango.
+ </summary>
+</member><member name="P:GacManipulation.BindingVersionRange.UpperBound">
+	<summary>
+ Obtiene el límite superior del rango.
+ </summary>
+</member><member name="M:GacManipulation.BindingVersionRange.Equals(System.Object)">
+	<summary>
+ Comprueba si dos rangos son iguales.
+ </summary>
+	<param name="obj">Otro rango con el
+ que comparar.</param>
+	<returns>True si son iguales. False en caso
+ contrario.</returns>
+</member><member name="M:GacManipulation.BindingVersionRange.ToString">
+	<summary>
+ Obtiene una representación en cadena del
+ rango de versiones.
+ </summary>
+	<returns>Representación en cadena del
+ rango de versiones.</returns>
+</member><member name="T:GacManipulation.BindingVersionRange">
+	<summary>
+ Representa un intervalo de versiones para operar
+ con directivas de enlace.
+ </summary>
+</member>
+</members>
+</doc>
