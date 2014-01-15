@@ -116,7 +116,7 @@
         data = { Data: directivesList };
 
         eraseInterfaceEventHandlers();
-        
+
         assembliesListHtml = Mustache.render(templateHtml, data);
         $('#assembliesListContainer')
             .empty()
@@ -149,29 +149,37 @@
                 newVersion = versionInput.val(),
                 assemblyName = currentCell.attr('data-assembly-name');
 
-                try {
+                if (oldVersion != newVersion) {
 
-                    if (currentCell.hasClass('lowerBound')) {
-                        bindingDirective.updateLowerBound(assemblyName, redirectionId, newVersion);
-                    } else if (currentCell.hasClass('upperBound')) {
-                        bindingDirective.updateUpperBound(assemblyName, redirectionId, newVersion);
-                    } else {
-                        bindingDirective.updateTargetVersion(assemblyName, redirectionId, newVersion);
+                    try {
+
+                        if (currentCell.hasClass('lowerBound')) {
+                            bindingDirective.updateLowerBound(assemblyName, redirectionId, newVersion);
+                        } else if (currentCell.hasClass('upperBound')) {
+                            bindingDirective.updateUpperBound(assemblyName, redirectionId, newVersion);
+                        } else {
+                            bindingDirective.updateTargetVersion(assemblyName, redirectionId, newVersion);
+                        }
+
+                        currentCell.html(newVersion);
+
+                        currentCell
+                            .closest('.redirections')
+                            .prev('.bindingDirective')
+                            .addClass('Changed');
+
+                    } catch (err) {
+                        versionInput.addClass('versionError');
+                        alert(err.message);
+                        currentCell.html(oldVersion);
+                    } finally {
+                        versionInput.remove();
+                        currentCell.on('click', setVersionControlClick);
                     }
 
-                    currentCell.html(newVersion);
-
-                    currentCell
-                    .closest('.redirections')
-                    .prev('.bindingDirective')
-                    .addClass('Changed');
-
-                } catch (err) {
-                    versionInput.addClass('versionError');
-                    alert(err.message);
-                    currentCell.html(oldVersion);
-                } finally {
+                } else {
                     versionInput.remove();
+                    currentCell.html(oldVersion);
                     currentCell.on('click', setVersionControlClick);
                 }
 

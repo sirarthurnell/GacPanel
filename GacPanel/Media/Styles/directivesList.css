@@ -149,10 +149,11 @@
     text-align: right;    
 }
 
-.versionControl:focus, .versionError
+.versionControl input[type="text"]:focus, .versionError
 {
-    height: 1em;
-    width: 6.5em;
+    background-color: White;
+    height: inherit;
+    width: inherit;
 }
 
 .versionError
