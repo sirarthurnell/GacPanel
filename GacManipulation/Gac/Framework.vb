@@ -32,16 +32,14 @@ Public Class Framework
     ''' <summary>
     ''' Crea una nueva instancia de Framework a partir de las rutas relativas al mismo.
     ''' </summary>
-    ''' <param name="frameworkPath">Path del framework usado en el sistema.</param>
-    ''' <param name="machineConfigPath">Path del archivo de configuración de ensamblados.</param>
-    ''' <param name="gacPath">Path de la gac instalada en el sistema.</param>
-    ''' <param name="gacUtilPath">Ruta a la utilidad gacutil.</param>
-    Private Sub New(ByVal frameworkPath As String, ByVal machineConfigPath As String, ByVal gacPath As String, ByVal gacUtilPath As String)
-        Me._frameworkPath = frameworkPath
-        Me._machineConfigPath = machineConfigPath
+    ''' <param name="routes">Objeto que contiene las rutas del framework
+    ''' a utilizar.</param>
+    Private Sub New(ByVal routes As FrameworkRoutes)
+        Me._frameworkPath = routes.FrameworkPath
+        Me._machineConfigPath = routes.MachineConfigPath
         Me._machineConfigFile = New MachineConfigFile(Me)
-        Me._gacPath = gacPath
-        Me._gacUtilPath = gacUtilPath
+        Me._gacPath = routes.GacPath
+        Me._gacUtilPath = routes.GacUtilPath
         Me._gacutil = New GacUtil(_gacUtilPath)
         Me._gac = New Gac(_gacutil)
     End Sub
@@ -75,39 +73,25 @@ Public Class Framework
             SyncLock _syncObj
                 If Not _frameworks.ContainsKey(version) Then
 
-                    Dim windowsDirectory As String = Environment.GetFolderPath(Environment.SpecialFolder.Windows)
-                    Dim programFilesDirectory As String = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)
-                    Dim frameworkPath As String
-                    Dim machineConfigPath As String
-                    Dim gacPath As String
-                    Dim gacUtilPath As String
+                    Dim routesFactory As IFrameworkRoutesFactory
 
                     Select Case version
 
                         Case FrameworkVersion.Version1_1
-                            frameworkPath = Path.Combine(windowsDirectory, "Microsoft.NET\Framework\v1.1.4322")
-                            machineConfigPath = Path.Combine(windowsDirectory, "Microsoft.NET\Framework\v1.1.4322\CONFIG\machine.config")
-                            gacPath = Path.Combine(windowsDirectory, "assembly\GAC")
-                            gacUtilPath = Path.Combine(windowsDirectory, "Microsoft.NET\Framework\v1.1.4322\gacutil.exe")
+                            routesFactory = New DefaultFramework1_1RoutesFactory()
 
                         Case FrameworkVersion.Version2
-                            frameworkPath = Path.Combine(windowsDirectory, "Microsoft.NET\Framework\v2.0.50727")
-                            machineConfigPath = Path.Combine(windowsDirectory, "Microsoft.NET\Framework\v2.0.50727\CONFIG\machine.config")
-                            gacPath = Path.Combine(windowsDirectory, "assembly\GAC")
-                            gacUtilPath = Path.Combine(windowsDirectory, "Microsoft.NET\Framework\v2.0.50727\gacutil.exe")
+                            routesFactory = New DefaultFramework2RoutesFactory()
 
                         Case FrameworkVersion.Version4
-                            frameworkPath = Path.Combine(windowsDirectory, "Microsoft.NET\Framework\v4.0.30319")
-                            machineConfigPath = Path.Combine(windowsDirectory, "Microsoft.NET\Framework\v4.0.30319\CONFIG\machine.config")
-                            gacPath = Path.Combine(windowsDirectory, "Microsoft.NET\Assembly")
-                            gacUtilPath = Path.Combine(programFilesDirectory, "Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\gacutil.exe")
+                            routesFactory = New DefaultFramework4RoutesFactory()
 
                         Case Else
                             Throw New ArgumentException("La versión de Framework especificada no está reconocida", "version")
 
                     End Select
 
-                    Dim framework As New Framework(frameworkPath, machineConfigPath, gacPath, gacUtilPath)
+                    Dim framework As New Framework(routesFactory.GetRoutes())
                     _frameworks.Add(version, framework)
 
                 End If
