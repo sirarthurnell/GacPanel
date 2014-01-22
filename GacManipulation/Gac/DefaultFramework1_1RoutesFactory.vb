@@ -26,4 +26,12 @@ Public Class DefaultFramework1_1RoutesFactory
         Return New FrameworkRoutes(frameworkPath, machineConfigPath, gacPath, gacUtilPath)
     End Function
 
+    ''' <summary>
+    ''' Obtiene el número de versión 1.1.
+    ''' </summary>
+    Public ReadOnly Property Version As String Implements IFrameworkRoutesFactory.Version
+        Get
+            Return "1.1"
+        End Get
+    End Property
 End Class

@@ -47,7 +47,7 @@ Public Class GacUtilTest
     'Use TestInitialize para ejecutar código antes de ejecutar cada prueba
     <TestInitialize()> _
     Public Sub MyTestInitialize()
-        _framework = Framework.Instance(FrameworkVersion.Version4)
+        _framework = Framework.Instance(New DefaultFramework4RoutesFactory())
         _gacutil = _framework.GacUtil
     End Sub
     '

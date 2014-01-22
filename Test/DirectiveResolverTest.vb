@@ -42,7 +42,7 @@ Public Class DirectiveResolverTest
     '
     ' Usar TestInitialize para ejecutar el código antes de ejecutar cada prueba
     <TestInitialize()> Public Sub MyTestInitialize()
-        _machineFile = New MachineConfigFile(Framework.Instance(FrameworkVersion.Version4))
+        _machineFile = New MachineConfigFile(Framework.Instance(New DefaultFramework2RoutesFactory()))
     End Sub
     '
     'Use TestCleanup para ejecutar código después de que se hayan ejecutado todas las pruebas

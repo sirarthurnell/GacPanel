@@ -18,7 +18,7 @@ End Enum
 ''' <remarks>Singleton.</remarks>
 Public Class Framework
 
-    Private Shared _frameworks As New Dictionary(Of FrameworkVersion, Framework)()
+    Private Shared _frameworks As New Dictionary(Of String, Framework)()
     Private Shared _syncObj As New Object()
 
     Private _frameworkPath As String
@@ -66,39 +66,23 @@ Public Class Framework
     ''' <summary>
     ''' Obtiene una instancia de Framework.
     ''' </summary>
+    ''' <param name="routesFactory">Factoría de la que obtener
+    ''' las rutas del framework a usar.</param>
     ''' <returns>Instancia de Framework.</returns>
     ''' <remarks>Singleton.</remarks>
-    Public Shared Function Instance(ByVal version As FrameworkVersion) As Framework
-        If Not _frameworks.ContainsKey(version) Then
+    Public Shared Function Instance(ByVal routesFactory As IFrameworkRoutesFactory) As Framework
+        If Not _frameworks.ContainsKey(routesFactory.Version) Then
             SyncLock _syncObj
-                If Not _frameworks.ContainsKey(version) Then
-
-                    Dim routesFactory As IFrameworkRoutesFactory
-
-                    Select Case version
-
-                        Case FrameworkVersion.Version1_1
-                            routesFactory = New DefaultFramework1_1RoutesFactory()
-
-                        Case FrameworkVersion.Version2
-                            routesFactory = New DefaultFramework2RoutesFactory()
-
-                        Case FrameworkVersion.Version4
-                            routesFactory = New DefaultFramework4RoutesFactory()
-
-                        Case Else
-                            Throw New ArgumentException("La versión de Framework especificada no está reconocida", "version")
-
-                    End Select
+                If Not _frameworks.ContainsKey(routesFactory.Version) Then
 
                     Dim framework As New Framework(routesFactory.GetRoutes())
-                    _frameworks.Add(version, framework)
+                    _frameworks.Add(routesFactory.Version, framework)
 
                 End If
             End SyncLock
         End If
 
-        Return _frameworks.Item(version)
+        Return _frameworks.Item(routesFactory.Version)
     End Function
 
     ''' <summary>

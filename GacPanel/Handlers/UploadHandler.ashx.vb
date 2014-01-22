@@ -40,7 +40,8 @@ Public Class UploadHandler
     ''' instalación.</returns>
     Private Function ConstructAssembliesToInstallList(ByVal filesPaths As List(Of String)) As List(Of AssemblyToInstall)
         Dim proposedAssemblies As New List(Of AssemblyToInstall)()
-        Dim machineConfig As MachineConfigFile = Framework.Instance(FrameworkVersion.Version2).MachineConfigFile
+        Dim frameworkToUse = Framework.Instance(FrameworkSelection.GetSelection())
+        Dim machineConfig As MachineConfigFile = frameworkToUse.MachineConfigFile
         Dim resolver As New DirectiveResolver(machineConfig)
 
         For Each assemblyPath In filesPaths

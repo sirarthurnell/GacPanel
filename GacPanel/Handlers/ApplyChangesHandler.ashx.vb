@@ -12,8 +12,8 @@ Public Class ApplyChangesHandler
 
             Dim directivesAsJson As String = New StreamReader(context.Request.InputStream).ReadToEnd()
             Dim changes = JsonConvert.DeserializeObject(Of List(Of RootObject))(directivesAsJson)
-
-            Dim applycator As New ConfigurationApplycator(Framework.Instance(FrameworkVersion.Version2))
+            Dim frameworkToUse = Framework.Instance(FrameworkSelection.GetSelection())
+            Dim applycator As New ConfigurationApplycator(frameworkToUse)
 
             Dim assembliesToInstall As List(Of AssemblyToInstall)
             assembliesToInstall = context.Session(Keys.AssembliesToInstall)

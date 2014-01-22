@@ -12,4 +12,10 @@ Public Interface IFrameworkRoutesFactory
     ''' <returns>Objeto con las rutas del framework.</returns>
     Function GetRoutes() As FrameworkRoutes
 
+    ''' <summary>
+    ''' Versión del framework a la que se refiere
+    ''' la factoría de rutas.
+    ''' </summary>
+    ReadOnly Property Version As String
+
 End Interface

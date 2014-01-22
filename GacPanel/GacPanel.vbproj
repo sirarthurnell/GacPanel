@@ -98,6 +98,7 @@
     </Compile>
     <Compile Include="Logic\AssemblyToInstall.vb" />
     <Compile Include="Logic\ConfigurationApplycator.vb" />
+    <Compile Include="Logic\FrameworkSelection.vb" />
     <Compile Include="Logic\JsonResponse.vb" />
     <Compile Include="Logic\ClientModel.vb" />
     <Compile Include="Logic\Keys.vb" />

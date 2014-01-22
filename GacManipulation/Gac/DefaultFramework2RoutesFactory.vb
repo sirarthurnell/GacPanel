@@ -26,4 +26,13 @@ Public Class DefaultFramework2RoutesFactory
         Return New FrameworkRoutes(frameworkPath, machineConfigPath, gacPath, gacUtilPath)
     End Function
 
+    ''' <summary>
+    ''' Obtiene el número de versión 2.
+    ''' </summary>
+    Public ReadOnly Property Version As String Implements IFrameworkRoutesFactory.Version
+        Get
+            Return "2"
+        End Get
+    End Property
+
 End Class

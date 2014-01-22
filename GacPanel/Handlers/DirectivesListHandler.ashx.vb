@@ -16,8 +16,8 @@ Public Class DirectivesListHandler
 
                 context.Session(Keys.AssembliesToInstall) = Nothing
 
-                Dim framework As Framework = framework.Instance(FrameworkVersion.Version2)
-                Dim machineConfig As MachineConfigFile = framework.MachineConfigFile
+                Dim frameworkToUse = framework.Instance(FrameworkSelection.GetSelection())
+                Dim machineConfig As MachineConfigFile = frameworkToUse.MachineConfigFile
                 Dim directives = machineConfig.Directives
 
                 Dim result As New OperationResult(Of List(Of BindingDirective))(True, directives)
