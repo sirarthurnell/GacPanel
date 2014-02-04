@@ -33,7 +33,6 @@ Public Structure BindingVersion
     ''' <param name="version">Número de versión a parsear.</param>
     Private Sub ParseAndFillNumbers(ByVal version As String)
         Dim numbers() As String
-        Dim i As Integer = 0
 
         If String.IsNullOrEmpty(version) Then
             Throw New ArgumentException("La versión no puede ser una cadena vacía o nula.", "version")
@@ -80,9 +79,23 @@ Public Structure BindingVersion
     ''' que con la que se compara.
     ''' Un número menor que cero si esta instancia es menor.</returns>
     Public Function CompareTo(other As BindingVersion) As Integer Implements System.IComparable(Of BindingVersion).CompareTo
-        Dim selfVersionSum As Long = VersionAsNumber(Me)
-        Dim otherVersionSum As Long = VersionAsNumber(other)
-        Return Convert.ToInt32(selfVersionSum - otherVersionSum)
+        Dim totalChunks As Integer = Math.Min(_version.Count, other._version.Count)
+
+        For i As Integer = 0 To totalChunks - 1
+            If _version(i) = other._version(i) Then
+                Continue For
+            Else
+                Return _version(i) - other._version(i)
+            End If
+        Next
+
+        If _version.Count > other._version.Count Then
+            Return 1
+        ElseIf _version.Count < other._version.Count Then
+            Return -1
+        Else
+            Return 0
+        End If
     End Function
 
     ''' <summary>
@@ -97,7 +110,7 @@ Public Structure BindingVersion
             Return False
         End If
 
-        If Me.GetHashCode() = obj.GetHashCode() Then
+        If Me.ToString().GetHashCode() = obj.ToString().GetHashCode() Then
             Return True
         End If
 
@@ -117,23 +130,6 @@ Public Structure BindingVersion
         Next
 
         Return True
-    End Function
-
-    ''' <summary>
-    ''' Obtiene el número de versión como un número
-    ''' operable matemáticamente.
-    ''' </summary>
-    ''' <param name="version">Versión.</param>
-    ''' <returns>Número de versión operable.</returns>
-    Private Shared Function VersionAsNumber(ByVal version As BindingVersion) As Long
-        Dim sum As Long
-        Dim versionLimit As Integer = 65535
-
-        For i As Integer = version.Parts.Count - 1 To 0
-            sum += version.Parts(i) * Math.Pow(10000, i)
-        Next
-
-        Return sum
     End Function
 
 End Structure
